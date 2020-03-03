@@ -16,7 +16,7 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state)
-      .then( () => this.props.history.push("USER SHOW PAGE GOES HERE"))
+      .then( () => this.props.history.push(`/`));
   }
 
   render() {
@@ -49,7 +49,7 @@ class Signup extends React.Component {
         </form>
       </div>
     );
-  }
+  };
 }
 
 export default Signup;

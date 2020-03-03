@@ -1,10 +1,13 @@
-import { RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER } from "../actions/session";
+import { 
+  RECEIVE_CURRENT_USER, 
+  LOGOUT_CURRENT_USER 
+} from "../actions/session_actions";
 
 const _nullSession = {
   currentUser: null,
 };
 
-export default sessionReducer = (state = _nullSession, action) => {
+export default (state = _nullSession, action) => {
   Object.freeze(state);
 
   switch (action.type) {

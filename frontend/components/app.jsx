@@ -1,12 +1,16 @@
 import React from "react";
-import UserShowContainer from "./users/user_show_container";
 import SignupContainer from "./session/signup_container";
 import { Route, HashRouter } from "react-router-dom";
+import HomePage from "./users/user_home_page";
 
 export default () => {
-  <HashRouter>
-    <div>
-      <Route path="/signup" component={SignupContainer} />
-    </div>
-  </HashRouter>
+  return (
+    <HashRouter>
+      <div>
+        <Route path="/" component={HomePage} />
+        <Route path="/signup" component={SignupContainer} />
+      </div>
+    </HashRouter>
+  );
 };
+
