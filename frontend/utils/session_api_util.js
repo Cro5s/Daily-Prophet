@@ -6,7 +6,7 @@ export function signup(user) {
   });
 }
 
-export function loginSession(user) {
+export function login(user) {
   return $.ajax({
     method: `POST`,
     url: `/api/session`,
@@ -14,7 +14,7 @@ export function loginSession(user) {
   });
 }
 
-export function logoutSession() {
+export function logout() {
   return $.ajax({
     method: `DELETE`,
     url: `/api/session`,
