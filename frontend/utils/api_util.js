@@ -15,8 +15,8 @@ export function loginSession(user) {
 }
 
 export function logoutSession() {
-  return {
+  return $.ajax({
     method: `DELETE`,
     url: `/api/session`,
-  };
+  });
 }

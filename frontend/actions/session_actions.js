@@ -18,12 +18,12 @@ export function logoutCurrentUser() {
 
 export const createNewUser = formUser => dispatch => {
   return signup(formUser)
-    .then(newUser => dispatch(receieveCurrentUser(newUser)));
+    .then(user => dispatch(receieveCurrentUser(user)));
 };
 
 export const login = formUser => dispatch => {
   return loginSession(formUser)
-    .then(currentUser => dispatch(receieveCurrentUser(currentUser)));
+    .then(user => dispatch(receieveCurrentUser(user)));
 };
 
 export const logout = () => dispatch => {
