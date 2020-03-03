@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class HomePage extends React.Component {
   render() {
     return (
-      <h2>You've Successfully logged in!</h2>
+     <h3>Whatever the Home page needs</h3>
     );
   }
 }
