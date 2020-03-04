@@ -14,7 +14,7 @@ export default () => {
       <header>
         <div className="nav-bar-container">
           <nav className="nav-bar">
-            <Link to="/" className="heaader-link">
+            <Link to="/" className="header-link">
               <h1>Daily Prophet</h1>
             </Link>
           </nav>
@@ -22,9 +22,7 @@ export default () => {
       </header>
 
       <Switch>
-        <ProtectedRoute exact path="/users/:userId" component={UserFeedContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />
         <Route exact path="/" component={HomeContainer} />
         <Redirect to="/" />
       </Switch>

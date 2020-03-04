@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
     
     store = configureStore();
   };
-
+  window.store = store; // Remove  
   ReactDom.render(<Root store={ store }/>, root);
 });

@@ -22,24 +22,6 @@ class SessionForm extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
-  }
-
-  renderErrors() {
-    const errorsList = this.props.errors.map((error, idx) => {
-      <li key={idx}>{error}</li>
-    });
-
-    return (
-      <>
-        <ul className="session-errors">
-          {errorsList}
-        </ul>
-      </>
-    );
-  }
-
   demoLogin() {
     return (e) => {
       e.preventDefault();
@@ -48,13 +30,14 @@ class SessionForm extends React.Component {
         username: "guest", email: "guest@demo.com", password: "password" 
       };
 
-      (this.props.formType === 'Log In' ?
-        this.props.processForm(demo) : this.props.login(demo))
-        .then(this.props.closeModal);
     }
   }
 
   render() {
+    const errorsList = this.props.errors.map((error, idx) => {
+      <li key={idx}>{error}</li>
+    });
+
     return (
       <div className="session-form-container">
         <button className="session-close" onClick={this.props.closeModal}>
@@ -85,8 +68,11 @@ class SessionForm extends React.Component {
               onChange={this.update("password")}
             />
           </label>
-
-          {this.renderErrors()}
+          <div className="session-errors">
+            <ul>
+              {errorsList}
+            </ul>
+          </div>
           
         <button 
           className="session-form-submit" 
