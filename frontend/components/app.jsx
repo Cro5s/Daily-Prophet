@@ -1,6 +1,6 @@
 import React from "react";
-import SignupContainer from "./session/signup_container";
-import LoginContainer from "./session/login_container"
+import SignupFormContainer from "./session/signup_form_container";
+import LoginFormContainer from "./session/login_form_container"
 import { Route, HashRouter } from "react-router-dom";
 import UserFeed from "./users/user_feed";
 import HomePage from "./home/home";
@@ -14,8 +14,8 @@ export default () => {
       <div>
         <Route exact path="/" component={HomePage} />
         <ProtectedRoute path="/feed" component={UserFeed} />
-        <AuthRoute path="/login" component={LoginContainer} />
-        <AuthRoute path="/signup" component={SignupContainer} />
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
       </div>
     </HashRouter>
   );

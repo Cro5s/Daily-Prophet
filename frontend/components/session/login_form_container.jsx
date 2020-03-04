@@ -1,5 +1,6 @@
+import React from "react";
 import { connect } from "react-redux";
-import Login from "./login";
 import { login } from "../../actions/session_actions";
+import SessionForm from "./session_form";
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
