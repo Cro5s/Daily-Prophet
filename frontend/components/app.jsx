@@ -1,23 +1,34 @@
 import React from "react";
 import SignupFormContainer from "./session/signup_form_container";
 import LoginFormContainer from "./session/login_form_container"
-import { Route, HashRouter } from "react-router-dom";
-import UserFeed from "./users/user_feed";
-import HomePage from "./home/home";
-import NavBarContainer from "./nav_bar/nav_bar_container";
+import HomeContainer from "./home/home_container";
+import UserFeedContainer from "./users/user_feed_container";
+import  Modal from "./modal/modal";
+import { Route, Redirect, Link, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 
 export default () => {
   return (
-    <HashRouter>
-      <NavBarContainer />
-      <div>
-        <Route exact path="/" component={HomePage} />
-        <ProtectedRoute path="/feed" component={UserFeed} />
+    <>
+      <Modal />
+      <header>
+        <div className="nav-bar-container">
+          <nav className="nav-bar">
+            <Link to="/" className="heaader-link">
+              <h1>Daily Prophet</h1>
+            </Link>
+          </nav>
+        </div>
+      </header>
+
+      <Switch>
+        <ProtectedRoute exact path="/users/:userId" component={UserFeedContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
-      </div>
-    </HashRouter>
+        <Route exact path="/" component={HomeContainer} />
+        <Redirect to="/" />
+      </Switch>
+    </>
   );
 };
 
