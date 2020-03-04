@@ -8,11 +8,11 @@ export function HomePage({currentUser, logout, openModal}) {
         <button 
           className="login-button"
           onClick={() => openModal("Log In")}
-        >Sign In</button>
+        >Sign in</button>
         <button
           className="signup-button"
           onClick={() => openModal("Sign Up")}
-        >Get Started</button>
+        >Get started</button>
       </div>
     );
   } else {

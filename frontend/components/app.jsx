@@ -15,15 +15,16 @@ export default () => {
         <div className="nav-bar-container">
           <nav className="nav-bar">
             <Link to="/" className="header-link">
-              <h1>Daily Prophet</h1>
+              <h1 className="nav-bar-left">Daily Prophet</h1>
             </Link>
+            <HomeContainer />
           </nav>
         </div>
       </header>
 
       <Switch>
         <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />
-        <Route exact path="/" component={HomeContainer} />
+        {/* <Route path="/" component={HomeContainer} /> */}
         <Redirect to="/" />
       </Switch>
     </>
