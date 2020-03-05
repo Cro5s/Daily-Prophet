@@ -4,10 +4,9 @@
   bottom: 0;
   right: 0;
   left: 0;
-  // background: rgba(255, 255, 255, 0.918);
+  background: rgba(255, 255, 255, 0.781);
   z-index: 10;
 
-  background: red;
 }
 
 .modal-child {
@@ -15,42 +14,105 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 25%;
+  padding: 10px;
+  font-weight: 400;
+  border: 1px solid #888;
+  margin: 0 48px;
+  padding: 20px;
+  max-width: 1192px;
 
-  background: pink;
+
+  background-color: #fefefe;
+}
+
+.session-close {
+  color: #aaa;
+  float: right;
+  font-size: 26px;
+}
+
+.session-close:hover,
+.session-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .session-header {
+  // font-family: medium-content-sans-serif-font;
+  // font-family: PT serif;
+  font-weight: inherit;
+  font-size: 26px;
+  text-align: center;
 
+  // background: royalblue;
+}
 
-  background: royalblue;
+.session-form-details {
+  text-align: center;
+  padding-top: 30px;
+  margin-bottom: 30px;
+  margin-left: 90px;
+  width: 60%;
+  box-sizing: border-box;
+
+  // background: orange;
+}
+
+.session-form-footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  font-weight: 400;
+  margin-top: 25px;
+
+  // background: lime;
 }
 
 .session-footer {
-
-
-  background: purple;
+  text-align: inherit;
+  
+  
+  // background: purple;
 }
 
-.session-form-label {
+.session-form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 
-
-  background: seagreen;
+  // background: bisque;
 }
 
-.session-form-submit {
+.session-form-footer-terms {
+  margin-top: 50px;
+  color: rgb(172, 172, 172);
 
-
-  background: sienna;
+  // background: red;
 }
+
+// .session-form-label {
+
+//   background: seagreen;
+// }
+
+// .session-form-submit {
+
+
+//   background: sienna;
+// }
 
 .session-demo-submit {
+  margin-left: 15px;
 
-
-  background: snow;
+  // background: snow;
 }
 
 .other-form-button {
+  margin-left: 5px;
+  color:  rgb(88, 165, 123);
 
-  background: slategrey;
+  // background: slategrey;
 }

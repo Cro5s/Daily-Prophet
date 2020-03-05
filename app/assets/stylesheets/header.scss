@@ -17,10 +17,10 @@
 
 .nav-bar-left-logo {
   // font-family: Abril Fatface;
-  font-family: medium-content-sans-serif-font;
+  // font-family: medium-content-sans-serif-font;
   color: rgba(0,0,0,0.8);
-  font-weight: 900;
-  font-size: 25px;
+  font-weight: bolder;
+  font-size: x-large;
   margin-left: 30px;
   padding: 20px;
   vertical-align: top;
@@ -32,19 +32,11 @@
   display: flex;
   margin-left: auto;
   font-size: 18px;
-  font-family:  medium-content-sans-serif-font;
+  // font-family:  medium-content-sans-serif-font;
   line-height: 35px;
   color: rgba(0,0,0,0.84);
   
   // background: pink; // Remove when done
-}
-
-.subscribe-button {
-  margin-right: 30px;
-}
-
-.write-button {
-  margin-right: 30px;
 }
 
 .login-button {

@@ -1,6 +1,7 @@
 import {
   RECEIVE_CURRENT_USER,
   RECEIVE_SESSION_ERRORS,
+  CLEAR_SESSION_ERRORS,
 } from "../actions/session_actions";
 import { CLOSE_MODAL } from "../actions/modal_actions";
 
@@ -14,6 +15,8 @@ export default (state = _defaultState, action) => {
       return _defaultState;
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
+    case CLEAR_SESSION_ERRORS:
+      return _defaultState;
     case CLOSE_MODAL:
       return _defaultState;
     default:

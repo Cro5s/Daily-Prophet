@@ -25,7 +25,7 @@ class User < ApplicationRecord
 
   def valid_password?(password)
     bcrypt_password = BCrypt::Password.new(self.password_digest)
-      .valid_password?(password)
+      .is_password?(password)
   end
 
   def password=(password)

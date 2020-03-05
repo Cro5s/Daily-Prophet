@@ -5,8 +5,6 @@ export function HomePage({currentUser, logout, openModal}) {
   if (!currentUser) {
     return (
       <div className="nav-bar-right">
-        <button className="subscribe-button">Subscribe</button>
-        <button className="write-button">Write</button>
         <button 
           className="login-button"
           onClick={() => openModal("Log In")}
