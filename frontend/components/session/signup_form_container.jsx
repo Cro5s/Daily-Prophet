@@ -9,7 +9,7 @@ const mapStateToProps = state => {
     formType: "Sign Up",
     errors: state.errors.session,
     header: <h2 className="session-header">Join Daily Prophet</h2>,
-    footer: <p>Already have an account?</p>,
+    footer: <p className="session-footer">Already have an account?</p>,
   };
 }
 

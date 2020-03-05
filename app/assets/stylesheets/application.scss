@@ -11,8 +11,8 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_self
- */
+*/
  
-//  @import "reset.scss";
- @import "modal.scss";
- @import "header.scss";
+@import "reset.scss";
+@import "header.scss";
+@import "modal.scss";

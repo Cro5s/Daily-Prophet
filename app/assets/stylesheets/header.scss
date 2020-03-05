@@ -1,59 +1,83 @@
-.header {
+// .nav-bar-container {
+  
 
-
-  background: black; // Remove when done
-}
-
-.nav-bar-container {
-  padding: 20px 30px;
-  width: 800px;
-  margin: auto;
-
-  background: orange; // Remove when done
-}
+//   // background: orange; // Remove when done
+// }
 
 .nav-bar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
 
-
-  background: red; // Remove when done
+  // background: red; // Remove when done
 }
 
 .nav-bar-left-logo {
-  // font: 400 92px/84px Abril Fatface;
   // font-family: Abril Fatface;
   font-family: medium-content-sans-serif-font;
-  vertical-align: middle;
   color: rgba(0,0,0,0.8);
-  font-weight: 400;
-  float: left;
+  font-weight: 900;
+  font-size: 25px;
+  margin-left: 30px;
+  padding: 20px;
+  vertical-align: top;
 
-
-  background: blue; // Remove when done
+  // background: white; // Remove when done
 }
 
 .nav-bar-right {
+  display: flex;
   margin-left: auto;
-  float: right;
+  font-size: 18px;
+  font-family:  medium-content-sans-serif-font;
+  line-height: 35px;
+  color: rgba(0,0,0,0.84);
+  
+  // background: pink; // Remove when done
+}
 
-  background: pink; // Remove when done
+.subscribe-button {
+  margin-right: 30px;
+}
+
+.write-button {
+  margin-right: 30px;
 }
 
 .login-button {
-  // font-family:  medium-content-sans-serif-font;
-  // font-size: 18px;
-  // font-weight: 300;
-  // line-height: 24px;
-  // color: rgba(0,0,0,0.84);
   margin-right: 30px;
 
-  background: grey; // Remove when done
+  // background: grey; // Remove when done
 }
 
 .signup-button {
+  margin-right: 30px;
+  width: 148px;
+  height: auto;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  font-size: 16px;
+  background: rgb(88, 165, 123);
+  
+}
 
-  background: chartreuse; // Remove when done
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.918);
+  z-index: 10;
+}
+
+.modal-child {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

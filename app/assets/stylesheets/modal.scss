@@ -4,8 +4,10 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.918);
+  // background: rgba(255, 255, 255, 0.918);
   z-index: 10;
+
+  background: red;
 }
 
 .modal-child {
@@ -13,4 +15,42 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 25%;
+
+  background: pink;
+}
+
+.session-header {
+
+
+  background: royalblue;
+}
+
+.session-footer {
+
+
+  background: purple;
+}
+
+.session-form-label {
+
+
+  background: seagreen;
+}
+
+.session-form-submit {
+
+
+  background: sienna;
+}
+
+.session-demo-submit {
+
+
+  background: snow;
+}
+
+.other-form-button {
+
+  background: slategrey;
 }
