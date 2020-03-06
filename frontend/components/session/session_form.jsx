@@ -45,7 +45,7 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <div className="session-close-div">
-         <button className="session-close" onClick={this.props.closeModal}>x</button>
+          <button className="session-close" onClick={this.props.closeModal}>&#x2715;</button>
         </div> 
 
         <div className="session-form-div">

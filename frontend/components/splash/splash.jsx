@@ -6,73 +6,85 @@ export default () => {
     <div className="splash-page-container">
       <div>
 
-        <h1 className="splash-page-message">
+        <h1 className="splash-page-msg-main">
           Get smarter about what matters to you.
         </h1>
 
         <ul className="topics-list-container">
-          <li className="topics-list">Politics</li>
-          <li className="topics-list">Potions</li>
-          <li className="topics-list">Trending</li>
-          <li className="topics-list">Relationships</li>
-          <li className="topics-list">All Things Muggle</li>
-          <li className="topics-list">Hogwarts</li>
-          <li className="topics-list">Defense Against The Dark Arts</li>
-          <li className="topics-list">Pets</li>
-          <li className="topics-list">Spells</li>
-          <li className="topics-list">Quidditch</li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Politics</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Potions</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Trending</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Relationships</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">All Things Muggle</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Hogwarts</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">
+              Defense Against The Dark Arts
+            </li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Pets</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Spells</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Quidditch</li>}
+          </li>
         </ul>
 
-        <p className="splash-page-msg">
-          Above is a list of topics you may find interesting.
-        </p>
+        <div className="msg-container">
+          <h3 className="splash-page-msg-2">
+            Above is a list of topics you may find interesting.
+          </h3>
+          
+          <button className="splash-signup-btn">Get started</button>
 
-        <button className="splash-signup-btn">Get started</button>
-
-        <div className="splash-login-container">
-          <p className="splash-login-msg">Already have an account?</p>
-          <button className="splash-login-btn">Sign in.</button>
+          <div className="splash-login-container">
+            <p className="splash-login-msg">Already have an account?</p>
+            <button className="splash-login-btn">Sign in.</button>
+          </div>
         </div>
 
-        <h2 className="splash-page-msg">
-          All Daily Prophet's, just for you.
+        <h2 className="splash-page-msg-3">
+          Daily Prophets, just for you.
         </h2>
         <p className="splash-paragraphs">Your privacy stays yours. We don't sell your data or target you with ads. Ever.</p>
 
-        <h2 className="splash-page-msg">
-          How we do things differently.
-        </h2>
-        <p className="splash-paragraphs">Daily Prohet is not like any other platform on the internet. Our sole purpose is to help you find compelling ideas, knowledge, and perspectives on all things magical and non-magical alike. We don’t serve ads—we serve you, the curious reader who loves to learn new things. Daily Prophet is home to thousands of independent voices, and we combine wizards/witches, technology, and a little spell of magic to find the best reading for you—and filter out the rest.
-        </p>
+        <div className="how-we-roll">
+
+          <div className="hwr-right">
+            <h2 className="splash-page-msg-4">
+              How we do things differently.
+            </h2>
+            <p className="hwr-paragraphs">Daily Prohet is not like any other platform on the internet. Our sole purpose is to help you find compelling ideas, knowledge, and perspectives on all things magical and non-magical alike. We don’t serve ads—we serve you, the curious reader who loves to learn new things. Daily Prophet is home to thousands of independent voices, and we combine wizards/witches, technology, and a little spell of magic to find the best reading for you—and filter out the rest.
+            </p>
+          </div>
+        </div>
       </div>  
 
-      <footer>
-
-        <div className="splash-footer-first">
-          <Link className="splash-footer-logo">DP</Link>
-        </div>
-
-        <div className="splash-footer-second">
-          <button 
-            className="splash-footer-signup"
-            onClick={() => openModal("Sign Up")}
-          >Get started</button>
-          
-          <p className="splash-footer-msg">Have an account?</p>
-
-          <button 
-            className="splash-footer-login"
-            onClick={() => openModal("Log In")}
-          >Sign in</button>
-            
-        </div>
-        
-        <div className="splash-footer-third">
-          <Link className="splash-footer-link">GitHub</Link>
-          <Link className="splash-footer-link">LinkedIn</Link>
-        </div>
-
-      </footer>
     </div>
   );
 }

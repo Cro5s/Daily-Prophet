@@ -27,7 +27,6 @@
 }
 
 .nav-bar-left-logo {
-  // color: rgba(0,0,0,0.8);
   font-weight: bolder;
   font-size: x-large;
   
@@ -39,8 +38,7 @@
   display: flex;
   margin-left: auto;
   font-size: 18px;
-  // line-height: 35px;
-  // color: rgba(0,0,0,0.84);
+
   
   // background: pink;
 }
@@ -60,6 +58,10 @@
   padding: 10px 40px 10px 40px;
   background: rgb(88, 165, 123);
   
+}
+
+.signup-button:hover {
+  background: rgb(83, 156, 116);
 }
 
 .user-profile-dropdown-icon {

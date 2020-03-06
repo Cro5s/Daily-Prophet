@@ -2,6 +2,7 @@ import React from "react";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import UserFeedContainer from "./users/user_feed_container";
 import SplashContainer from "./splash/splash";
+import SplashFooterContainer from "./splash/footer_container";
 import  Modal from "./modal/modal";
 import { Route, Redirect, Link, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../utils/route_util";
@@ -23,6 +24,7 @@ export default () => {
       <body className="body">
         <SplashContainer />
       </body>
+      <SplashFooterContainer />      
 
       <Switch>
         <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />
