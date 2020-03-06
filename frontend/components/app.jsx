@@ -1,7 +1,7 @@
 import React from "react";
 import NavBarContainer from "./nav_bar/nav_bar_container";
 import UserFeedContainer from "./users/user_feed_container";
-import SplashPage from "./home/splash";
+import SplashContainer from "./splash/splash";
 import  Modal from "./modal/modal";
 import { Route, Redirect, Link, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../utils/route_util";
@@ -10,7 +10,7 @@ export default () => {
   return (
     <>
       <Modal />
-      <header>
+      <header className="nav-bar-header">
         <div className="nav-bar-container">
           <nav className="nav-bar">
             <Link to="/" className="header-link">
@@ -20,8 +20,9 @@ export default () => {
           </nav>
         </div>
       </header>
-
-      <SplashPage />
+      <body className="body">
+        <SplashContainer />
+      </body>
 
       <Switch>
         <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />

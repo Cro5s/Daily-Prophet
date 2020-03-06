@@ -1,0 +1,83 @@
+// .nav-bar-header {
+
+//   // background: darkorange;
+// }
+
+.nav-bar-container {
+  padding: 10px 25px 10px 25px;
+
+  // background: brown;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 400;
+
+  // background: red;
+}
+
+.header-link {
+  padding-left: 30px;
+
+  // background: gold;
+}
+
+.nav-bar-left-logo {
+  // color: rgba(0,0,0,0.8);
+  font-weight: bolder;
+  font-size: x-large;
+  
+
+  // background: white;
+}
+
+.nav-bar-right {
+  display: flex;
+  margin-left: auto;
+  font-size: 18px;
+  // line-height: 35px;
+  // color: rgba(0,0,0,0.84);
+  
+  // background: pink;
+}
+
+.login-button {
+  margin-right: 30px;
+
+  // background: grey;
+}
+
+.signup-button {
+  margin-right: 45px;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  font-size: smaller;
+  padding: 10px 40px 10px 40px;
+  background: rgb(88, 165, 123);
+  
+}
+
+.user-profile-dropdown-icon {
+
+  background: deeppink;
+}
+
+.nav-bar-username {
+
+  background: cadetblue;
+}
+
+.nav-bar-profile {
+
+  background: crimson;
+}
+
+.logout-button {
+
+  background: darkcyan;
+}
