@@ -39,71 +39,79 @@ class SessionForm extends React.Component {
 
   render() {
     const errorsList = this.props.errors.map((error, idx) => (
-      <li key={idx}>{error}</li>
+      <li className="session-form-errors" key={idx}>{error}</li>
     ));
 
     return (
       <div className="session-form-container">
-        <button className="session-close" onClick={this.props.closeModal}>x</button>
-      
-          {this.props.header}
+        <div className="session-close-div">
+         <button className="session-close" onClick={this.props.closeModal}>x</button>
+        </div> 
+
+        <div className="session-form-div">
+
+          <header className="session-form-header">{this.props.header}</header>
         
-        {
-          this.props.formType === "Log In" ? <p className="session-form-details">Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories.</p> :
-            <p className="session-form-details">Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.</p>
-        }
+          {
+            this.props.formType === "Log In" ? <div className="session-form-details-div"><p className="session-form-details">Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories.</p></div> :
+              <div className="session-form-details-div"><p className="session-form-details">Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.</p></div>
+          }
 
-        <form className="session-form" onSubmit={this.handleSubmit}>
+          <form className="session-form" onSubmit={this.handleSubmit}>
 
-          {this.props.formType === "Sign Up" ?
-            <label className="session-form-label">Email:
+            {this.props.formType === "Sign Up" ?
+              <label className="session-form-label">Your email</label> : null
+            }
+
+            {this.props.formType === "Sign Up" ?
               <input
+                className="session-form-input"
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
-              />
-            </label> : null
-          }
+              /> : null
+            }
 
-          <label className="session-form-label">Username:
-            <input 
+            <label className="session-form-label">Your username</label>
+            <input
+              className="session-form-input"
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
             />
-          </label>
 
-          <label className="session-form-label">Password:
-            <input 
+            <label className="session-form-label">Your password</label>
+            <input
+              className="session-form-input"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
             />
-          </label>
 
-          <div className="session-errors">
-            <ul>
-              {errorsList}
-            </ul>
-          </div>
+            <div className="session-errors">
+              <ul>
+                {errorsList}
+              </ul>
+            </div>
+            
+            <button 
+              className="session-form-submit" 
+              onClick={this.handleSubmit}
+            >{this.props.formType}</button>
+
           
-          <button 
-            className="session-form-submit" 
-            onClick={this.handleSubmit}
-          >{this.props.formType}</button>
+          </form>
 
-        
-        </form>
+          <footer className="session-form-footer">
+            {this.props.footer} {this.props.otherForm}
+            <button
+              className="session-demo-submit"
+              onClick={this.demoLogin}
+            >Demo Login</button>
 
-        <footer className="session-form-footer">
-          {this.props.footer} {this.props.otherForm}
-          <button
-            className="session-demo-submit"
-            onClick={this.demoLogin}
-          >Demo Login</button>
-
-          <p className="session-form-footer-terms">{`To make Daily Prophet work, we log user data and share it with service providers. Click ${this.props.formType} above to accept Daily Prophet’s Terms of Service & Privacy Policy.`}</p>
-        </footer>
+            <p className="session-form-footer-terms">{`To make Daily Prophet work, we log user data and share it with service providers. Click ${this.props.formType} above to accept Daily Prophet’s Terms of Service & Privacy Policy.`}</p>
+          </footer>
+        </div>
       </div>
     );
   };

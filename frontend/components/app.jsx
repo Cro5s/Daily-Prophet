@@ -1,6 +1,7 @@
 import React from "react";
-import HomeContainer from "./home/home_container";
+import NavBarContainer from "./nav_bar/nav_bar_container";
 import UserFeedContainer from "./users/user_feed_container";
+import SplashPage from "./home/splash";
 import  Modal from "./modal/modal";
 import { Route, Redirect, Link, Switch } from "react-router-dom";
 import { ProtectedRoute } from "../utils/route_util";
@@ -15,10 +16,12 @@ export default () => {
             <Link to="/" className="header-link">
               <h1 className="nav-bar-left-logo">Daily Prophet</h1>
             </Link>
-            <HomeContainer />
+            <NavBarContainer />
           </nav>
         </div>
       </header>
+
+      <SplashPage />
 
       <Switch>
         <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />
