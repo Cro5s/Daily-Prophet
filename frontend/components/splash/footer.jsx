@@ -14,27 +14,29 @@ export default (props) => {
         <div className="splash-footer-second">
           <button
             className="splash-footer-signup"
-            onClick={() => props.openModal("Sign Up")}
-          >Get started</button>
+            onClick={() => props.openModal("Sign Up")}>
+            Get started
+          </button>
 
           <p className="splash-footer-msg">Have an account?</p>
 
           <button
             className="splash-footer-login"
-            onClick={() => props.openModal("Log In")}
-          >Sign in</button>
+            onClick={() => props.openModal("Log In")}>
+            Sign in
+          </button>
 
         </div>
 
         <div className="splash-footer-third">
           <div className="footer-link-1">
             <Link 
-              to={`https://github.com/Cro5s`} className="splash-footer-link">
+              to={"https://github.com/Cro5s"} className="splash-footer-link">
               GitHub
             </Link>
           </div>
           <div className="footer-link-2">
-            <Link to={`https://www.linkedin.com/in/kadeem-jackson-4349348a/`}
+            <Link to={"https://www.linkedin.com/in/kadeem-jackson-4349348a/"}
               className="splash-footer-link">
               LinkedIn
             </Link>
