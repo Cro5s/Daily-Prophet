@@ -52,6 +52,30 @@ export default (props) => {
             <div className="hashtag"><i class="fas fa-hashtag"></i></div>
             {<li className="topics-list-name">Quidditch</li>}
           </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Brooms</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Mythical Beasts</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Gringotts Investing</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Transfiguration</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Enchantments</li>}
+          </li>
+          <li className="topics-list">
+            <div className="hashtag"><i class="fas fa-hashtag"></i></div>
+            {<li className="topics-list-name">Ministry of Magic</li>}
+          </li>
         </ul>
 
         <div className="msg-container">
@@ -86,7 +110,7 @@ export default (props) => {
             <h2 className="splash-page-msg-4">
               How we do things differently.
             </h2>
-            <p className="hwr-paragraphs">Daily Prophet is not like any other platform on the internet. Our sole purpose is to help you find compelling ideas, knowledge, and perspectives on all things magical and non-magical alike. We don’t serve ads—we serve you, the curious reader who loves to learn new things. Daily Prophet is home to thousands of independent voices, and we combine wizards/witches, technology, and a little spell of magic to find the best reading for you—and filter out the rest.
+            <p className="hwr-paragraphs">Daily Prophet is not like any other platform on the internet. {<div className="hwr-paragraphs-highlight"> Our sole purpose is to help you find compelling ideas, knowledge, and perspectives on all things magical and non-magical alike.</div>} We don’t serve ads—we serve you, the curious reader who loves to learn new things. Daily Prophet is home to thousands of independent voices, and we combine wizards/witches, technology, and a little spell of magic to find the best reading for you—and filter out the rest.
             </p>
           </div>
         </div>
