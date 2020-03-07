@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => {
+export default (props) => {
   return (
     <footer className="splash-footer">
 
@@ -14,24 +14,30 @@ export default () => {
         <div className="splash-footer-second">
           <button
             className="splash-footer-signup"
-            onClick={() => openModal("Sign Up")}
+            onClick={() => props.openModal("Sign Up")}
           >Get started</button>
 
           <p className="splash-footer-msg">Have an account?</p>
 
           <button
             className="splash-footer-login"
-            onClick={() => openModal("Log In")}
+            onClick={() => props.openModal("Log In")}
           >Sign in</button>
 
         </div>
 
         <div className="splash-footer-third">
           <div className="footer-link-1">
-            <Link className="splash-footer-link">GitHub</Link>
+            <Link 
+              to={`https://github.com/Cro5s`} className="splash-footer-link">
+              GitHub
+            </Link>
           </div>
           <div className="footer-link-2">
-            <Link className="splash-footer-link">LinkedIn</Link>
+            <Link to={`https://www.linkedin.com/in/kadeem-jackson-4349348a/`}
+              className="splash-footer-link">
+              LinkedIn
+            </Link>
           </div>
         </div>
 

@@ -48,6 +48,8 @@ class SessionForm extends React.Component {
           <button className="session-close" onClick={this.props.closeModal}>&#x2715;</button>
         </div> 
 
+        {/* <img src={window.modal_left_URL} /> */}
+
         <div className="session-form-div">
 
           <header className="session-form-header">{this.props.header}</header>

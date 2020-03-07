@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { openModal } from "../../actions/modal_actions";
-import { SplashPage } from "./nav_bar";
+import SplashPage from "./splash";
 
 const mapStateToProps = ({ session, entities: { users } }) => {
   return {

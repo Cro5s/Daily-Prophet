@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default () => {
+export default (props) => {
+  debugger
   return (
     <div className="splash-page-container">
       <div>
@@ -60,11 +61,12 @@ export default () => {
             Above is a list of topics you may find interesting.
           </h3>
           
-          <button className="splash-signup-btn">Get started</button>
+          <button className="splash-signup-btn" onClick={() => props.openModal("Sign Up")}
+          >Get started</button>
 
           <div className="splash-login-container">
             <p className="splash-login-msg">Already have an account?</p>
-            <button className="splash-login-btn">Sign in.</button>
+            <button className="splash-login-btn" onClick={() => props.openModal("Log In")}>Sign in.</button>
           </div>
         </div>
 
