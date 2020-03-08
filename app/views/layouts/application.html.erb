@@ -12,16 +12,22 @@
       window.ModalLogLeft = "<%= image_url('modal-left-img.png') %>";
     </script>
     <% if logged_in? %>
-      <script id="bootstrap-current-user" type="text/javascript">
-        window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
-        // {
-        //   "id": <%= current_user.id %>,
-        //   "username": "<%= current_user.username %>",
-        //   "name": "<%= current_user.name %>",
-        //   "email": "<%= current_user.email %>"
-        // };
+      <script>
+        window.current_user = {
+          "id": <%= current_user.id %>,
+          "username": "<%= current_user.username %>",
+          "name": "<%= current_user.name %>",
+          "email": "<%= current_user.email %>"
+        };
       </script>
     <% end %>
+
+    <%# <% if logged_in? %>
+      <%# <script id="bootstrap-current-user" type="text/javascript">
+        window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+      <%# </script> %>
+    <%# <% end %>
+
   </head>
 
   <body>

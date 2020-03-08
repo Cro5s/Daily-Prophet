@@ -3,7 +3,7 @@ import React from "react";
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {username: "", email: "", password: ""};
+    this.state = { name: "", username: "", email: "", password: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   }
@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     const demo = {  
-      username: "guest", email: "guest@demo.com", password: "password" 
+      name: "Guest", username: "guest", email: "guest@demo.com", password: "password" 
     };
 
     (this.props.formType === 'Log In' ?
@@ -45,36 +45,59 @@ class SessionForm extends React.Component {
     return (
       <div className="session-form-container">
         <div className="session-close-div">
-          <button 
-            className="session-close" onClick={this.props.closeModal}>&#x2715;
+          <button className="session-close" onClick={this.props.closeModal}>
+            &#x2715;
           </button>
-        </div> 
+        </div>
 
         {/* <img src={window.ModalLogLeft} /> */}
 
         <div className="session-form-div">
-
           <header className="session-form-header">{this.props.header}</header>
-        
-          {
-            this.props.formType === "Log In" ? <div className="session-form-details-div"><p className="session-form-details">Sign in to get personalized story recommendations, follow authors and topics you love, and interact with stories.</p></div> :
-              <div className="session-form-details-div"><p className="session-form-details">Create an account to receive great stories in your inbox, personalize your homepage, and follow authors and topics that you love.</p></div>
-          }
+
+          {this.props.formType === "Log In" ? (
+            <div className="session-form-details-div">
+              <p className="session-form-details">
+                Sign in to get personalized story recommendations, follow
+                authors and topics you love, and interact with stories.
+              </p>
+            </div>
+          ) : (
+            <div className="session-form-details-div">
+              <p className="session-form-details">
+                Create an account to receive great stories in your inbox,
+                personalize your homepage, and follow authors and topics that
+                you love.
+              </p>
+            </div>
+          )}
 
           <form className="session-form" onSubmit={this.handleSubmit}>
+            {this.props.formType === "Sign Up" ? (
+              <label className="session-form-label">Your full name</label>
+            ) : null}
 
-            {this.props.formType === "Sign Up" ?
-              <label className="session-form-label">Your email</label> : null
-            }
+            {this.props.formType === "Sign Up" ? (
+              <input
+                className="session-form-input"
+                type="text"
+                value={this.state.name}
+                onChange={this.update("name")}
+              />
+            ) : null}
 
-            {this.props.formType === "Sign Up" ?
+            {this.props.formType === "Sign Up" ? (
+              <label className="session-form-label">Your email</label>
+            ) : null}
+
+            {this.props.formType === "Sign Up" ? (
               <input
                 className="session-form-input"
                 type="text"
                 value={this.state.email}
                 onChange={this.update("email")}
-              /> : null
-            }
+              />
+            ) : null}
 
             <label className="session-form-label">Your username</label>
             <input
@@ -93,26 +116,19 @@ class SessionForm extends React.Component {
             />
 
             <div className="session-errors">
-              <ul>
-                {errorsList}
-              </ul>
+              <ul>{errorsList}</ul>
             </div>
-            
-            <button 
-              className="session-form-submit" 
-              onClick={this.handleSubmit}
-            >{this.props.formType}</button>
 
-          
+            <button className="session-form-submit" onClick={this.handleSubmit}>
+              {this.props.formType}
+            </button>
           </form>
 
           <footer className="session-form-footer">
             {this.props.footer} {this.props.otherForm}
-            <button
-              className="session-demo-submit"
-              onClick={this.demoLogin}
-            >Demo Login</button>
-
+            <button className="session-demo-submit" onClick={this.demoLogin}>
+              Demo Login
+            </button>
             <p className="session-form-footer-terms">{`To make Daily Prophet work, we log user data and share it with service providers. Click ${this.props.formType} above to accept Daily Prophet’s Terms of Service & Privacy Policy.`}</p>
           </footer>
         </div>

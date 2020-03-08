@@ -4,14 +4,14 @@ import { Redirect, Route, withRouter } from "react-router-dom";
 
 const Auth = ({loggedIn, path, exact, component: Component}) => (
   <Route exact={exact} path={path} render={props => (
-      loggedIn ? <Component {...props} /> : <Redirect to="/stories" />
+      !loggedIn ? ( <Component {...props} /> ) : ( <Redirect to="/feed" /> )
     )}
   />
 );
 
 const Protected = ({loggedIn, path, exact, component: Component}) => (
   <Route exact={exact} path={path} render={props => (
-      loggedIn ? <Component {...props} /> : <Redirect to="/" />
+      loggedIn ? ( <Component {...props} /> ) : ( <Redirect to="/" /> )
     )}
   />
 );
