@@ -13,7 +13,6 @@
 # Indexes
 #
 #  index_stories_on_title  (title) UNIQUE
-#
 
 class Story < ApplicationRecord
   validates :title, :body, presence: true
@@ -23,7 +22,5 @@ class Story < ApplicationRecord
   primary_key: :id,
   foreign_key: :author_id,
   class_name: "User"
-
-  has_many :photos
 
 end

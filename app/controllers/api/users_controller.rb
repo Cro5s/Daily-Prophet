@@ -1,6 +1,4 @@
 class Api::UsersController < ApplicationController
-  before_action :ensure_logged_in, only: [:show]
-
   def show
     @user = User.find(params[:id])
     render :show
@@ -19,6 +17,6 @@ class Api::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :name)
   end
 end

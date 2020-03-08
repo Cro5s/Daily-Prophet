@@ -16,11 +16,11 @@
 #  index_users_on_email          (email) UNIQUE
 #  index_users_on_session_token  (session_token) UNIQUE
 #  index_users_on_username       (username) UNIQUE
-#
+
 class User < ApplicationRecord
-  validates :username, :email, :session_token, :password_digest, presence: true
+  validates :username, :email, :name, :session_token, :password_digest, presence: true
   validates :username, :email, :session_token, uniqueness: true
-  validates :password, length: { minimum: 6, allow_nil: true}
+  validates :password, length: { minimum: 6, allow_nil: true }
   
   after_initialize :ensure_session_token
 
