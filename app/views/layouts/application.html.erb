@@ -8,9 +8,11 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <script src="https://kit.fontawesome.com/6bd696cce4.js" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
       window.ModalLogLeft = "<%= image_url('modal-left-img.png') %>";
     </script>
+    
     <% if logged_in? %>
       <script>
         window.current_user = {

@@ -86,6 +86,46 @@
   // background: bisque;
 }
 
+.session-form-signup-labels {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.session-form-name-labels {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.session-form-name-label {
+
+}
+
+.session-form-name-input {
+  margin-top: 25px;
+  margin: 10px 10px 10px 0px;
+  border-bottom: 1px solid black;
+}
+
+.session-form-email-labels {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.session-form-email-label {
+
+}
+
+.session-form-email-input {
+  margin-top: 25px;
+  margin: 10px 0px 10px 10px;
+  border-bottom: 1px solid black;
+}
+
 .session-form-label {
   display: flex;
   flex-direction: column;

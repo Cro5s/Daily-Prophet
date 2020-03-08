@@ -22,10 +22,6 @@ export default () => {
           </nav>
         </div>
       </header>
-      {/* <body className="body">
-        <SplashContainer />
-      </body> */}
-      {/* <SplashFooterContainer />       */}
 
       <Switch>
         <AuthRoute path="/" component={SplashContainer} />

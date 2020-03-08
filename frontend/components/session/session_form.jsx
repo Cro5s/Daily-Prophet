@@ -73,31 +73,37 @@ class SessionForm extends React.Component {
           )}
 
           <form className="session-form" onSubmit={this.handleSubmit}>
-            {this.props.formType === "Sign Up" ? (
-              <label className="session-form-label">Your full name</label>
-            ) : null}
+            <div className="session-form-signup-labels">
+              <div className="session-form-name-labels">
+                {this.props.formType === "Sign Up" ? (
+                  <label className="session-form-name-label">Your full name</label>
+                ) : null}
 
-            {this.props.formType === "Sign Up" ? (
-              <input
-                className="session-form-input"
-                type="text"
-                value={this.state.name}
-                onChange={this.update("name")}
-              />
-            ) : null}
+                {this.props.formType === "Sign Up" ? (
+                  <input
+                    className="session-form-name-input"
+                    type="text"
+                    value={this.state.name}
+                    onChange={this.update("name")}
+                  />
+                ) : null}
+              </div>
 
-            {this.props.formType === "Sign Up" ? (
-              <label className="session-form-label">Your email</label>
-            ) : null}
+              <div className="session-form-email-labels">
+                {this.props.formType === "Sign Up" ? (
+                  <label className="session-form-email-label">Your email</label>
+                ) : null}
 
-            {this.props.formType === "Sign Up" ? (
-              <input
-                className="session-form-input"
-                type="text"
-                value={this.state.email}
-                onChange={this.update("email")}
-              />
-            ) : null}
+                {this.props.formType === "Sign Up" ? (
+                  <input
+                    className="session-form-email-input"
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update("email")}
+                  />
+                ) : null}
+              </div>
+            </div>
 
             <label className="session-form-label">Your username</label>
             <input
