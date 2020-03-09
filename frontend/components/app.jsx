@@ -13,19 +13,14 @@ export default () => {
     <>
       <Modal />
       <header className="nav-bar-header">
-        <div className="nav-bar-container">
           <nav className="nav-bar">
-            <Link to="/" className="header-link">
-              <h1 className="nav-bar-left-logo">Daily Prophet</h1>
-            </Link>
             <NavBarContainer />
           </nav>
-        </div>
       </header>
 
       <Switch>
         <AuthRoute path="/" component={SplashContainer} />
-        {/* <ProtectedRoute path="/feed" component={FeedContainer} /> */}
+        <ProtectedRoute path="/feed" component={FeedContainer} />
         <ProtectedRoute path="/users/:userId" component={UserFeedContainer} />
         {/* <Redirect to="/" /> */}
       </Switch>

@@ -4,33 +4,31 @@ import { Link } from "react-router-dom";
 export function NavBar({ currentUser, logout, openModal }) {
   if (!currentUser) {
     return (
-      <div className="nav-bar-right">
-        <button
-          className="login-button"
-          onClick={() => openModal("Log In")}
-        >Sign in</button>
-        <button
-          className="signup-button"
-          onClick={() => openModal("Sign Up")}
-        >Get started</button>
+      <div className="nav-bar-container">
+        <Link to="/" className="header-link">
+          <h1 className="nav-bar-left-logo">Daily Prophet</h1>
+        </Link>
+        <div className="nav-bar-right">
+          <button
+            className="login-button"
+            onClick={e => { 
+              e.preventDefault();
+              openModal("Log In")
+            }}
+          >Sign in</button>
+          <button
+            className="signup-button"
+            onClick={e => { 
+              e.preventDefault();
+              openModal("Sign Up"
+            )}}
+          >Get started</button>
+        </div>
       </div>
     );
   } else {
     return (
-      <div className="nav-bar-right">
-        <h3 className="nav-bar-username">{currentUser.username}</h3>
-        <Link
-          to={`/api/users/${currentUser.id}`}
-          className="nav-bar-profile">
-          Profile
-        </Link>
-        <div className="user-profile-dropdown-icon">
-          <i className="fas fa-user"></i>
-        </div>
-        <Link to="/">
-          <button className="logout-button" onClick={logout}>Log Out</button>
-        </Link>
-      </div>
+      <div className="nav-bar-right"></div>
     );
   };
 }

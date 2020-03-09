@@ -20,13 +20,14 @@ class EditStoryForm extends React.Component {
   // }
 
   render() {
-    const { story, formType, currentUser, errors, action, fetchStory, deleteStory, history } = this.props;
+    const { story, formType, currentUser, imageFile, errors, action, fetchStory, deleteStory, history } = this.props;
 
     return (
       <StoryForm 
         story={story}
         formType={formType}
         currentUser={currentUser}
+        imageFile={imageFile}
         errors={errors}
         action={action}
         fetchStory={fetchStory}
@@ -42,6 +43,7 @@ const mapStateToProps = (state, ownProps) => {
     story: state.entities.stories[ownProps.match.params.storyId],
     formType: "Edit Story",
     currentUser: state.entities.users[state.session.id],
+    imageFile: state.entities.stories[ownProps.match.params.storyId.image],
     errors: state.errors.story,
   };
 };

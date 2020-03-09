@@ -24,7 +24,10 @@ const mapDispatchToProps = dispatch => {
     otherForm: (
       <button
         className="other-form-button"
-        onClick={() => dispatch(openModal("Log In"))}
+        onClick={e => {
+          e.preventDefault();
+          dispatch(openModal("Log In")
+        )}}
       >Sign in</button>
     ),
     closeModal: () => dispatch(closeModal()),
