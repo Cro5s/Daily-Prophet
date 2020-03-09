@@ -23,4 +23,5 @@ class Story < ApplicationRecord
   foreign_key: :author_id,
   class_name: "User"
 
+  has_one_attached :image
 end

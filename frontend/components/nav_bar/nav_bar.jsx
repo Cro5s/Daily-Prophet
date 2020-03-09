@@ -25,7 +25,7 @@ export function NavBar({ currentUser, logout, openModal }) {
           Profile
         </Link>
         <div className="user-profile-dropdown-icon">
-          <i class="fas fa-user"></i>
+          <i className="fas fa-user"></i>
         </div>
         <Link to="/">
           <button className="logout-button" onClick={logout}>Log Out</button>

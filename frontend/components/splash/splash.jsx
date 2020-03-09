@@ -12,43 +12,43 @@ export default (props) => {
         <ul className="topics-list-container">
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Politics</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Potions</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Trending</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Relationships</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">All Things Muggle</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Hogwarts</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {
               <li className="topics-list-name">
@@ -58,55 +58,55 @@ export default (props) => {
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Pets</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Spells</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Quidditch</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Brooms</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Mythical Beasts</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Gringotts Investing</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Transfiguration</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Enchantments</li>}
           </li>
           <li className="topics-list">
             <div className="hashtag">
-              <i class="fas fa-hashtag"></i>
+              <i className="fas fa-hashtag"></i>
             </div>
             {<li className="topics-list-name">Ministry of Magic</li>}
           </li>

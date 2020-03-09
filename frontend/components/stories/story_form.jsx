@@ -20,8 +20,15 @@ class StoryForm extends React.Component {
   }
 
   render() {
-    return (
+    const errorsList = this.props.errors.map((error, idx) => (
+      <li className="story-form-errors" key={idx}>{error}</li>
+    ));
 
+    return (
+      <div className="story-form-container">
+        <div className="story-form-h1"></div>
+
+      </div>
     );
   }
 }
