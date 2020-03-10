@@ -30,7 +30,13 @@ class StoryForm extends React.Component {
         <div className="story-form-container">
           <div className="story-form-details-container">
             <div className="story-form-title-container">
-              <input className="story-form-title" type="text" />
+              {
+                
+              }
+              <input 
+                className="story-form-title" 
+                type="text" 
+                value/>
 
               <div className="story-form-buttons-container">
                 <div className="story-form-button-container">

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import DropDown from  "../dropdown/drop_down";
 
-export function NavBar({ currentUser, openModal, openDropDown, dropDown }) {
+export default function NavBar({currentUser, openModal, openDropDown, dropDown}) {
   if (!currentUser) {
     return (
       <div className="nav-bar-container">
@@ -34,7 +34,6 @@ export function NavBar({ currentUser, openModal, openDropDown, dropDown }) {
       </div>
     );
   } else {
-    // const { openDropDown } = DropDown;
 
     return (
       <div className="nav-bar-container">
@@ -60,3 +59,4 @@ export function NavBar({ currentUser, openModal, openDropDown, dropDown }) {
     );
   };
 }
+

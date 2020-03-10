@@ -17,10 +17,6 @@
   background-color: white;
   z-index: 5;
 
-  // border: 1px solid #ddd;
-  // border-radius: 3px;
-  // box-shadow: 0px 1px 2px rgba(0,0,0,.20);
-
 }
 
 .popover-arrow::before {
@@ -58,7 +54,7 @@
   position: absolute;
   top: 2px;
   right: -124px;
-  width: 210px;
+  width: 220px;
   border: 1px solid #ddd;
   border-radius: 3px;
   background-color: white;
@@ -78,14 +74,8 @@
 
 .dd-list {
   color: rgba(0, 0, 0, 0.54);
-  // padding: 10px;
   margin: 10px;
-  // padding: 12px 16px;
-  // text-decoration: none;
-  // display: block;
-  // z-index: 5;
-  // cursor: pointer;
-  // font-size: 14px;
+
 }
 
 .dd-profile-details {
@@ -99,7 +89,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 30px;
+  margin: 20px;
 
   // background: salmon;
 }
@@ -130,9 +120,13 @@
   // background: skyblue;
 }
 
-.username {
-  // background: tomato;
+.name:hover {
+  color: rgba(0, 0, 0, 0.54);
 }
+
+// .username {
+//   // background: tomato;
+// }
 
 .username:hover {
   text-decoration: underline;
