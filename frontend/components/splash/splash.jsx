@@ -159,7 +159,7 @@ export default (props) => {
               independent voices, and we combine wizards/witches, technology,
               and a little spell of magic to find the best reading for you—and
               filter out the rest.
-            </p>
+          </p>
           </div>
         </div>
       </div>
@@ -167,7 +167,9 @@ export default (props) => {
       <footer className="splash-footer">
         <div className="splash-footer-container">
           <div className="splash-footer-first">
-            <Link className="splash-footer-logo">DP</Link>
+            <Link 
+            to="/feed"
+            className="splash-footer-logo">DP</Link>
           </div>
 
           <div className="splash-footer-second">
@@ -190,20 +192,18 @@ export default (props) => {
 
           <div className="splash-footer-third">
             <div className="footer-link-1">
-              <Link
-                to={"https://github.com/Cro5s"}
-                className="splash-footer-link"
-              >
+              <a 
+                href="https://github.com/Cro5s"
+                className="splash-footer-link">
                 GitHub
-              </Link>
+              </a>
             </div>
             <div className="footer-link-2">
-              <Link
-                to={"https://www.linkedin.com/in/kadeem-jackson-4349348a/"}
-                className="splash-footer-link"
-              >
+              <a 
+                href="https://www.linkedin.com/in/kadeem-jackson-4349348a"
+                className="splash-footer-link">
                 LinkedIn
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -1,29 +1,19 @@
-// .nav-bar-header {
-
-//   // background: darkorange;
-// }
-
 .nav-bar-container {
-  padding: 20px 75px 10px 95px;
-
-  // background: brown;
-}
-
-.nav-bar {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   font-weight: 400;
-
+  padding: 15px;
+  
   // background: red;
 }
 
-.header-link {
-  padding-left: 30px;
+.nav-bar-left-container {
+  padding: 20px 75px 10px 95px;
 
-  // background: gold;
+  // background: blue;
 }
 
 .nav-bar-left-logo {
@@ -32,6 +22,12 @@
   
 
   // background: white;
+}
+
+.nav-bar-right-container {
+  margin-right: 60px;
+
+  // background: wheat;
 }
 
 .nav-bar-right {
@@ -66,23 +62,16 @@
 }
 
 .user-profile-dropdown-icon {
+  // padding: 10px;
 
-  background: deeppink;
+  // color: rgba(192, 192, 192, 0.6)
+  // background: wheat;
 }
 
-.nav-bar-username {
-
-  background: cadetblue;
-}
-
-.nav-bar-profile {
-
-  background: crimson;
-}
-
-.logout-button {
-
-  background: darkcyan;
+.user-icon {
+  // max-width: 100%;
+  // height: auto;
+  // border-image-width: 10px;
 }
 
 .modal-background {

@@ -2,10 +2,13 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { openModal } from "../../actions/modal_actions";
 import { NavBar } from "./nav_bar";
+import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 
-const mapStateToProps = ({ session, entities: { users } }) => {
+
+const mapStateToProps = state => {
   return {
-    currentUser: users[session.id],
+    currentUser: state.entities.users[state.session.id],
+    openDropDown: state.ui.dropDown,
   };
 };
 
@@ -13,6 +16,8 @@ const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
+    openDropDown: () => dispatch(openDropDown()),
+    closeDropDown: () => dispatch(closeDropDown()),
   };
 };
 

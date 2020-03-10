@@ -1,0 +1,79 @@
+.dd-background {
+  position: relative;
+  background-color: white;
+  z-index: 2;
+}
+
+.dd-child {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: -4px;
+  padding: 2px;
+  background-color: white;
+  z-index: 5;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0px 1px 2px rgba(0,0,0,.20);
+
+}
+
+.dd-wrapper {
+  position: absolute;
+  top: 50px;
+  right: 1px;
+  width: 150px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.15);
+  z-index: 5;
+}
+
+.user-profile-dropdown-icon {
+
+}
+
+.dd-list {
+
+}
+
+.dd-profile-details {
+
+}
+
+.dd-profile-details-container {
+
+}
+
+.pro-icon {
+
+}
+
+.name-username-container {
+
+}
+
+.name {
+
+}
+
+.username {
+
+}
+
+.dd-new-story {
+
+}
+
+.dd-stories {
+
+}
+
+.dd-profile-page {
+
+}
+
+.dd-logout {
+
+}
