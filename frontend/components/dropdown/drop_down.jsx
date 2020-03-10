@@ -12,53 +12,75 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
   return (
     <div className="dd-background" onClick={closeDropDown}>
       <div className="dd-child" onClick={e => e.stopPropagation()}>
+        <div onClick={closeDropDown} className="popover-arrow"></div>
         <div className="dd-wrapper">
           <ul className="dd-list">
-            <li className="dd-profile-details">
+            <div className="dd-profile-details">
               <div className="dd-profile-details-container">
-                <div className="pro-icon">
-                  <img src={window.UserIcon}/>
+                <div className="pro-icon-container">
+                  <img src={window.UserIcon} className="pro-icon" />
                 </div>
 
                 <div className="name-username-container">
-                  <h3 className="name">{currentUser.name}</h3>
-                  <h3 className="username">{currentUser.username}</h3>
+                  <Link
+                    to={`/api/users/${currentUser.id}`}
+                    className="name"
+                    onClick={closeDropDown}
+                  >
+                    {currentUser.name}
+                  </Link>
+                  <Link
+                    to={`/api/users/${currentUser.id}`}
+                    className="username"
+                    onClick={closeDropDown}
+                  >
+                    {"@" + currentUser.username}
+                  </Link>
                 </div>
               </div>
-            </li>
+            </div>
+            <div className="dd-divider"></div>
             <li className="dd-new-story">
               <Link
                 to={"/newStory"}
-                className="create-story-link">
-                New Story
+                className="create-story-link"
+                onClick={closeDropDown}
+              >
+                New story
               </Link>
             </li>
             <li className="dd-stories">
               <Link
                 to={"/stories"}
-                className="stories-page-link">
+                className="stories-page-link"
+                onClick={closeDropDown}
+              >
                 Stories
               </Link>
             </li>
+            <div className="dd-divider"></div>
             <li className="dd-profile-page">
               <Link
                 to={`/api/users/${currentUser.id}`}
-                className="nav-bar-profile">
+                className="nav-bar-profile"
+                onClick={closeDropDown}
+              >
                 Profile
               </Link>
             </li>
             <li className="dd-logout">
-              <Link to="/">
-                <button className="logout-button" onClick={logout}>
-                  Log Out
-                </button>
+              <Link
+                to="/"
+                className="logout-button"
+                onClick={(closeDropDown, () => logout())}
+              >
+                Sign out
               </Link>
             </li>
+            <div className="dd-divider"></div>
           </ul>
         </div>
-
       </div>
-
     </div>
   );
 }
@@ -66,13 +88,14 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
 const mapStateToProps = state => {
   return {
     currentUser: state.entities.users[state.session.id],
+    dropDown: state.ui.dropDown,
   };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     closeDropDown: () => dispatch(closeDropDown()),
-    openDropDown: () => dispatch(openDropDown()),
+    openDropDown: dropDown => dispatch(openDropDown(dropDown)),
     logout: () => dispatch(logout()), 
   };
 }

@@ -8,7 +8,7 @@ import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 const mapStateToProps = state => {
   return {
     currentUser: state.entities.users[state.session.id],
-    openDropDown: state.ui.dropDown,
+    dropDown: state.ui.dropDown,
   };
 };
 
@@ -16,7 +16,7 @@ const mapDispatchToProps = dispatch => {
   return {
     logout: () => dispatch(logout()),
     openModal: modal => dispatch(openModal(modal)),
-    openDropDown: () => dispatch(openDropDown()),
+    openDropDown: dropDown => dispatch(openDropDown(dropDown)),
     closeDropDown: () => dispatch(closeDropDown()),
   };
 };

@@ -4,7 +4,8 @@ import StoryForm from "./story_form";
 import {
   fetchStory,
   updateStory,
-  deleteStory 
+  deleteStory, 
+  clearStoryErrors
 } from "../../actions/story_actions";
 
 
@@ -53,6 +54,7 @@ const mapDispatchToProps = dispatch => {
     action: story => dispatch(updateStory(story)),
     fetchStory: storyId => dispatch(fetchStory(storyId)),
     deleteStory: storyId => dispatch(deleteStory(storyId)),
+    clearStoryErrors: () => dispatch(clearStoryErrors()),
   };
 };
 

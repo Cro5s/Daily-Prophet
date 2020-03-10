@@ -25,31 +25,32 @@ class StoryForm extends React.Component {
     ));
 
     return (
-      <div></div>
-      // <div className="story-form-page-container">
+      <div className="story-form-page-container">
         
-      //   <div className="story-form-container">
-      //     <div className="story-form-details-container">
-      //       <div className="story-form-title-container">
-      //         <input className="story-form-title" type="text" />
+        <div className="story-form-container">
+          <div className="story-form-details-container">
+            <div className="story-form-title-container">
+              <input className="story-form-title" type="text" />
 
-      //         <div className="story-form-buttons-container">
-      //           <div className="story-form-button-container">
-      //             <button className="create-story-btn">Write a story</button>
-      //           </div>
-      //         </div>
+              <div className="story-form-buttons-container">
+                <div className="story-form-button-container">
+                  <button className="create-story-btn">Write a story</button>
+                </div>
+              </div>
 
-      //         <div className="stories-container">
-      //           <li></li>
-      //         </div>
+              <div className="stories-container">
+                <li></li>
+              </div>
 
-      //       </div>
-      //     </div>
-      //   </div>
+            </div>
+          </div>
+        </div>
 
-      // </div>
+      </div>
     );
+    
   }
+
 }
 
 export default StoryForm;

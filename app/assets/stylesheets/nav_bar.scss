@@ -25,7 +25,7 @@
 }
 
 .nav-bar-right-container {
-  margin-right: 60px;
+  margin-right: 190px;
 
   // background: wheat;
 }
@@ -61,17 +61,16 @@
   
 }
 
-.user-profile-dropdown-icon {
-  // padding: 10px;
-
-  // color: rgba(192, 192, 192, 0.6)
-  // background: wheat;
-}
-
 .user-icon {
-  // max-width: 100%;
-  // height: auto;
-  // border-image-width: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 30px;
+  position: relative;
+  // width: 35px;
+  // object-fit: cover;
+  // z-index: 6;
+  // cursor: pointer;
+
 }
 
 .modal-background {

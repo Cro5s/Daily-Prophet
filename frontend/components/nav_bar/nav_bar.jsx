@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import DropDown from  "../dropdown/dropdown";
+import DropDown from  "../dropdown/drop_down";
 
-export function NavBar({ currentUser, openModal, openDropDown}) {
+export function NavBar({ currentUser, openModal, openDropDown, dropDown }) {
   if (!currentUser) {
     return (
       <div className="nav-bar-container">
@@ -47,14 +47,9 @@ export function NavBar({ currentUser, openModal, openDropDown}) {
         <div className="nav-bar-right-container">
           <button 
             className="user-profile-dropdown-icon" 
-            onClick={() => openDropDown()}>
+            onClick={() => openDropDown(dropDown)}>
             
-            <img 
-              src={window.UserIcon} 
-              className="user-icon" 
-              // style={"width:100%; height:100%;"}
-            />
-            {/* <i className="fas fa-user"></i> */}
+            <img src={window.UserIcon} className="user-icon" />
           </button>
           <div>
             <div className="nav-bar-right"><DropDown /></div>
