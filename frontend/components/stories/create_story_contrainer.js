@@ -4,8 +4,8 @@ import StoryForm from "./story_form";
 
 const mapStateToProps = state => {
   return {
-    story: { title: "", body: "", image: "" },
-    formType: "Create Story",
+    story: { title: "", body: "", image: "", imageFile: null},
+    formType: "Write a story",
     errors: state.errors.story,
   };
 };

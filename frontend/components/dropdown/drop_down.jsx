@@ -50,7 +50,7 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
               <div className="dd-divider"></div>
               <li className="dd-new-story">
                 <Link
-                  to={"/newStory"}
+                  to={`/stories/new`}
                   className="create-story-link"
                   onClick={closeDropDown}
                 >
