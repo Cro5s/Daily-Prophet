@@ -11,7 +11,7 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
 
   return (
     <>
-      <div className="transparent-modal" onClick={closeDropDown}></div>
+      <div className="transparent-modal" onClick={closeDropDown} />
       <div className="dd-background">
         <div className="dd-child" onClick={e => e.stopPropagation()}>
           <div onClick={closeDropDown} className="popover-arrow"></div>
