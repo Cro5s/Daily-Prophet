@@ -4,6 +4,7 @@ class StoryForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = this.props.story;
+    this.formData = new FormData();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
@@ -19,9 +20,14 @@ class StoryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    const story = Object.assign({}, this.state);
-    this.props.action(story)
-      .then(() => this.props.history.push(`/users/${this.props.currentUser.id}`));
+    // const story = Object.assign({}, this.state);
+    // const formData = new FormData();
+    this.formData.append("story[title]", this.state.title);
+    this.formData.append("story[body]", this.state.body);
+
+
+    this.props.action(this.formData)
+      .then(() => this.props.history.push(`/users/profile`));
   }
 
   handleFile(e) {
@@ -41,21 +47,22 @@ class StoryForm extends React.Component {
   handleFileSubmit(e) {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append("story[title]", this.state.title);
+    // const formData = new FormData();
+    this.formData.append("story[title]", this.state.title);
+
     if (this.state.imageFile) {
-      formData.append("story[image]", this.state.imageFile);
+      this.formData.append("story[image]", this.state.imageFile);
     }
-    $.ajax({
-      method: `POST`,
-      url: `/api/stories`,
-      data: formData,
-      contentType: false,
-      processData: false,
-    }).then(
-      (response) => console.log(response.message),
-      (response) => console.log(response.response.JSON)
-    );
+    // $.ajax({
+    //   method: `POST`,
+    //   url: `/api/stories`,
+    //   data: formData,
+    //   contentType: false,
+    //   processData: false,
+    // }).then(
+    //   (response) => console.log(response.message),
+    //   (response) => console.log(response.response.JSON)
+    // );
   }
 
   render() {
@@ -72,22 +79,24 @@ class StoryForm extends React.Component {
             <div className="story-form-details-container">
               <div className="story-form-title-container">
                 {this.props.formType === "Edit story" ? (
-                  <div className="story-form-inputs-container">
-                    <label className="story-form-title-label">Title</label>
-                    <input
-                      className="story-form-title"
-                      type="text"
-                      value={this.state.title}
-                      onChange={this.update("title")}
-                    />
-                    <input
-                      className="story-form-body"
-                      type="textarea"
-                      value={this.state.body}
-                      onChange={this.update("body")}
-                    />
-                    <div className="story-errors">
-                      <ul>{errorsList}</ul>
+                  <div className="story-form-contents">
+                    <div className="story-form-inputs-container">
+                      <label className="story-form-title-label">Title</label>
+                      <input
+                        className="story-form-title"
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.update("title")}
+                      />
+                      <input
+                        className="story-form-body"
+                        type="textarea"
+                        value={this.state.body}
+                        onChange={this.update("body")}
+                      />
+                      <div className="story-errors">
+                        <ul>{errorsList}</ul>
+                      </div>
                     </div>
                   </div>
                 ) : (
@@ -119,6 +128,12 @@ class StoryForm extends React.Component {
                       <div className="story-errors">
                         <ul>{errorsList}</ul>
                       </div>
+                      <button
+                        className="temp-btn"
+                        onClick={this.handleSubmit}
+                      >
+                        Create story
+                      </button>
                     </div>
                   </div>
                 )}

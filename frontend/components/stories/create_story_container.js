@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    action: story => dispatch(createStory(story)),
+    action: payload => dispatch(createStory(payload)),
     clearErrors: () => dispatch(clearStoryErrors()),
   };
 };

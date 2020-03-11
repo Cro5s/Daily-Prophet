@@ -59,7 +59,7 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
               </li>
               <li className="dd-stories">
                 <Link
-                  to={"/stories"}
+                  to={"/user/stories"}
                   className="stories-page-link"
                   onClick={closeDropDown}
                 >
@@ -69,7 +69,7 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
               <div className="dd-divider"></div>
               <li className="dd-profile-page">
                 <Link
-                  to={`/api/users/${currentUser.id}`}
+                  to={`/api/users/profile`}
                   className="nav-bar-profile"
                   onClick={closeDropDown}
                 >

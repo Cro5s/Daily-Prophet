@@ -55,8 +55,8 @@ export const fetchStory = storyId => dispatch => {
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 };
 
-export const createStory = story => dispatch => {
-  return StoryApiUtil.createStory(story)
+export const createStory = formData => dispatch => {
+  return StoryApiUtil.createStory(formData)
     .then(response => dispatch(receiveStory(response)),
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 };

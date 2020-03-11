@@ -12,13 +12,13 @@ export function fetchStory(storyId) {
   });
 }
 
-export function createStory(story) {
+export function createStory(formData) {
   return $.ajax({
     method: `POST`,
     url: `/api/stories`,
-    data: { story },
-    
-
+    data: formData,
+    contentType: false,
+    processData: false,
   });
 }
 

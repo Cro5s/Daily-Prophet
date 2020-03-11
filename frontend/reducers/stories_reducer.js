@@ -4,7 +4,7 @@ import {
   REMOVE_STORY
 } from "../actions/story_actions";
 
-export default (state = {}, action) => {
+export default function(state = {}, action) {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -20,4 +20,4 @@ export default (state = {}, action) => {
     default:
       return state;
   };
-};
+}
