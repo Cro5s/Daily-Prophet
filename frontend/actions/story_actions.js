@@ -6,11 +6,11 @@ export const REMOVE_STORY = "REMOVE_STORY";
 export const RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
 export const CLEAR_STORY_ERRORS = "CLEAR_STORY_ERRORS";
 
-export function receiveStories(response) {
+export function receiveStories(payload) {
   return {
     type: RECEIVE_STORIES,
-    stories: response.stories,
-    users: response.users,
+    stories: payload.stories,
+    users: payload.users,
   };
 }
 

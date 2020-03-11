@@ -21,7 +21,7 @@ class EditStoryForm extends React.Component {
   // }
 
   render() {
-    const { story, formType, currentUser, imageFile, errors, action, fetchStory, deleteStory, history } = this.props;
+    const { story, formType, currentUser, imageFile, errors, action, fetchStory, deleteStory, clearErrors, history } = this.props;
 
     return (
       <StoryForm 
@@ -34,6 +34,7 @@ class EditStoryForm extends React.Component {
         fetchStory={fetchStory}
         deleteStory={deleteStory}
         history={history}
+        clearErrors={clearErrors}
       />
     );
   }
@@ -54,7 +55,7 @@ const mapDispatchToProps = dispatch => {
     action: story => dispatch(updateStory(story)),
     fetchStory: storyId => dispatch(fetchStory(storyId)),
     deleteStory: storyId => dispatch(deleteStory(storyId)),
-    clearStoryErrors: () => dispatch(clearStoryErrors()),
+    clearErrors: () => dispatch(clearStoryErrors()),
   };
 };
 

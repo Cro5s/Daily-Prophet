@@ -9,7 +9,7 @@ class StoryForm extends React.Component {
   }
 
   componentWillUnmount() {
-    this.props.clearStoryErrors();
+    this.props.clearErrors();
   }
 
   update(field) {
@@ -27,6 +27,7 @@ class StoryForm extends React.Component {
   handleFile(e) {
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
+
     fileReader.onloadend = () => {
       this.setState({imageFile: file, imageUrl: fileReader.result});
 
@@ -39,6 +40,7 @@ class StoryForm extends React.Component {
 
   handleFileSubmit(e) {
     e.preventDefault();
+
     const formData = new FormData();
     formData.append("story[title]", this.state.title);
     if (this.state.imageFile) {
@@ -70,7 +72,7 @@ class StoryForm extends React.Component {
             <div className="story-form-details-container">
               <div className="story-form-title-container">
                 {this.props.formType === "Edit story" ? (
-                  <>
+                  <div className="story-form-inputs-container">
                     <label className="story-form-title-label">Title</label>
                     <input
                       className="story-form-title"
@@ -87,36 +89,38 @@ class StoryForm extends React.Component {
                     <div className="story-errors">
                       <ul>{errorsList}</ul>
                     </div>
-                  </>
+                  </div>
                 ) : (
-                  <>
-                    <input
-                      className="story-form-title"
-                      type="text"
-                      placeholder="Title"
-                      onChange={this.update("title")}
-                    />
+                  <div className="story-form-contents">
                     <div className="image-btn-container">
                       <label className="file-upload-div">
                         +
                         <input
-                          id="image-btn"
+                          className="image-btn"
                           type="file"
                           onChange={this.handleFile}
                         />
                       </label>
                     </div>
-                    <input
-                      className="story-form-body"
-                      type="textarea"
-                      placeholder="Tell your story..."
-                      onChange={this.update("body")}
-                    />
-                    {preview}
-                    <div className="story-errors">
-                      <ul>{errorsList}</ul>
+                    <div className="story-form-inputs-container">
+                      <input
+                        className="story-form-title"
+                        type="text"
+                        placeholder="Title"
+                        onChange={this.update("title")}
+                      />
+                      <input
+                        className="story-form-body"
+                        type="textarea"
+                        placeholder="Tell your story..."
+                        onChange={this.update("body")}
+                      />
+                      {preview}
+                      <div className="story-errors">
+                        <ul>{errorsList}</ul>
+                      </div>
                     </div>
-                  </>
+                  </div>
                 )}
               </div>
             </div>

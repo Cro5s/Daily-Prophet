@@ -17,6 +17,7 @@ export function createStory(story) {
     method: `POST`,
     url: `/api/stories`,
     data: { story },
+    
 
   });
 }
