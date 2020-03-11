@@ -1,5 +1,5 @@
 json.story do
-  json.partial! "api/sotries/story", story: @story
+  json.partial! "api/stories/story", story: @story
 end
 
 json.author do 

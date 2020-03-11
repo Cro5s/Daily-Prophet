@@ -47,10 +47,20 @@
 }
 
 .image-btn-container {
+  // border: 1px solid black;
+  // border-radius: 30px;
+}
+
+.file-upload-div {
+  padding: 5px;
   border: 1px solid black;
-  border-radius: 30px;
+  border-radius: 50px;
+
+  background: burlywood;
 }
 
-.image-btn {
+#image-btn {
+  display: none;
 
 }
+

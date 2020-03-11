@@ -6,17 +6,19 @@ export const REMOVE_STORY = "REMOVE_STORY";
 export const RECEIVE_STORY_ERRORS = "RECEIVE_STORY_ERRORS";
 export const CLEAR_STORY_ERRORS = "CLEAR_STORY_ERRORS";
 
-export function receiveStories(stories) {
+export function receiveStories(response) {
   return {
     type: RECEIVE_STORIES,
-    stories,
+    stories: response.stories,
+    users: response.users,
   };
 }
 
-export function receiveStory(story) {
+export function receiveStory(payload) {
   return {
     type: RECEIVE_STORY,
-    story,
+    story: payload.story,
+    user: payload.author,
   };
 }
 
@@ -42,26 +44,26 @@ export function clearStoryErrors() {
 
 export const fetchStories = () => dispatch => {
   return StoryApiUtil.fetchStories()
-    .then(stories => dispatch(receiveStories(stories)), 
+    .then(response => dispatch(receiveStories(response)), 
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 
 };
 
 export const fetchStory = storyId => dispatch => {
   return StoryApiUtil.fetchStory(storyId)
-    .then(story => dispatch(receiveStory(story)), 
+    .then(response => dispatch(receiveStory(response)), 
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 };
 
 export const createStory = story => dispatch => {
   return StoryApiUtil.createStory(story)
-    .then(createdStory => dispatch(receiveStory(createdStory)),
+    .then(response => dispatch(receiveStory(response)),
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 };
 
 export const updateStory = story => dispatch => {
   return StoryApiUtil.updateStory(story)
-    .then(updatedStory => dispatch(receiveStory(updatedStory)),
+    .then(response => dispatch(receiveStory(response)),
     error => (dispatch(receiveStoryErrors(error.responseJSON))));
 };
 

@@ -25,14 +25,25 @@ class StoryForm extends React.Component {
   }
 
   handleFile(e) {
-    this.setState({imageFile: e.currentTarget.files[0]});
+    const file = e.currentTarget.files[0];
+    const fileReader = new FileReader();
+    fileReader.onloadend = () => {
+      this.setState({imageFile: file, imageUrl: fileReader.result});
+
+    };
+
+    if (file) {
+      fileReader.readAsDataURL(file);
+    };
   }
 
   handleFileSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
     formData.append("story[title]", this.state.title);
-    formData.append("story[image]", this.state.imageFile);
+    if (this.state.imageFile) {
+      formData.append("story[image]", this.state.imageFile);
+    }
     $.ajax({
       method: `POST`,
       url: `/api/stories`,
@@ -46,7 +57,7 @@ class StoryForm extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    const preview = this.state.imageUrl ? <img scr={this.state.imageUrl} /> : null
 
     const errorsList = this.props.errors.map((error, idx) => (
       <li className="story-form-errors" key={idx}>{error}</li>
@@ -82,22 +93,29 @@ class StoryForm extends React.Component {
                     <input
                       className="story-form-title"
                       type="text"
-                      value={"Title"}
+                      placeholder="Title"
                       onChange={this.update("title")}
                     />
                     <div className="image-btn-container">
-                      <input 
-                        className="image-btn"
-                        type="file"
-                        onChange={this.handleFile}
-                      />
+                      <label className="file-upload-div">
+                        +
+                        <input
+                          id="image-btn"
+                          type="file"
+                          onChange={this.handleFile}
+                        />
+                      </label>
                     </div>
                     <input
                       className="story-form-body"
                       type="textarea"
-                      value={"Tell your story..."}
+                      placeholder="Tell your story..."
                       onChange={this.update("body")}
                     />
+                    {preview}
+                    <div className="story-errors">
+                      <ul>{errorsList}</ul>
+                    </div>
                   </>
                 )}
               </div>
