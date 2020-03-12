@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import { createStory,  clearStoryErrors } from "../../actions/story_actions";
 import StoryForm from "./story_form";
+import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 
 const mapStateToProps = state => {
   return {
@@ -14,6 +15,7 @@ const mapDispatchToProps = dispatch => {
   return {
     action: payload => dispatch(createStory(payload)),
     clearErrors: () => dispatch(clearStoryErrors()),
+    
   };
 };
 

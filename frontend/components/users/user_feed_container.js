@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
-import UserFeed from "../users/user_feed";
+import UserFeed from "./user_feed";
 
 const mapStateToProps = ({session, entities: { users }}, ownProps) => {
   return {

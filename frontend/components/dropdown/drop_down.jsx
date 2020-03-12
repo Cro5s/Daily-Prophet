@@ -80,7 +80,7 @@ function DropDown({dropDown, closeDropDown, currentUser, logout}) {
                 <Link
                   to="/"
                   className="logout-button"
-                  onClick={(closeDropDown, () => logout())}
+                  onClick={(() => logout().then(() => closeDropDown()))}
                 >
                   Sign out
                 </Link>

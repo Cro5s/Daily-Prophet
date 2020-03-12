@@ -20,11 +20,8 @@ class StoryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // const story = Object.assign({}, this.state);
-    // const formData = new FormData();
     this.formData.append("story[title]", this.state.title);
     this.formData.append("story[body]", this.state.body);
-
 
     this.props.action(this.formData)
       .then(() => this.props.history.push(`/users/profile`));
@@ -47,22 +44,12 @@ class StoryForm extends React.Component {
   handleFileSubmit(e) {
     e.preventDefault();
 
-    // const formData = new FormData();
     this.formData.append("story[title]", this.state.title);
 
     if (this.state.imageFile) {
       this.formData.append("story[image]", this.state.imageFile);
-    }
-    // $.ajax({
-    //   method: `POST`,
-    //   url: `/api/stories`,
-    //   data: formData,
-    //   contentType: false,
-    //   processData: false,
-    // }).then(
-    //   (response) => console.log(response.message),
-    //   (response) => console.log(response.response.JSON)
-    // );
+    };
+
   }
 
   render() {

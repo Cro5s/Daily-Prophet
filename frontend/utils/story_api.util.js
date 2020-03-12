@@ -22,10 +22,10 @@ export function createStory(formData) {
   });
 }
 
-export function updateStory(story) {
+export function updateStory(formData) {
   return $.ajax({
     method: `PATCH`,
-    url: `/api/stories/${story.id}`,
+    url: `/api/stories/${formData.id}`,
     data: { story },
 
   });
