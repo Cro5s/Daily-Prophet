@@ -10,7 +10,7 @@ const mapStateToProps = state => {
     stories: Object.values(state.entities.stories),
     dropDown: state.ui.dropDown,
     currentUserId: state.session.id,
-    // created_at: 
+  
   };
 };
 
@@ -19,7 +19,8 @@ const mapDispatchToProps = dispatch => {
     fetchStories: () => dispatch(fetchStories()),
     openDropDown: dropDown => dispatch(openDropDown(dropDown)),
     closeDropDown: () => dispatch(closeDropDown()),
-    deleteStory: storyId => dispatch(deleteStory(storyId)), 
+    deleteStory: storyId => dispatch(deleteStory(storyId)),
+     
   };
 };
 

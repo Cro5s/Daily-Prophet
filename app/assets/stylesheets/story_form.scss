@@ -9,6 +9,12 @@
   // background: tomato;
 }
 
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .story-form-contents {
   display: flex;
   flex-direction: row;
@@ -39,9 +45,27 @@
   
 }
 
-// .story-errors {
+.create-btn-container {
+  align-self: flex-end;
+}
 
-// }
+.temp-btn {
+  margin-top: 15px;
+  color: white;
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  background: rgba(3, 168, 124, 1);
+}
+
+.temp-btn:hover {
+  background: rgba(0, 146, 107, 0.897);
+}
+
+.story-errors {
+  margin-top: 25px;
+  color: rgba(0, 0, 0, 0.54);
+}
 
 .image-btn-container {
   width: 32px;
@@ -55,10 +79,10 @@
 }
 
 .file-upload-div {
-  padding: 6px;
+  padding: 9px;
   border: 0.5px solid black;
   border-radius: 100%;
-  font-size: larger;
+  font-size: small;
   cursor: pointer;
 
   // background: burlywood;

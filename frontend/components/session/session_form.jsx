@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
 
     const demo = {  
-      name: "Guest", username: "guest", email: "guest@demo.com", password: "password" 
+      name: "Guest User", username: "Guest", email: "guest@email.com", password: "password" 
     };
 
     (this.props.formType === 'Log In' ?

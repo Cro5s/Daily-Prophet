@@ -50,12 +50,15 @@ class StoryIndexItem extends React.Component {
     const date = new Date(story.createdAt);
     const month = months[date.getMonth()];
     const day = date.getDate();
+    
+    const imageUrl = story.imageUrl ?  story.imageUrl : null;
 
     return (
       <>
         <div className = "divider-2" >
           <li className="story-details" key={story.id}>
             <h3 className="story-title">{story.title}</h3>
+            <img src={imageUrl} className="story-img"/>
             <div className="story-body">{story.body}</div>
             <div className="story-stats-container">
               <h4 

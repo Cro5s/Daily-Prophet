@@ -29,7 +29,7 @@ class UserStoryIndex extends React.Component {
             <div className="stories-btns-container">
               <div className="right-btn-container">
                 <Link
-                  to="/stories/new"s
+                  to="/stories/new"
                   className="create-story"
                 >
                   Write a story

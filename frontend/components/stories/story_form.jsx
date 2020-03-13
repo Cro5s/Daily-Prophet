@@ -8,23 +8,29 @@ class StoryForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleFile = this.handleFile.bind(this);
   }
-
+  
   componentWillUnmount() {
     this.props.clearErrors();
   }
-
+  
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
-
+  
   handleSubmit(e) {
     e.preventDefault();
+    
+    this.formData.append("story[title]", this.state.title);
+  
+    if (this.state.imageFile) {
+    debugger
+      this.formData.append("story[image]", this.state.imageFile);
+    };
 
     this.formData.append("story[title]", this.state.title);
     this.formData.append("story[body]", this.state.body);
-
     this.props.action(this.formData)
-      .then(() => this.props.history.push(`/users/profile`));
+    .then(() => this.props.history.push(`/users/profile`));
   }
 
   handleFile(e) {
@@ -44,11 +50,6 @@ class StoryForm extends React.Component {
   handleFileSubmit(e) {
     e.preventDefault();
 
-    this.formData.append("story[title]", this.state.title);
-
-    if (this.state.imageFile) {
-      this.formData.append("story[image]", this.state.imageFile);
-    };
 
   }
 
@@ -87,42 +88,48 @@ class StoryForm extends React.Component {
                     </div>
                   </div>
                 ) : (
-                  <div className="story-form-contents">
-                    <div className="image-btn-container">
-                      <label className="file-upload-div">
-                        +
-                        <input
-                          className="image-btn"
-                          type="file"
-                          onChange={this.handleFile}
-                        />
-                      </label>
-                    </div>
-                    <div className="story-form-inputs-container">
-                      <input
-                        className="story-form-title"
-                        type="text"
-                        placeholder="Title"
-                        onChange={this.update("title")}
-                      />
-                      <input
-                        className="story-form-body"
-                        type="textarea"
-                        placeholder="Tell your story..."
-                        onChange={this.update("body")}
-                      />
-                      {preview}
-                      <div className="story-errors">
-                        <ul>{errorsList}</ul>
+                  <>
+                    <div className="form-container">
+                      <div className="story-form-contents">
+                        <div className="image-btn-container">
+                          <label className="file-upload-div">
+                            <i className="fas fa-plus"></i>
+                            <input
+                              className="image-btn"
+                              type="file"
+                              onChange={this.handleFile}
+                            />
+                          </label>
+                        </div>
+                        <div className="story-form-inputs-container">
+                          <input
+                            className="story-form-title"
+                            type="text"
+                            placeholder="Title"
+                            onChange={this.update("title")}
+                          />
+                          <input
+                            className="story-form-body"
+                            type="textarea"
+                            placeholder="Tell your story..."
+                            onChange={this.update("body")}
+                          />
+                        </div>
                       </div>
-                      <button
-                        className="temp-btn"
-                        onClick={this.handleSubmit}
-                      >
-                        Create story
-                      </button>
+                      <div className="create-btn-container">
+                        <button
+                          className="temp-btn"
+                          onClick={this.handleSubmit}
+                          >
+                          Publish
+                        </button>
+                      </div>
                     </div>
-                  </div>
+                    {preview}
+                    <div className="story-errors">
+                      <ul>{errorsList}</ul>
+                    </div>
+                  </>
                 )}
               </div>
             </div>
