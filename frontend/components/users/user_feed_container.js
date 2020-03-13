@@ -6,7 +6,7 @@ import UserFeed from "./user_feed";
 const mapStateToProps = state => {
   return {
     users: Object.values(state.entities.users),
-    stories: state.entities.stories,
+    stories: Object.values(state.entities.stories),
   };
 };
 
