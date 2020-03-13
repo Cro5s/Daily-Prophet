@@ -1,17 +1,19 @@
 import { connect } from "react-redux";
 import { fetchUser } from "../../actions/user_actions";
+import { fetchStories } from "../../actions/story_actions";
 import UserFeed from "./user_feed";
 
-const mapStateToProps = ({session, entities: { users }}, ownProps) => {
+const mapStateToProps = state => {
   return {
-    user: users[ownProps.match.params.userId] || { username: "" },
-    currentUserId: session.id,
+    users: Object.values(state.entities.users),
+    stories: state.entities.stories,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchUser: id => dispatch(fetchUser(id)),
+    fetchStories: () => dispatch(fetchStories()),
   };
 };
 

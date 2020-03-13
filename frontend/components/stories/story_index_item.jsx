@@ -16,9 +16,7 @@ const DropDown = ({ storyId, deleteStory }) => {
 class StoryIndexItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      dropDown: false
-    }
+    this.state = {dropDown: false}
     this.openDropDown = this.openDropDown.bind(this);
     this.closeDropDown = this.closeDropDown.bind(this);
   }
@@ -57,9 +55,13 @@ class StoryIndexItem extends React.Component {
       <>
         <div className = "divider-2" >
           <li className="story-details" key={story.id}>
+            <div className="story-img-container">
+              <img src={imageUrl} className="story-img"/>
+            </div>
             <h3 className="story-title">{story.title}</h3>
-            <img src={imageUrl} className="story-img"/>
-            <div className="story-body">{story.body}</div>
+            <div className="story-body-container"> 
+              <p className="story-body">{story.body}</p>
+            </div>
             <div className="story-stats-container">
               <h4 
                 className="date-created"
@@ -77,7 +79,7 @@ class StoryIndexItem extends React.Component {
                 </div>
                 <div className="dd-menu-container">
                   {
-                  this.state.dropDown && <DropDown storyId={story.id} deleteStory={deleteStory}/>
+                    this.state.dropDown && <DropDown storyId={story.id} deleteStory={deleteStory} />
                   }
                 </div>
               </div>

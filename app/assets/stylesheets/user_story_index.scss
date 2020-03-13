@@ -90,7 +90,22 @@
   cursor: pointer;
 }
 
+.story-img-container {
+  margin: 20px 650px 20px 10px;
+}
+
+.story-img {
+  
+}
+
+.story-body-container {
+  margin: 0px 350px 0px 0px;
+}
+
 .story-body {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   font-size: 18px;
   color: rgba(0, 0, 0, 0.54);
   cursor: pointer;

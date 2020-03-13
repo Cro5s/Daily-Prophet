@@ -5,7 +5,6 @@ import UserStoryIndex from "./user_story_index";
 import { deleteStory } from "../../actions/story_actions";
 
 const mapStateToProps = state => {
-
   return {
     stories: Object.values(state.entities.stories),
     dropDown: state.ui.dropDown,
