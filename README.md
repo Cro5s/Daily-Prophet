@@ -1,7 +1,7 @@
 # Daily-Prophet
 Daily Prophet, a Medium clone, is an online platform where users can publicly post stories, which are informative guides, or opinions on different topics that they want to share. Users can respond to stories and also give claps to stories.  
 
-[Live Demo](https://dailyprophet.herokuapp.com/ "Daily Prophet")
+[Live Site](https://dailyprophet.herokuapp.com/ "Daily Prophet")
 
 ## Technologies
   * Backend: Ruby on Rails/ActiveRecord/PostgreSQL
