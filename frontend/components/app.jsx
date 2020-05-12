@@ -6,7 +6,7 @@ import StoryShowContainer from "./stories/story_show_container";
 import CreateStoryContainer from "./stories/create_story_container";
 import EditStoryContainer from "./stories/edit_story_container";
 import UserStoryIndexContainer from "./stories/user_story_index_container";
-import  Modal from "./modal/modal";
+import Modal from "./modal/modal";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 
@@ -15,26 +15,25 @@ export default () => {
     <>
       <Modal />
       <header className="nav-bar-header">
-          <nav className="nav-bar">
-            <NavBarContainer />
-          </nav>
+        <nav className="nav-bar">
+          <NavBarContainer />
+        </nav>
       </header>
 
       <Switch>
-        <ProtectedRoute 
-          path="/stories/:storyId/edit" component={EditStoryContainer} 
+        <ProtectedRoute
+          path="/stories/:storyId/edit"
+          component={EditStoryContainer}
         />
-        
         <ProtectedRoute path="/stories/new" component={CreateStoryContainer} />
-        
-        <ProtectedRoute 
-          path="/stories/:storyId" component={StoryShowContainer} 
+        <ProtectedRoute
+          path="/stories/:storyId"
+          component={StoryShowContainer}
         />
-        
-        <ProtectedRoute 
-          path="/user/stories" component={UserStoryIndexContainer} 
+        <ProtectedRoute
+          path="/user/stories"
+          component={UserStoryIndexContainer}
         />
-        
         <ProtectedRoute path="/feed" component={UserFeedContainer} />
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
@@ -42,4 +41,3 @@ export default () => {
     </>
   );
 };
-

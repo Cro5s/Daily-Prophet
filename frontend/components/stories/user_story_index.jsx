@@ -4,7 +4,7 @@ import StoryIndexItem from "./story_index_item";
 
 class UserStoryIndex extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   componentDidMount() {
@@ -13,10 +13,10 @@ class UserStoryIndex extends React.Component {
 
   render() {
     let { stories, currentUserId, deleteStory } = this.props;
-    
-    stories = stories.filter(story => {
-      return story.authorId === currentUserId
-    })
+
+    stories = stories.filter((story) => {
+      return story.authorId === currentUserId;
+    });
 
     return (
       <>
@@ -28,10 +28,7 @@ class UserStoryIndex extends React.Component {
             </div>
             <div className="stories-btns-container">
               <div className="right-btn-container">
-                <Link
-                  to="/stories/new"
-                  className="create-story"
-                >
+                <Link to="/stories/new" className="create-story">
                   Write a story
                 </Link>
               </div>
@@ -40,25 +37,24 @@ class UserStoryIndex extends React.Component {
 
           <ul className="stories-list-container">
             <div className="story-details-container">
-              {
-                stories.length < 1 ? ( 
-                  <div className="divider">
-                    <h3 
-                      className="no-stories-msg"
-                    >
-                      You haven't published any stories yet.
-                    </h3>
-                  </div>
-                ) : stories.map(story => {
-                  return ( 
-                    <StoryIndexItem 
-                      key={story.id} 
-                      story={story} 
+              {stories.length < 1 ? (
+                <div className="divider">
+                  <h3 className="no-stories-msg">
+                    You haven't published any stories yet.
+                  </h3>
+                </div>
+              ) : (
+                stories.map((story) => {
+                  return (
+                    <StoryIndexItem
+                      key={story.id}
+                      story={story}
+                      editStory={editStory}
                       deleteStory={deleteStory}
-                    /> 
+                    />
                   );
                 })
-              }
+              )}
             </div>
           </ul>
         </div>
