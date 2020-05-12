@@ -7,7 +7,7 @@ import CreateStoryContainer from "./stories/create_story_container";
 import EditStoryContainer from "./stories/edit_story_container";
 import UserStoryIndexContainer from "./stories/user_story_index_container";
 import Modal from "./modal/modal";
-import { Route, Redirect, Switch } from "react-router-dom";
+import { Redirect, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../utils/route_util";
 
 export default () => {
