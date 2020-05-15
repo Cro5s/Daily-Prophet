@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const DropDown = ({ story, deleteStory }) => {
-  console.log(story);
   return (
     <div className="dd-menu">
       <Link to={`/story/${story.id}/edit`} className="edit-story-link">

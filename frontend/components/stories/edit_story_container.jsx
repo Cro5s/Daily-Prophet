@@ -54,8 +54,6 @@ class EditStoryForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log("story:", state.entities.stories[ownProps.match.params.storyId]);
-
   return {
     story: state.entities.stories[ownProps.match.params.storyId],
     formType: "Edit story",
