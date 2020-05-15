@@ -42,33 +42,37 @@ export function clearStoryErrors() {
   };
 }
 
-export const fetchStories = () => dispatch => {
-  return StoryApiUtil.fetchStories()
-    .then(response => dispatch(receiveStories(response)), 
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
-
+export const fetchStories = () => (dispatch) => {
+  return StoryApiUtil.fetchStories().then(
+    (response) => dispatch(receiveStories(response)),
+    (error) => dispatch(receiveStoryErrors(error.responseJSON))
+  );
 };
 
-export const fetchStory = storyId => dispatch => {
-  return StoryApiUtil.fetchStory(storyId)
-    .then(response => dispatch(receiveStory(response)), 
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
+export const fetchStory = (storyId) => (dispatch) => {
+  return StoryApiUtil.fetchStory(storyId).then(
+    (response) => dispatch(receiveStory(response)),
+    (error) => dispatch(receiveStoryErrors(error.responseJSON))
+  );
 };
 
-export const createStory = formData => dispatch => {
-  return StoryApiUtil.createStory(formData)
-    .then(response => dispatch(receiveStory(response)),
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
+export const createStory = (formData) => (dispatch) => {
+  return StoryApiUtil.createStory(formData).then(
+    (response) => dispatch(receiveStory(response)),
+    (error) => dispatch(receiveStoryErrors(error.responseJSON))
+  );
 };
 
-export const updateStory = formData => dispatch => {
-  return StoryApiUtil.updateStory(formData)
-    .then(response => dispatch(receiveStory(response)),
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
+export const updateStory = (formData) => (dispatch) => {
+  return StoryApiUtil.updateStory(formData).then(
+    (response) => dispatch(receiveStory(response)),
+    (error) => dispatch(receiveStoryErrors(error.responseJSON))
+  );
 };
 
-export const deleteStory = storyId => dispatch => {
-  return StoryApiUtil.deleteStory(storyId)
-    .then( () => dispatch(removeStory(storyId)),
-    error => (dispatch(receiveStoryErrors(error.responseJSON))));
+export const deleteStory = (storyId) => (dispatch) => {
+  return StoryApiUtil.deleteStory(storyId).then(
+    () => dispatch(removeStory(storyId)),
+    (error) => dispatch(receiveStoryErrors(error.responseJSON))
+  );
 };

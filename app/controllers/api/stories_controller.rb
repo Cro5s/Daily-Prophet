@@ -22,7 +22,9 @@ class Api::StoriesController < ApplicationController
   end
 
   def update
-    @story = Story.find(params[:story][:id])
+    debugger
+
+    @story = Story.find_by(id: params[:story][:id])
 
     if @story.update(story_params)
       render :show

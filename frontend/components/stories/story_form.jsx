@@ -20,17 +20,23 @@ class StoryForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // this.formData.append("story[title]", this.state.title);
+    if (this.props.formType === "Edit story") {
+      let story = this.state;
 
-    if (this.state.imageFile) {
-      this.formData.append("story[image]", this.state.imageFile);
+      this.props
+        .action(story)
+        .then(() => this.props.history.push(`/users/profile`));
+    } else {
+      if (this.state.imageFile) {
+        this.formData.append("story[image]", this.state.imageFile);
+      }
+
+      this.formData.append("story[title]", this.state.title);
+      this.formData.append("story[body]", this.state.body);
+      this.props
+        .action(this.formData, this.state)
+        .then(() => this.props.history.push(`/users/profile`));
     }
-
-    this.formData.append("story[title]", this.state.title);
-    this.formData.append("story[body]", this.state.body);
-    this.props
-      .action(this.formData)
-      .then(() => this.props.history.push(`/users/profile`));
   }
 
   handleFile(e) {
@@ -44,10 +50,6 @@ class StoryForm extends React.Component {
     if (file) {
       fileReader.readAsDataURL(file);
     }
-  }
-
-  handleFileSubmit(e) {
-    e.preventDefault();
   }
 
   render() {

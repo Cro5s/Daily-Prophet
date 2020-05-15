@@ -12,22 +12,21 @@ export function fetchStory(storyId) {
   });
 }
 
-export function createStory(formData) {
+export function createStory(story) {
   return $.ajax({
     method: `POST`,
     url: `/api/stories`,
-    data: formData,
+    data: story,
     contentType: false,
     processData: false,
   });
 }
 
-export function updateStory(formData) {
+export function updateStory(story) {
   return $.ajax({
     method: `PATCH`,
-    url: `/api/stories/${formData.id}`,
+    url: `/api/stories/${story.id}`,
     data: { story },
-
   });
 }
 
