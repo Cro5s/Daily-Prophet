@@ -17,7 +17,7 @@ const mapDispatchToProps = (dispatch) => {
     fetchStories: () => dispatch(fetchStories()),
     openDropDown: (dropDown) => dispatch(openDropDown(dropDown)),
     closeDropDown: () => dispatch(closeDropDown()),
-    editStory: (storyId) => dispatch(updateStory(storyId)),
+    updateStory: (story) => dispatch(updateStory(story)),
     deleteStory: (storyId) => dispatch(deleteStory(storyId)),
   };
 };

@@ -13,12 +13,12 @@
 //     <>
 //       <div className="transparent-modal" onClick={closeDropDown} />
 //       <div className="dd-background">
-//         <div className="dd-child" onClick={e => e.stopPropagation()}>
+//         <div className="dd-child" onClick={(e) => e.stopPropagation()}>
 //           <div onClick={closeDropDown} className="popover-arrow"></div>
 //           <div className="dd-wrapper">
 //             <ul className="dd-list">
-//               <Link 
-//                 to={`/story/storyId here!!/edit`} 
+//               <Link
+//                 to={`/story/storyId here!!/edit`}
 //                 className="edit-story-link"
 //               >
 //                 Edit story
@@ -40,16 +40,16 @@
 // const mapStateToProps = (state, ownProps) => {
 //   return {
 //     dropDown: state.ui.dropDown,
-//     storyId: state.entities.users.storyIds
+//     storyId: state.entities.users.storyIds,
 //   };
-// }
+// };
 
-// const mapDispatchToProps = dispatch => {
+// const mapDispatchToProps = (dispatch) => {
 //   return {
 //     closeDropDown: () => dispatch(closeDropDown()),
-//     openDropDown: dropDown => dispatch(openDropDown(dropDown)),
-//     deleteStory: storyId => dispatch(deleteStory(storyId)),
+//     openDropDown: (dropDown) => dispatch(openDropDown(dropDown)),
+//     deleteStory: (storyId) => dispatch(deleteStory(storyId)),
 //   };
-// }
+// };
 
 // export default connect(mapStateToProps, mapDispatchToProps)(StoryDropDown);

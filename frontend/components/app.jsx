@@ -22,7 +22,7 @@ export default () => {
 
       <Switch>
         <ProtectedRoute
-          path="/stories/:storyId/edit"
+          path="/story/:storyId/edit"
           component={EditStoryContainer}
         />
         <ProtectedRoute path="/stories/new" component={CreateStoryContainer} />

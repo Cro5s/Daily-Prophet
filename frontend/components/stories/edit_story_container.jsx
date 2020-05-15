@@ -4,8 +4,8 @@ import StoryForm from "./story_form";
 import {
   fetchStory,
   updateStory,
-  deleteStory, 
-  clearStoryErrors
+  deleteStory,
+  clearStoryErrors,
 } from "../../actions/story_actions";
 import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 
@@ -17,14 +17,26 @@ class EditStoryForm extends React.Component {
   // componentDidUpdate(prevProps) {
   //   if (this.props.match.params.storyId !== prevProps.story.id) {
   //     this.props.fetchPost(this.props.match.params.postId);
-  //   }; 
+  //   };
   // }
 
   render() {
-    const { story, formType, currentUser, imageFile, errors, action, fetchStory, deleteStory, clearErrors, history } = this.props;
+    const {
+      story,
+      formType,
+      currentUser,
+      imageFile,
+      errors,
+      action,
+      fetchStory,
+      updateStory,
+      deleteStory,
+      clearErrors,
+      history,
+    } = this.props;
 
     return (
-      <StoryForm 
+      <StoryForm
         story={story}
         formType={formType}
         currentUser={currentUser}
@@ -32,6 +44,7 @@ class EditStoryForm extends React.Component {
         errors={errors}
         action={action}
         fetchStory={fetchStory}
+        updateStory={updateStory}
         deleteStory={deleteStory}
         history={history}
         clearErrors={clearErrors}
@@ -41,6 +54,8 @@ class EditStoryForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
+  console.log("story:", state.entities.stories[ownProps.match.params.storyId]);
+
   return {
     story: state.entities.stories[ownProps.match.params.storyId],
     formType: "Edit story",
@@ -50,13 +65,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    action: story => dispatch(updateStory(story)),
-    fetchStory: storyId => dispatch(fetchStory(storyId)),
-    deleteStory: storyId => dispatch(deleteStory(storyId)),
+    action: (story) => dispatch(updateStory(story)),
+    fetchStory: (storyId) => dispatch(fetchStory(storyId)),
+    deleteStory: (storyId) => dispatch(deleteStory(storyId)),
     clearErrors: () => dispatch(clearStoryErrors()),
-    
   };
 };
 

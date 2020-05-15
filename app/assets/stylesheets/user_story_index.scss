@@ -136,15 +136,17 @@
   
 }
 
-.dd-menu-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  color: rgba(0, 0, 0, 0.54);
-}
+// .dd-menu-container {
+//   display: flex;
+//   flex-direction: column;
+//   color: rgba(0, 0, 0, 0.54);
+// }
 
 .dd-menu {
   // position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   top: 2px;
   right: -124px;
   width: 220px;
@@ -155,6 +157,19 @@
   z-index: 5;
   
 }
+
+.edit-story-link {
+  margin-bottom: 10px;
+
+}
+
+.edit-story-link:hover {
+  color: black;
+}
+
+// .delete-btn {
+
+// }
 
 .delete-btn:hover {
   color: black;

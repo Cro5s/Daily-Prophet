@@ -12,7 +12,7 @@ class UserStoryIndex extends React.Component {
   }
 
   render() {
-    let { stories, currentUserId, deleteStory } = this.props;
+    let { stories, currentUserId, updateStory, deleteStory } = this.props;
 
     stories = stories.filter((story) => {
       return story.authorId === currentUserId;
@@ -49,7 +49,7 @@ class UserStoryIndex extends React.Component {
                     <StoryIndexItem
                       key={story.id}
                       story={story}
-                      editStory={editStory}
+                      updateStory={updateStory}
                       deleteStory={deleteStory}
                     />
                   );
