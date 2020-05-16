@@ -7,7 +7,7 @@ import {
   deleteStory,
   clearStoryErrors,
 } from "../../actions/story_actions";
-import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
+// import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 
 class EditStoryForm extends React.Component {
   componentDidMount() {

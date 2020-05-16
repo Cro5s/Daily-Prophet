@@ -17,10 +17,7 @@
 //           <div onClick={closeDropDown} className="popover-arrow"></div>
 //           <div className="dd-wrapper">
 //             <ul className="dd-list">
-//               <Link
-//                 to={`/story/storyId here!!/edit`}
-//                 className="edit-story-link"
-//               >
+//               <Link to={`/story/${storyId}/edit`} className="edit-story-link">
 //                 Edit story
 //               </Link>
 //               <button

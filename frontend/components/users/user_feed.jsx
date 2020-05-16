@@ -3,7 +3,6 @@ import React from "react";
 class UserFeed extends React.Component {
   constructor(props) {
     super(props);
-    // this.users = this.props.users;
   }
 
   componentDidMount() {
@@ -27,8 +26,6 @@ class UserFeed extends React.Component {
     };
     const { stories, users } = this.props;
 
-    // console.log(this.props.users)
-    // debugger
     return (
       <div className="feed-page-container">
         <div className="story-container">
@@ -66,15 +63,6 @@ class UserFeed extends React.Component {
           })}
         </div>
       </div>
-
-      // <div className="h1-container">
-      //   <h1
-      //     className="story-h1"
-      //   >
-      //     Site has too many visitors feed failed to load.
-      //   </h1>
-
-      // </div>
     );
   }
 }

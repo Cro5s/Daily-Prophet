@@ -25,7 +25,7 @@ class StoryForm extends React.Component {
 
       this.props
         .action(story)
-        .then(() => this.props.history.push(`/users/profile`));
+        .then(() => this.props.history.push(`/user/stories`));
     } else {
       if (this.state.imageFile) {
         this.formData.append("story[image]", this.state.imageFile);
@@ -35,7 +35,7 @@ class StoryForm extends React.Component {
       this.formData.append("story[body]", this.state.body);
       this.props
         .action(this.formData, this.state)
-        .then(() => this.props.history.push(`/users/profile`));
+        .then(() => this.props.history.push(`/user/stories`));
     }
   }
 
@@ -54,7 +54,7 @@ class StoryForm extends React.Component {
 
   render() {
     const preview = this.state.imageUrl ? (
-      <img scr={this.state.imageUrl} />
+      <img className="img-preview" scr={this.state.imageUrl} />
     ) : null;
 
     const errorsList = this.props.errors.map((error, idx) => (

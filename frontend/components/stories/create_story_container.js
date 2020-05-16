@@ -1,21 +1,20 @@
 import { connect } from "react-redux";
-import { createStory,  clearStoryErrors } from "../../actions/story_actions";
+import { createStory, clearStoryErrors } from "../../actions/story_actions";
 import StoryForm from "./story_form";
-import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
+// import { openDropDown, closeDropDown } from "../../actions/drop_down_actions";
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    story: { title: "", body: "", imageFile: null, imageUrl: null},
+    story: { title: "", body: "", imageFile: null, imageUrl: null },
     formType: "Write a story",
     errors: state.errors.story,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    action: payload => dispatch(createStory(payload)),
+    action: (payload) => dispatch(createStory(payload)),
     clearErrors: () => dispatch(clearStoryErrors()),
-    
   };
 };
 

@@ -55,13 +55,15 @@ class StoryIndexItem extends React.Component {
       <>
         <div className="divider-2">
           <li className="story-details" key={story.id}>
-            <div className="story-img-container">
-              <img src={imageUrl} className="story-img" />
-            </div>
-            <h3 className="story-title">{story.title}</h3>
-            <div className="story-body-container">
-              <p className="story-body">{story.body}</p>
-            </div>
+            <Link to={`/stories/${story.id}`}>
+              <div className="story-img-container">
+                <img src={imageUrl} className="story-img" />
+              </div>
+              <h3 className="story-title">{story.title}</h3>
+              <div className="story-body-container">
+                <p className="story-body">{story.body}</p>
+              </div>
+            </Link>
             <div className="story-stats-container">
               <h4 className="date-created">
                 Published on {month} {day}

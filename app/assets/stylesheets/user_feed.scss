@@ -1,18 +1,6 @@
-// .h1-container {
-//   display: flex;
-//   justify-content: center;
-// }
-
-// .story-h1 {
-//   margin-top: 80px;
-//   font-size: 22px;
-//   color: rgba(0, 0, 0, 0.54);
-// }
-
 .feed-page-container {
   display: flex;
   flex-direction: row;
-
 }
 
 .story-container {
@@ -46,27 +34,14 @@
 .story-body {
   display: flex;
   flex-shrink: 1;
-
 }
 
 .story-details-container {
   color: rgba(0, 0, 0, 0.54);
 }
 
-.story-author {
-
-}
-
 .story-date-container {
   margin-top: 10px;
-}
-
-.story-date {
-
-}
-
-.story-image-container {
-
 }
 
 .story-image {
