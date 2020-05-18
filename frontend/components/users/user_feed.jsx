@@ -30,7 +30,7 @@ class UserFeed extends React.Component {
       <div className="feed-page-container">
         <div className="story-container">
           {stories.map((story) => {
-            let authorId = story.authorId;
+            // let authorId = story.authorId;
             // let name = this.users[authorId].name;
             let date = new Date(story.createdAt);
             let month = months[date.getMonth()];
