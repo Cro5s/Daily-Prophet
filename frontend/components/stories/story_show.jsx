@@ -6,18 +6,8 @@ class StoryShow extends React.Component {
     this.state = { story: null };
   }
 
-  // componentDidMount() {
-  //   debugger;
-  //   this.props.fetchStory(this.props.storyId).then(() => {
-  //     debugger;
-  //     this.setState({ story: this.props.story });
-  //   });
-  // }
-
   componentDidMount() {
-    // debugger;
     this.props.fetchStory(this.props.storyId).then(() => {
-      // debugger;
       this.setState({ story: this.props.story });
     });
   }
@@ -37,7 +27,6 @@ class StoryShow extends React.Component {
       10: "Nov",
       11: "Dec",
     };
-    // debugger;
 
     if (!this.state.story) {
       return null;
