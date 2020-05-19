@@ -1,8 +1,8 @@
 class Api::ResponsesController < ApplicationController
-  def show
-    @response = Response.includes(:author).find(params[:id])
-    render :show
-  end
+  # def show
+  #   @response = Response.includes(:author).find(params[:id])
+  #   render :show
+  # end
 
   def create
     @response = Response.new(response_params)

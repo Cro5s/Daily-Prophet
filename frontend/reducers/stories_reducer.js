@@ -1,10 +1,10 @@
 import {
   RECEIVE_STORIES,
   RECEIVE_STORY,
-  REMOVE_STORY
+  REMOVE_STORY,
 } from "../actions/story_actions";
 
-export default function(state = {}, action) {
+export default function (state = {}, action) {
   Object.freeze(state);
   let newState = Object.assign({}, state);
 
@@ -12,6 +12,7 @@ export default function(state = {}, action) {
     case RECEIVE_STORIES:
       return action.stories;
     case RECEIVE_STORY:
+      debugger;
       newState[action.story.id] = action.story;
       return newState;
     case REMOVE_STORY:
@@ -19,5 +20,5 @@ export default function(state = {}, action) {
       return newState;
     default:
       return state;
-  };
+  }
 }

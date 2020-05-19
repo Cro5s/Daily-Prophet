@@ -19,6 +19,7 @@ export function receiveStory(payload) {
     type: RECEIVE_STORY,
     story: payload.story,
     user: payload.author,
+    responses: payload.responses,
   };
 }
 
