@@ -7,6 +7,7 @@ export default function (state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_STORY:
+      if (!action.responses) action.responses = {};
       return action.responses;
     case REMOVE_RESPONSE:
       delete newState[action.responseId];

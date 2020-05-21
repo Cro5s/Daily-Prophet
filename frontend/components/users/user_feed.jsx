@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class UserFeed extends React.Component {
   constructor(props) {
@@ -30,8 +31,10 @@ class UserFeed extends React.Component {
       <div className="feed-page-container">
         <div className="story-container">
           {stories.map((story) => {
+            // console.log("AuthorId:", story.authorId);
+            // console.log("Users[authorId]:", users[authorId]);
             // let authorId = story.authorId;
-            // let name = this.users[authorId].name;
+            // let name = users[authorId].name;
             let date = new Date(story.createdAt);
             let month = months[date.getMonth()];
             let day = date.getDate();
@@ -40,20 +43,22 @@ class UserFeed extends React.Component {
             return (
               <ul className="story-list-container" key={story.id}>
                 <li className="story">
-                  <div className="story-title-container">
-                    <h1 className="story-title">{story.title}</h1>
-                    <div className="story-body-container">
-                      <p className="story-body">{story.body}</p>
-                    </div>
-                    <div className="story-details-container">
-                      <div className="story-author">{name}</div>
-                      <div className="story-date-container">
-                        <div className="story-date">
-                          {month} {day}
+                  <Link to={`/stories/${story.id}`}>
+                    <div className="story-title-container">
+                      <h1 className="story-title">{story.title}</h1>
+                      <div className="story-body-container">
+                        <p className="story-body">{story.body}</p>
+                      </div>
+                      <div className="story-details-container">
+                        <div className="story-author">{name}</div>
+                        <div className="story-date-container">
+                          <div className="story-date">
+                            {month} {day}
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                   <div className="story-image-container">
                     <img className="story-image" src={imageUrl} />
                   </div>

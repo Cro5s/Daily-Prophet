@@ -12,7 +12,6 @@ export default function (state = {}, action) {
     case RECEIVE_STORIES:
       return action.stories;
     case RECEIVE_STORY:
-      debugger;
       newState[action.story.id] = action.story;
       return newState;
     case REMOVE_STORY:
