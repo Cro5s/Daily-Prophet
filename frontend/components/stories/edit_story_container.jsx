@@ -14,12 +14,6 @@ class EditStoryForm extends React.Component {
     this.props.fetchStory(this.props.match.params.storyId);
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (this.props.match.params.storyId !== prevProps.story.id) {
-  //     this.props.fetchPost(this.props.match.params.postId);
-  //   };
-  // }
-
   render() {
     const {
       story,

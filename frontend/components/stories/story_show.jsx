@@ -3,7 +3,8 @@ import React from "react";
 class StoryShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { story: null };
+    this.state = { story: null, response: null };
+    this.responses = this.props.responses;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -13,6 +14,10 @@ class StoryShow extends React.Component {
     });
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return (e) => this.setState({ [field]: e.currentTarget.value });
   }
@@ -20,7 +25,12 @@ class StoryShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    this.props.createResponse();
+    let response = this.state.response;
+    let story = this.state.story;
+
+    this.props
+      .createResponse(response, story)
+      .then(() => this.props.history.push(`/stories/:storyId`));
   }
 
   render() {
@@ -53,7 +63,6 @@ class StoryShow extends React.Component {
         className="story-show-img"
       />
     ) : null;
-    const responses = this.props.responses;
 
     return (
       <>
@@ -76,16 +85,24 @@ class StoryShow extends React.Component {
         </div>
         <div className="story-show-details-bottom-container">
           <div className="responses-container">
-            {this.responses.map((response) => {
-              const responseAuthor = this.props.users[response.authorId];
+            {this.responses.length > 0
+              ? this.responses.map((response) => {
+                  const responseAuthor = this.props.users[response.authorId];
 
-              responses.length > 0 ? (
-                <>
-                  <div className="story-show-response">{response.body}</div>
-                  <div className="response-author">{responseAuthor.name}</div>
-                </>
-              ) : null;
-            })}
+                  return (
+                    <ul className="responses-ul" id={response.id}>
+                      <li className="responses-li">
+                        <div className="story-show-response">
+                          {response.body}
+                        </div>
+                        <div className="response-author">
+                          {responseAuthor.name}
+                        </div>
+                      </li>
+                    </ul>
+                  );
+                })
+              : null}
             <form className="response-form" onSubmit={this.handleSubmit}>
               <div className="response-body">
                 <input

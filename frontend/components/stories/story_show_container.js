@@ -1,7 +1,10 @@
 import { connect } from "react-redux";
 import StoryShow from "./story_show";
 import { fetchStory } from "../../actions/story_actions";
-import { createStory } from "../../actions/response_action";
+import {
+  createResponse,
+  clearResponseErrors,
+} from "../../actions/response_action";
 
 const mapStateToProps = (state, ownProps) => {
   // debugger;
@@ -22,6 +25,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchStory: (storyId) => dispatch(fetchStory(storyId)),
     createResponse: (response) => dispatch(createResponse(response)),
+    clearErrors: () => dispatch(clearResponseErrors()),
   };
 };
 
