@@ -13,10 +13,14 @@ class StoryShow extends React.Component {
     });
   }
 
+  update(field) {
+    return (e) => this.setState({ [field]: e.currentTarget.value });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
 
-    this.state.story;
+    this.props.createResponse();
   }
 
   render() {
@@ -72,21 +76,28 @@ class StoryShow extends React.Component {
         </div>
         <div className="story-show-details-bottom-container">
           <div className="responses-container">
-            {responses.length > 0 ? (
-              responses.map((response) => {
-                const responseAuthor = this.props.users[response.authorId];
-                return (
-                  <>
-                    <div className="story-show-response">{response.body}</div>
-                    <div className="response-author">{responseAuthor.name}</div>
-                  </>
-                );
-              })
-            ) : (
-              <form className="response-form" onSubmit={this.handleSubmit}>
-                <div className="response-body"></div>
-              </form>
-            )}
+            {this.responses.map((response) => {
+              const responseAuthor = this.props.users[response.authorId];
+
+              responses.length > 0 ? (
+                <>
+                  <div className="story-show-response">{response.body}</div>
+                  <div className="response-author">{responseAuthor.name}</div>
+                </>
+              ) : null;
+            })}
+            <form className="response-form" onSubmit={this.handleSubmit}>
+              <div className="response-body">
+                <input
+                  type="text"
+                  placeholder="Write a response..."
+                  onChange={this.update("body")}
+                />
+              </div>
+              <button className="response-button" onClick={this.handleSubmit}>
+                Publish
+              </button>
+            </form>
           </div>
         </div>
       </>
