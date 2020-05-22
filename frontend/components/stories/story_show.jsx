@@ -4,12 +4,19 @@ class StoryShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { story: null };
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchStory(this.props.storyId).then(() => {
       this.setState({ story: this.props.story });
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+
+    this.state.story;
   }
 
   render() {
@@ -42,6 +49,7 @@ class StoryShow extends React.Component {
         className="story-show-img"
       />
     ) : null;
+    const responses = this.props.responses;
 
     return (
       <>
@@ -60,6 +68,25 @@ class StoryShow extends React.Component {
             </div>
             {imageUrl}
             <div className="story-show-body">{this.state.story.body}</div>
+          </div>
+        </div>
+        <div className="story-show-details-bottom-container">
+          <div className="responses-container">
+            {responses.length > 0 ? (
+              responses.map((response) => {
+                const responseAuthor = this.props.users[response.authorId];
+                return (
+                  <>
+                    <div className="story-show-response">{response.body}</div>
+                    <div className="response-author">{responseAuthor.name}</div>
+                  </>
+                );
+              })
+            ) : (
+              <form className="response-form" onSubmit={this.handleSubmit}>
+                <div className="response-body"></div>
+              </form>
+            )}
           </div>
         </div>
       </>
