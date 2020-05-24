@@ -1,7 +1,7 @@
 export function createResponse(response) {
   return $.ajax({
     method: `POST`,
-    url: `/api/responses`,
+    url: `/api/responses/response`,
     data: response,
   });
 }
