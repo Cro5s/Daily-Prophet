@@ -4,7 +4,7 @@ json.responseAuthor response.author.name
 json.responses do
   @story.responses.each do |response|
     json.set! response.id do
-      json.partial! "api/responses/response", response: response
+      json.partial! "api/responses/", response: response
     end
   end
 end
