@@ -23,7 +23,7 @@
 }
 
 .story-title {
-  font-weight: bolder;
+  // font-weight: bolder;
   font-size: 20px;
 }
 
@@ -32,8 +32,10 @@
 }
 
 .story-body {
-  display: flex;
-  flex-shrink: 1;
+  // display: flex;
+  // flex-shrink: 1;
+  letter-spacing: 0.01em;
+  line-height: 30px;
 }
 
 .story-details-container {

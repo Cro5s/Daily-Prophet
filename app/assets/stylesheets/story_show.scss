@@ -1,26 +1,61 @@
 .story-show-details-top-container {
-  border: 1px solid rgba(221, 221, 221, 0.87);
   box-shadow: 0 30px 40px rgba(0,0,0,.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  
+  // border: 1px solid blue;
 }
 
 .story-show-details-top {
-
+  // border: 1px solid orange;
 }
 
 .story-show-title {
+  font-size: 28px;
+  margin: 0% 25% 0% 25%;
 
+
+  // border: 1px solid red;
 }
 
 .story-show-author-details-container {
+  display: flex;
+  margin: .5% 25% 0% 25%;
+
+
+  // border: 1px solid green;
+}
+
+.show-author-details-container {
+  display: flex;
+}
+
+.story-show-user-icon-container {
 
 }
 
 .story-show-user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+}
 
+.show-user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
 }
 
 .story-show-author-name {
+  margin-top: 10px;
+}
 
+.show-user-date {
+  display: flex;
+  color: rgba(0, 0, 0, 0.54);
+  margin-top: 4px;
 }
 
 .story-show-month {
@@ -28,41 +63,72 @@
 }
 
 .story-show-day {
-
+  margin-left: 5px;
 }
 
-.story-show-details-bottom-container {
+.story-show-img {
+  margin: 3% 25% 3% 25%;
+  width: 50vw;
+}
 
+.story-show-body {
+  font-size: 20px;
+  letter-spacing: 0.01em;
+  line-height: 30px;
+  margin: 0% 25% 2% 25%;
+}
+
+.show-details-bottom-container {
+  background-color: white;
+}
+
+.story-show-details-bottom {
+  margin: 0% 25% 0% 25%;
+  
 }
 
 .responses-container {
-
+  
 }
 
 .responses-ul {
-
+  
 }
 
 .responses-li {
-
+  
 }
 
 .story-show-response {
-
+  
 }
 
 .response-author {
-
+  
 }
 
 .response-form {
-
+  
 }
 
 .response-body {
-
+  font-size: 20px;
+  height: 10vh;
+  width: 50vw;
+  border: 1px solid rgba(221, 221, 221, 0.87);
 }
 
 .response-button {
+  margin: 15px 0px 20px 0px;
+  color: rgba(3, 168, 124, 1);
+  padding: 5px 15px 5px 15px;
+  border-radius: 5px;
+  font-size: 18px;
+  border: 1px solid rgba(3, 168, 124, 1);
 
+}
+
+.response-button:hover {
+  color: rgba(0, 146, 107, 0.897);
+  border: 1px solid rgba(0, 146, 107, 0.897);
 }

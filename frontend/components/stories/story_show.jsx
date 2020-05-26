@@ -70,51 +70,63 @@ class StoryShow extends React.Component {
           <div className="story-show-details-top">
             <h1 className="story-show-title">{this.state.story.title}</h1>
             <div className="story-show-author-details-container">
-              <div className="story-show-user-icon">
-                <img src={window.UserIcon} alt="User Icon" />
+              <div className="show-author-details-container">
+                <div className="story-show-user-icon-container">
+                  <img
+                    src={window.UserIcon}
+                    alt="User Icon"
+                    className="story-show-user-icon"
+                  />
+                </div>
+                <div className="show-user-info">
+                  <div className="story-show-author-name">
+                    {this.props.currentUser.name}
+                  </div>
+                  <div className="show-user-date">
+                    <div className="story-show-month">{month}</div>
+                    <div className="story-show-day">{day}</div>
+                  </div>
+                </div>
               </div>
-              <div className="story-show-author-name">
-                {this.props.currentUser.name}
-              </div>
-              <div className="story-show-month">{month}</div>
-              <div className="story-show-day">{day}</div>
             </div>
             {imageUrl}
             <div className="story-show-body">{this.state.story.body}</div>
           </div>
         </div>
-        <div className="story-show-details-bottom-container">
-          <div className="responses-container">
-            {this.responses.length > 0
-              ? this.responses.map((response) => {
-                  const responseAuthor = this.props.users[response.authorId];
+        <div className="show-details-bottom-container">
+          <div className="story-show-details-bottom">
+            <div className="responses-container">
+              {this.responses.length > 0
+                ? this.responses.map((response) => {
+                    const responseAuthor = this.props.users[response.authorId];
 
-                  return (
-                    <ul className="responses-ul" id={response.id}>
-                      <li className="responses-li">
-                        <div className="story-show-response">
-                          {response.body}
-                        </div>
-                        <div className="response-author">
-                          {responseAuthor.name}
-                        </div>
-                      </li>
-                    </ul>
-                  );
-                })
-              : null}
-            <form className="response-form" onSubmit={this.handleSubmit}>
-              <div className="response-body">
-                <input
-                  type="text"
-                  placeholder="Write a response..."
-                  onChange={this.update("body")}
-                />
-              </div>
-              <button className="response-button" onClick={this.handleSubmit}>
-                Publish
-              </button>
-            </form>
+                    return (
+                      <ul className="responses-ul" id={response.id}>
+                        <li className="responses-li">
+                          <div className="story-show-response">
+                            {response.body}
+                          </div>
+                          <div className="response-author">
+                            {responseAuthor.name}
+                          </div>
+                        </li>
+                      </ul>
+                    );
+                  })
+                : null}
+              <form className="response-form" onSubmit={this.handleSubmit}>
+                <div className="response-body">
+                  <input
+                    type="text"
+                    placeholder="Write a response..."
+                    onChange={this.update("body")}
+                  />
+                </div>
+                <button className="response-button" onClick={this.handleSubmit}>
+                  Publish
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </>
