@@ -68,20 +68,20 @@ class StoryIndexItem extends React.Component {
               <h4 className="date-created">
                 Published on {month} {day}
               </h4>
-              <div className="dd-background">
-                <div className="dd-btn-container">
-                  <button
-                    className="dd-btn"
-                    onClick={
-                      this.state.dropDown
-                        ? this.closeDropDown
-                        : this.openDropDown
-                    }
-                  >
-                    <i className="fas fa-chevron-down"></i>
-                  </button>
-                </div>
-                <div className="dd-menu-container">
+              {this.state.dropDown ? (
+                <div
+                  className="story-dd-background"
+                  onClick={this.closeDropDown}
+                />
+              ) : null}
+              <div className="dd-btn-container">
+                <button className="dd-btn" onClick={this.openDropDown}>
+                  <i className="fas fa-chevron-down"></i>
+                </button>
+                <div
+                  className="dd-menu-container"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   {this.state.dropDown && (
                     <DropDown story={story} deleteStory={deleteStory} />
                   )}
