@@ -22,7 +22,7 @@
 
 .story-show-author-details-container {
   display: flex;
-  margin: .5% 25% 0% 25%;
+  margin: .5% 25% 1% 25%;
 
 
   // border: 1px solid green;
@@ -116,6 +116,11 @@
   height: 10vh;
   width: 50vw;
   border: 1px solid rgba(221, 221, 221, 0.87);
+}
+
+.response-body-input {
+  width: 50vw;
+  padding-bottom: 72px;
 }
 
 .response-button {

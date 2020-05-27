@@ -118,6 +118,7 @@ class StoryShow extends React.Component {
                 <div className="response-body">
                   <input
                     type="text"
+                    className="response-body-input"
                     placeholder="Write a response..."
                     onChange={this.update("body")}
                   />
