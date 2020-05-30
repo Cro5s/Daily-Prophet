@@ -1,12 +1,20 @@
-// import { connect } from "react-redux";
-// import FeedPage from "./feed";
+import { connect } from "react-redux";
+import { fetchUser } from "../../actions/user_actions";
+import { fetchStories } from "../../actions/story_actions";
+import Feed from "./feed";
 
-// const mapStateToProps = state => {
+const mapStateToProps = (state) => {
+  return {
+    users: Object.values(state.entities.users),
+    stories: Object.values(state.entities.stories),
+  };
+};
 
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchUser: (id) => dispatch(fetchUser(id)),
+    fetchStories: () => dispatch(fetchStories()),
+  };
+};
 
-// const mapDispatchToProps = dispatch => {
-
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(FeedPage);
+export default connect(mapStateToProps, mapDispatchToProps)(Feed);

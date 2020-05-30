@@ -1,6 +1,6 @@
 import React from "react";
 import NavBarContainer from "./nav_bar/nav_bar_container";
-import UserFeedContainer from "./users/user_feed_container";
+import FeedContainer from "./feed/feed_container";
 import SplashContainer from "./splash/splash_container";
 import StoryShowContainer from "./stories/story_show_container";
 import CreateStoryContainer from "./stories/create_story_container";
@@ -34,7 +34,7 @@ export default () => {
           path="/user/stories"
           component={UserStoryIndexContainer}
         />
-        <ProtectedRoute path="/feed" component={UserFeedContainer} />
+        <ProtectedRoute path="/feed" component={FeedContainer} />
         <AuthRoute path="/" component={SplashContainer} />
         <Redirect to="/" />
       </Switch>

@@ -50,6 +50,16 @@ class StoryIndexItem extends React.Component {
     const month = months[date.getMonth()];
     const day = date.getDate();
     const imageUrl = story.imageUrl ? story.imageUrl : null;
+    let words = story.body.split(" ");
+    let shortenedBody = [];
+    let i = 0;
+
+    while (shortenedBody.length <= 7) {
+      shortenedBody.push(words[i]);
+      i++;
+    }
+
+    const ellipseBody = shortenedBody.join(" ") + "...";
 
     return (
       <>
@@ -61,7 +71,7 @@ class StoryIndexItem extends React.Component {
               </div>
               <h3 className="story-title">{story.title}</h3>
               <div className="story-body-container">
-                <p className="story-body">{story.body}</p>
+                <p className="story-body">{ellipseBody}</p>
               </div>
             </Link>
             <div className="story-stats-container">
