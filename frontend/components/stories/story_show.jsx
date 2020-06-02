@@ -3,8 +3,7 @@ import React from "react";
 class StoryShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { story: null, response: null };
-    this.responses = this.props.responses;
+    this.state = { story: null, body: null };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -25,12 +24,13 @@ class StoryShow extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let response = this.state.response;
-    let story = this.state.story;
+    let data = {
+      body: this.state.body,
+      story_id: this.props.storyId,
+    };
 
-    this.props
-      .createResponse(response, story)
-      .then(() => this.props.history.push(`/stories/:storyId`));
+    this.props.createResponse(data);
+    this.state.body = null;
   }
 
   render() {
@@ -63,6 +63,9 @@ class StoryShow extends React.Component {
         className="story-show-img"
       />
     ) : null;
+    let responses = [];
+
+    if (this.props.responses) responses = this.props.responses;
 
     return (
       <>
@@ -80,7 +83,7 @@ class StoryShow extends React.Component {
                 </div>
                 <div className="show-user-info">
                   <div className="story-show-author-name">
-                    {this.props.currentUser.name}
+                    {this.props.story.storyAuthor}
                   </div>
                   <div className="show-user-date">
                     <div className="story-show-month">{month}</div>
@@ -96,24 +99,53 @@ class StoryShow extends React.Component {
         <div className="show-details-bottom-container">
           <div className="story-show-details-bottom">
             <div className="responses-container">
-              {this.responses.length > 0
-                ? this.responses.map((response) => {
-                    const responseAuthor = this.props.users[response.authorId];
+              <h1 className="responses-title">Responses</h1>
+              {responses.map((response, idx) => {
+                const responseAuthor = this.props.users[response.authorId];
 
-                    return (
-                      <ul className="responses-ul" id={response.id}>
-                        <li className="responses-li">
-                          <div className="story-show-response">
-                            {response.body}
+                return (
+                  <>
+                    <ul className="responses-ul" key={idx}>
+                      <li className="responses-li" key={response.id}>
+                        <div className="response-container">
+                          <div className="story-show-user-icon-container">
+                            <img
+                              src={window.UserIcon}
+                              alt="User Icon"
+                              className="story-show-user-icon"
+                            />
                           </div>
-                          <div className="response-author">
-                            {responseAuthor.name}
+                          <div className="response-details-container">
+                            <div className="response-author">
+                              {responseAuthor.name}
+                            </div>
+                            <div className="show-response-date">
+                              <div className="story-response-month">
+                                {month}
+                              </div>
+                              <div className="story-response-day">{day}</div>
+                            </div>
                           </div>
-                        </li>
-                      </ul>
-                    );
-                  })
-                : null}
+                        </div>
+                        <div className="story-show-response">
+                          {response.body}
+                        </div>
+                        {responseAuthor.id === this.props.currentUser.id ? (
+                          <button
+                            className="delete-response"
+                            onClick={() =>
+                              this.props.deleteResponse(response.id)
+                            }
+                          >
+                            Remove Response
+                          </button>
+                        ) : null}
+                      </li>
+                    </ul>
+                  </>
+                );
+              })}
+
               <form className="response-form" onSubmit={this.handleSubmit}>
                 <div className="response-body">
                   <input

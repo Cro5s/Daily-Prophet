@@ -32,66 +32,65 @@ class EditorsPick extends React.Component {
       11: "Dec",
     };
     const { stories, users } = this.props;
+    // const shuffledStories = this.shuffle(stories);
     const shuffledStories = stories.map((story) => {
       return story;
     });
     const topFive = [];
 
-    this.shuffle(shuffledStories);
+    for (let i = 0; topFive.length <= 5; i++) {
+      topFive.push(shuffledStories[i]);
+    }
 
-    while (topFive.length <= 5)
-      return (
-        <div className="feed-page-container">
-          <div className="story-container">
-            {stories.map((story) => {
-              // console.log("AuthorId:", story.authorId);
-              // console.log("Users[authorId]:", users[authorId]);
-              // let authorId = story.authorId;
-              // let name = users[authorId].name;
-              let date = new Date(story.createdAt);
-              let month = months[date.getMonth()];
-              let day = date.getDate();
-              let imageUrl = story.imageUrl ? story.imageUrl : null;
-              let words = story.body.split(" ");
-              let shortenedBody = [];
-              let i = 0;
+    return (
+      <div className="feed-page-container">
+        <div className="story-container">
+          {topFive.map((story) => {
+            let name = this.props.story.storyAuthor;
+            let date = new Date(story.createdAt);
+            let month = months[date.getMonth()];
+            let day = date.getDate();
+            let imageUrl = story.imageUrl ? story.imageUrl : null;
+            let words = story.body.split(" ");
+            let shortenedBody = [];
+            let i = 0;
 
-              while (shortenedBody.length <= 7) {
-                shortenedBody.push(words[i]);
-                i++;
-              }
+            while (shortenedBody.length <= 7) {
+              shortenedBody.push(words[i]);
+              i++;
+            }
 
-              const ellipseBody = shortenedBody.join(" ") + "...";
+            const ellipseBody = shortenedBody.join(" ") + "...";
 
-              return (
-                <ul className="story-list-container" key={story.id}>
-                  <li className="story">
-                    <Link to={`/stories/${story.id}`}>
-                      <div className="story-title-container">
-                        <h1 className="story-title">{story.title}</h1>
-                        <div className="story-body-container">
-                          <p className="story-body">{ellipseBody}</p>
-                        </div>
-                        <div className="story-details-container">
-                          <div className="story-author">{name}</div>
-                          <div className="story-date-container">
-                            <div className="story-date">
-                              {month} {day}
-                            </div>
+            return (
+              <ul className="story-list-container" key={story.id}>
+                <li className="story">
+                  <Link to={`/stories/${story.id}`}>
+                    <div className="story-title-container">
+                      <h1 className="story-title">{story.title}</h1>
+                      <div className="story-body-container">
+                        <p className="story-body">{ellipseBody}</p>
+                      </div>
+                      <div className="story-details-container">
+                        <div className="story-author">{name}</div>
+                        <div className="story-date-container">
+                          <div className="story-date">
+                            {month} {day}
                           </div>
                         </div>
                       </div>
-                    </Link>
-                    <div className="story-image-container">
-                      <img className="story-image" src={imageUrl} />
                     </div>
-                  </li>
-                </ul>
-              );
-            })}
-          </div>
+                  </Link>
+                  <div className="story-image-container">
+                    <img className="story-image" src={imageUrl} />
+                  </div>
+                </li>
+              </ul>
+            );
+          })}
         </div>
-      );
+      </div>
+    );
   }
 }
 

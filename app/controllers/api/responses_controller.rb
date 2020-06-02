@@ -1,7 +1,7 @@
 class Api::ResponsesController < ApplicationController
   def create
     @response = Response.new(response_params)
-
+    
     @response.author_id = current_user.id
 
     if @response.save
@@ -21,6 +21,6 @@ class Api::ResponsesController < ApplicationController
 
   private
   def response_params
-    params.require(:response).permit(:body)
+    params.require(:response).permit(:body, :story_id)
   end
 end

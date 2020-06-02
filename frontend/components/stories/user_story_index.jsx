@@ -20,7 +20,6 @@ class UserStoryIndex extends React.Component {
 
     return (
       <>
-        {/* <div className="transparent-modal" onClick={this.props.closeDropDown} /> */}
         <div className="stories-page-container">
           <div className="stories-header-container">
             <div className="h1-container">
