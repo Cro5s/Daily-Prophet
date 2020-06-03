@@ -7,7 +7,7 @@ export default function (state = {}, action) {
 
   switch (action.type) {
     case RECEIVE_RESPONSE:
-      let newState = Object.assign({}, state, action.response);
+      newState = Object.assign({}, state, action.response);
       return newState;
     case RECEIVE_STORY:
       if (!action.responses) action.responses = {};

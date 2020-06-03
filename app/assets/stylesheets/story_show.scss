@@ -109,20 +109,29 @@
 
 .story-show-response {
   font-size: 20px;
-  margin-left: 10px;
+  margin: 15px;
 }
 
 .delete-response {
-  
+  color: rgba(0, 0, 0, 0.54);
+  margin: 5px 10px 0px 0px;
+}
+
+.delete-response:hover {
+  color: black;
 }
 
 .response-details-container {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   margin-left: 10px;
+  width: 100%;
 }
 
 .response-author {
+  display: flex;
+  justify-content: space-between;
   font-size: 16px;
   color: rgba(0, 146, 107, 0.897);
 }
@@ -139,6 +148,7 @@
 }
 
 .story-response-date {
+
 }
 
 .story-response-month {

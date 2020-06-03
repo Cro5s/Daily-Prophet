@@ -29,8 +29,7 @@ class StoryShow extends React.Component {
       story_id: this.props.storyId,
     };
 
-    this.props.createResponse(data);
-    this.state.body = null;
+    this.props.createResponse(data).then(() => this.setState({ body: "" }));
   }
 
   render() {
@@ -118,6 +117,17 @@ class StoryShow extends React.Component {
                           <div className="response-details-container">
                             <div className="response-author">
                               {responseAuthor.name}
+                              {responseAuthor.id ===
+                              this.props.currentUser.id ? (
+                                <button
+                                  className="delete-response"
+                                  onClick={() =>
+                                    this.props.deleteResponse(response.id)
+                                  }
+                                >
+                                  <i className="fas fa-times"></i>
+                                </button>
+                              ) : null}
                             </div>
                             <div className="show-response-date">
                               <div className="story-response-month">
@@ -130,16 +140,6 @@ class StoryShow extends React.Component {
                         <div className="story-show-response">
                           {response.body}
                         </div>
-                        {responseAuthor.id === this.props.currentUser.id ? (
-                          <button
-                            className="delete-response"
-                            onClick={() =>
-                              this.props.deleteResponse(response.id)
-                            }
-                          >
-                            Remove Response
-                          </button>
-                        ) : null}
                       </li>
                     </ul>
                   </>

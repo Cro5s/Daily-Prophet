@@ -36,6 +36,7 @@ class EditorsPick extends React.Component {
     const shuffledStories = stories.map((story) => {
       return story;
     });
+    console.log("shuffledStories:", shuffledStories);
     const topFive = [];
 
     for (let i = 0; topFive.length <= 5; i++) {
@@ -46,7 +47,7 @@ class EditorsPick extends React.Component {
       <div className="feed-page-container">
         <div className="story-container">
           {topFive.map((story) => {
-            let name = this.props.story.storyAuthor;
+            let name = story.storyAuthor;
             let date = new Date(story.createdAt);
             let month = months[date.getMonth()];
             let day = date.getDate();
