@@ -3,7 +3,7 @@ import React from "react";
 class StoryShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { story: null, body: null };
+    this.state = { story: null, body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -99,52 +99,43 @@ class StoryShow extends React.Component {
           <div className="story-show-details-bottom">
             <div className="responses-container">
               <h1 className="responses-title">Responses</h1>
-              {responses.map((response, idx) => {
-                const responseAuthor = this.props.users[response.authorId];
-
-                return (
-                  <>
-                    <ul className="responses-ul" key={idx}>
-                      <li className="responses-li" key={response.id}>
-                        <div className="response-container">
-                          <div className="story-show-user-icon-container">
-                            <img
-                              src={window.UserIcon}
-                              alt="User Icon"
-                              className="story-show-user-icon"
-                            />
+              <ul className="responses-ul">
+                {responses.map((response) => {
+                  return (
+                    <li className="responses-li" key={response.id}>
+                      <div className="response-container">
+                        <div className="story-show-user-icon-container">
+                          <img
+                            src={window.UserIcon}
+                            alt="User Icon"
+                            className="story-show-user-icon"
+                          />
+                        </div>
+                        <div className="response-details-container">
+                          <div className="response-author">
+                            {response.responseAuthor}
+                            {response.authorId === this.props.currentUser.id ? (
+                              <button
+                                className="delete-response"
+                                onClick={() =>
+                                  this.props.deleteResponse(response.id)
+                                }
+                              >
+                                <i className="fas fa-times"></i>
+                              </button>
+                            ) : null}
                           </div>
-                          <div className="response-details-container">
-                            <div className="response-author">
-                              {responseAuthor.name}
-                              {responseAuthor.id ===
-                              this.props.currentUser.id ? (
-                                <button
-                                  className="delete-response"
-                                  onClick={() =>
-                                    this.props.deleteResponse(response.id)
-                                  }
-                                >
-                                  <i className="fas fa-times"></i>
-                                </button>
-                              ) : null}
-                            </div>
-                            <div className="show-response-date">
-                              <div className="story-response-month">
-                                {month}
-                              </div>
-                              <div className="story-response-day">{day}</div>
-                            </div>
+                          <div className="show-response-date">
+                            <div className="story-response-month">{month}</div>
+                            <div className="story-response-day">{day}</div>
                           </div>
                         </div>
-                        <div className="story-show-response">
-                          {response.body}
-                        </div>
-                      </li>
-                    </ul>
-                  </>
-                );
-              })}
+                      </div>
+                      <div className="story-show-response">{response.body}</div>
+                    </li>
+                  );
+                })}
+              </ul>
 
               <form className="response-form" onSubmit={this.handleSubmit}>
                 <div className="response-body">
@@ -152,6 +143,7 @@ class StoryShow extends React.Component {
                     type="text"
                     className="response-body-input"
                     placeholder="Write a response..."
+                    value={this.state.body}
                     onChange={this.update("body")}
                   />
                 </div>

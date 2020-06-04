@@ -1,9 +1,35 @@
-.feed-page-container {
+.divider-top {
+  border: 1px solid rgba(0, 0, 0, 0.54);
+}
+
+.divider-right {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.editors-container {
   display: flex;
   flex-direction: row;
 }
 
-.story-container {
+.editors-story-container {
+  margin: 20px 300px 0px 100px;
+}
+
+.popular-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.popular-story-container {
+  margin: 20px 300px 0px 100px;
+}
+
+.stories-feed-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.stories-story-container {
   margin: 20px 300px 0px 100px;
 }
 
@@ -42,10 +68,24 @@
   color: rgba(0, 0, 0, 0.54);
 }
 
+.story-author {
+  color: rgba(37, 37, 37, 0.54);
+
+}
+
 .story-date-container {
   margin-top: 10px;
 }
 
 .story-image {
   padding: 100px;
+}
+
+.editors-title {
+  color: rgba(0, 146, 107, 0.897);
+}
+
+.popular-title {
+  color: rgba(0, 146, 107, 0.897);
+
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import EditorsPick from "./editors_pick";
 import Stories from "./stories";
 import Popular from "./popular";
@@ -12,18 +11,6 @@ class Feed extends React.Component {
   componentDidMount() {
     this.props.fetchStories();
   }
-
-  // render() {
-  //   const { stories, users } = this.props;
-
-  //   return (
-  //     <>
-  //       <EditorsPick stories={stories} />
-  //       <Stories stories={stories} />
-  //       <Popular stories={stories} />
-  //     </>
-  //   );
-  // }
 
   render() {
     const months = {
@@ -40,59 +27,18 @@ class Feed extends React.Component {
       10: "Nov",
       11: "Dec",
     };
-    const { stories, users } = this.props;
+    const { stories } = this.props;
+
+    if (stories.length === 0) return null;
 
     return (
-      <div className="feed-page-container">
-        <div className="story-container">
-          {stories.map((story) => {
-            // console.log("AuthorId:", story.authorId);
-            // console.log("Users[authorId]:", users[authorId]);
-            // let authorId = story.authorId;
-            // let name = users[authorId].name;
-            let date = new Date(story.createdAt);
-            let month = months[date.getMonth()];
-            let day = date.getDate();
-            let imageUrl = story.imageUrl ? story.imageUrl : null;
-            let words = story.body.split(" ");
-            let shortenedBody = [];
-            let i = 0;
-
-            while (shortenedBody.length <= 7) {
-              shortenedBody.push(words[i]);
-              i++;
-            }
-
-            const ellipseBody = shortenedBody.join(" ") + "...";
-
-            return (
-              <ul className="story-list-container" key={story.id}>
-                <li className="story">
-                  <Link to={`/stories/${story.id}`}>
-                    <div className="story-title-container">
-                      <h1 className="story-title">{story.title}</h1>
-                      <div className="story-body-container">
-                        <p className="story-body">{ellipseBody}</p>
-                      </div>
-                      <div className="story-details-container">
-                        <div className="story-author">{name}</div>
-                        <div className="story-date-container">
-                          <div className="story-date">
-                            {month} {day}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                  <div className="story-image-container">
-                    <img className="story-image" src={imageUrl} />
-                  </div>
-                </li>
-              </ul>
-            );
-          })}
-        </div>
-      </div>
+      <>
+        <EditorsPick stories={stories} months={months} />
+        {/* <div className="divider-top">-</div> */}
+        <Stories stories={stories} months={months} />
+        {/* <div className="divider-right">|</div> */}
+        <Popular stories={stories} months={months} />
+      </>
     );
   }
 }

@@ -5,7 +5,6 @@ import Feed from "./feed";
 
 const mapStateToProps = (state) => {
   return {
-    users: Object.values(state.entities.users),
     stories: Object.values(state.entities.stories),
   };
 };

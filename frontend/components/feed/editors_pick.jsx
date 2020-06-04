@@ -5,90 +5,137 @@ class EditorsPick extends React.Component {
   constructor(props) {
     super(props);
     this.shuffle = this.shuffle.bind(this);
+    this.ellipse = this.ellipse.bind(this);
+    this.month = this.month.bind(this);
+    this.day = this.day.bind(this);
+    this.image = this.image.bind(this);
   }
 
   shuffle(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
+    let newArr = [];
+
+    while (newArr.length < 5) {
+      const i = Math.floor(Math.random() * arr.length);
+
+      if (!newArr.includes(arr[i])) newArr.push(arr[i]);
     }
 
-    return arr;
+    return newArr;
+  }
+
+  ellipse(story) {
+    let words = story.body.split(" ");
+    let shortenedBody = [];
+    let i = 0;
+
+    while (shortenedBody.length <= 7) {
+      shortenedBody.push(words[i]);
+      i++;
+    }
+
+    return shortenedBody.join(" ") + "...";
+  }
+
+  day(story) {
+    let date = new Date(story.createdAt);
+    return date.getDate();
+  }
+
+  month(months, story) {
+    let date = new Date(story.createdAt);
+    return months[date.getMonth()];
+  }
+
+  image(story) {
+    return story.imageUrl ? story.imageUrl : null;
   }
 
   render() {
-    const months = {
-      0: "Jan",
-      1: "Feb",
-      2: "Mar",
-      3: "Apr",
-      4: "May",
-      5: "Jun",
-      6: "Jul",
-      7: "Aug",
-      8: "Sep",
-      9: "Oct",
-      10: "Nov",
-      11: "Dec",
-    };
-    const { stories, users } = this.props;
-    const storiesArr = Object.values(stories);
-    console.log("storiesArr:", storiesArr);
-    const shuffledStories = this.shuffle(storiesArr);
-    console.log("shuffledStories:", shuffledStories);
-    const topFive = [];
+    const { stories, months } = this.props;
+    const topFive = this.shuffle(stories);
+    const first = topFive[0];
+    const middle = [];
+    const last = topFive[4];
 
-    for (let i = 0; topFive.length <= 5; i++) {
-      topFive.push(shuffledStories[i]);
+    for (let i = 1; i < 4; i++) {
+      middle.push(topFive[i]);
     }
 
     return (
-      <div className="feed-page-container">
-        <div className="story-container">
-          {topFive.map((story) => {
-            let name = story.storyAuthor;
-            let date = new Date(story.createdAt);
-            let month = months[date.getMonth()];
-            let day = date.getDate();
-            let imageUrl = story.imageUrl ? story.imageUrl : null;
-            let words = story.body.split(" ");
-            let shortenedBody = [];
-            let i = 0;
-
-            while (shortenedBody.length <= 7) {
-              shortenedBody.push(words[i]);
-              i++;
-            }
-
-            const ellipseBody = shortenedBody.join(" ") + "...";
-
-            return (
-              <ul className="story-list-container" key={story.id}>
-                <li className="story">
+      <div className="editors-container">
+        <div className="editors-story-container">
+          <ul className="story-list-container">
+            <li className="story" key={first.id}>
+              <Link to={`/stories/${first.id}`}>
+                <div className="story-title-container">
+                  <h1 className="story-title">{first.title}</h1>
+                  <div className="story-body-container">
+                    <p className="story-body">{this.ellipse(first)}</p>
+                  </div>
+                  <div className="story-details-container">
+                    <div className="story-author">{first.storyAuthor}</div>
+                    <div className="story-date-container">
+                      <div className="story-date">
+                        {this.month(months, first)} {this.day(first)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className="story-image-container">
+                <img className="story-image" src={this.image(first)} />
+              </div>
+            </li>
+            {middle.map((story) => {
+              return (
+                <li className="story" key={story.id}>
                   <Link to={`/stories/${story.id}`}>
                     <div className="story-title-container">
                       <h1 className="story-title">{story.title}</h1>
                       <div className="story-body-container">
-                        <p className="story-body">{ellipseBody}</p>
+                        <p className="story-body">{this.ellipse(story)}</p>
                       </div>
                       <div className="story-details-container">
-                        <div className="story-author">{name}</div>
+                        <div className="story-author">{story.storyAuthor}</div>
                         <div className="story-date-container">
                           <div className="story-date">
-                            {month} {day}
+                            {this.month(months, story)} {this.day(story)}
                           </div>
                         </div>
                       </div>
                     </div>
                   </Link>
                   <div className="story-image-container">
-                    <img className="story-image" src={imageUrl} />
+                    <img className="story-image" src={this.image(story)} />
                   </div>
                 </li>
-              </ul>
-            );
-          })}
+              );
+            })}
+            <li className="story" key={last.id}>
+              <Link to={`/stories/${last.id}`}>
+                <div className="story-title-container">
+                  <h1 className="story-title">{last.title}</h1>
+                  <div className="story-body-container">
+                    <p className="story-body">{this.ellipse(last)}</p>
+                  </div>
+                  <div className="story-details-container">
+                    <div className="story-author">{last.storyAuthor}</div>
+                    <div className="story-date-container">
+                      <div className="story-date">
+                        {this.month(months, last)} {this.day(last)}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Link>
+              <div className="story-image-container">
+                <img className="story-image" src={this.image(last)} />
+              </div>
+            </li>
+          </ul>
         </div>
+        <p className="editors-title">Daily's Picks</p>
+        <div className="divider-top" />
       </div>
     );
   }
