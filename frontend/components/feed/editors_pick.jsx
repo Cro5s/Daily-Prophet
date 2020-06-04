@@ -32,15 +32,11 @@ class EditorsPick extends React.Component {
       11: "Dec",
     };
     const { stories, users } = this.props;
-    // const shuffledStories = this.shuffle(stories);
-    const shuffledStories = [];
-    const topFive = [];
-
-    stories.map((story) => {
-      return story;
-    });
-
+    const storiesArr = Object.values(stories);
+    console.log("storiesArr:", storiesArr);
+    const shuffledStories = this.shuffle(storiesArr);
     console.log("shuffledStories:", shuffledStories);
+    const topFive = [];
 
     for (let i = 0; topFive.length <= 5; i++) {
       topFive.push(shuffledStories[i]);
