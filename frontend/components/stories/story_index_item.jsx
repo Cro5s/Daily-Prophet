@@ -71,7 +71,7 @@ class StoryIndexItem extends React.Component {
               </div>
               <h3 className="story-title">{story.title}</h3>
               <div className="story-body-container">
-                <p className="story-body">{ellipseBody}</p>
+                <p className="story-item-body">{ellipseBody}</p>
               </div>
             </Link>
             <div className="story-stats-container">

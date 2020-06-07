@@ -1,18 +1,25 @@
 .divider-top {
-  border: 1px solid rgba(0, 0, 0, 0.54);
+  border: .05px solid rgba(95, 95, 95, 0.54);
+  width: 80%;
+  display: flex;
+  align-self: center;
 }
 
 .divider-right {
-  color: rgba(0, 0, 0, 0.54);
+  border: .05px solid rgba(95, 95, 95, 0.54);
+  // color: rgba(95, 95, 95, 0.54);
 }
 
 .editors-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .editors-story-container {
-  margin: 20px 300px 0px 100px;
+  margin: 20px 50px 0px 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .popular-container {
@@ -33,35 +40,69 @@
   margin: 20px 300px 0px 100px;
 }
 
-.story-list-container {
+.editors-story-list-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  // flex-direction: column;
+  // flex-wrap: wrap;
 }
 
-.story {
+.mid-stories-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+}
+
+.mid-story-container {
+  display: flex;
+}
+
+.first-story {
+  margin-right: 20px;
+  
+  border: 1px solid red;
+}
+
+.mid-story {
+  display: flex;
+  margin-right: 20px;
+
+  border: 1px solid blue;
+}
+
+.last-story {
+  
+  border: 1px solid red;
 }
 
 .story-title-container {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mid-story-title-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .story-title {
-  // font-weight: bolder;
   font-size: 20px;
 }
 
-.story-body-container {
+.editors-story-body-container {
   margin: 10px 0px 10px 0px;
 }
 
 .story-body {
-  // display: flex;
-  // flex-shrink: 1;
   letter-spacing: 0.01em;
   line-height: 30px;
+  font-size: 18px;
+}
+
+.editors-story-body {
+  display: flex;
+  align-self: center;
+  letter-spacing: 0.01em;
+  font-size: 18px;
 }
 
 .story-details-container {
@@ -77,15 +118,59 @@
   margin-top: 10px;
 }
 
-.story-image {
-  padding: 100px;
+.first-story-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.first-story-image {
+  width: 20vw;
+  max-height: 40vh;
+  
+  border: 1px solid green;
+}
+
+.mid-story-image-container {
+
+}
+
+.mid-story-image {
+  width: 10vw;
+  max-height: 40vh;
+  
+  border: 1px solid green;
+}
+
+.last-story-image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.last-story-image {
+  width: 20vw;
+  max-height: 40vh;
+  
+  border: 1px solid green;
 }
 
 .editors-title {
   color: rgba(0, 146, 107, 0.897);
+  display: flex;
+  align-self: flex-end;
+  margin-right: 12%;
+  margin-top: 20px;
 }
 
 .popular-title {
   color: rgba(0, 146, 107, 0.897);
+
+}
+
+.editors-feed {
+
+}
+
+.bottom-feed {
+  display: flex;
 
 }

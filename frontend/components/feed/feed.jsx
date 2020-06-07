@@ -33,11 +33,13 @@ class Feed extends React.Component {
 
     return (
       <>
-        <EditorsPick stories={stories} months={months} />
-        {/* <div className="divider-top">-</div> */}
-        <Stories stories={stories} months={months} />
-        {/* <div className="divider-right">|</div> */}
-        <Popular stories={stories} months={months} />
+        <div className="editors-feed">
+          <EditorsPick stories={stories} months={months} />
+        </div>
+        <div className="bottom-feed">
+          <Stories stories={stories} months={months} />
+          <Popular stories={stories} months={months} />
+        </div>
       </>
     );
   }

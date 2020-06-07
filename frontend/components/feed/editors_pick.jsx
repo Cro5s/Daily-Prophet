@@ -64,13 +64,16 @@ class EditorsPick extends React.Component {
     return (
       <div className="editors-container">
         <div className="editors-story-container">
-          <ul className="story-list-container">
-            <li className="story" key={first.id}>
+          <ul className="editors-story-list-container">
+            <li className="first-story" key={first.id}>
               <Link to={`/stories/${first.id}`}>
+                <div className="first-story-image-container">
+                  <img className="first-story-image" src={this.image(first)} />
+                </div>
                 <div className="story-title-container">
                   <h1 className="story-title">{first.title}</h1>
-                  <div className="story-body-container">
-                    <p className="story-body">{this.ellipse(first)}</p>
+                  <div className="editors-story-body-container">
+                    <p className="editors-story-body">{this.ellipse(first)}</p>
                   </div>
                   <div className="story-details-container">
                     <div className="story-author">{first.storyAuthor}</div>
@@ -82,41 +85,52 @@ class EditorsPick extends React.Component {
                   </div>
                 </div>
               </Link>
-              <div className="story-image-container">
-                <img className="story-image" src={this.image(first)} />
-              </div>
             </li>
-            {middle.map((story) => {
-              return (
-                <li className="story" key={story.id}>
-                  <Link to={`/stories/${story.id}`}>
-                    <div className="story-title-container">
-                      <h1 className="story-title">{story.title}</h1>
-                      <div className="story-body-container">
-                        <p className="story-body">{this.ellipse(story)}</p>
-                      </div>
-                      <div className="story-details-container">
-                        <div className="story-author">{story.storyAuthor}</div>
-                        <div className="story-date-container">
-                          <div className="story-date">
-                            {this.month(months, story)} {this.day(story)}
+            <div className="mid-stories-container">
+              {middle.map((story) => {
+                return (
+                  <li className="mid-story" key={story.id}>
+                    <Link to={`/stories/${story.id}`}>
+                      <div className="mid-story-container">
+                        <div className="mid-story-image-container">
+                          <img
+                            className="mid-story-image"
+                            src={this.image(story)}
+                          />
+                        </div>
+                        <div className="mid-story-title-container">
+                          <h1 className="story-title">{story.title}</h1>
+                          <div className="editors-story-body-container">
+                            <p className="editors-story-body">
+                              {this.ellipse(story)}
+                            </p>
+                          </div>
+                          <div className="story-details-container">
+                            <div className="story-author">
+                              {story.storyAuthor}
+                            </div>
+                            <div className="story-date-container">
+                              <div className="story-date">
+                                {this.month(months, story)} {this.day(story)}
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
-                  <div className="story-image-container">
-                    <img className="story-image" src={this.image(story)} />
-                  </div>
-                </li>
-              );
-            })}
-            <li className="story" key={last.id}>
+                    </Link>
+                  </li>
+                );
+              })}
+            </div>
+            <li className="last-story" key={last.id}>
               <Link to={`/stories/${last.id}`}>
+                <div className="last-story-image-container">
+                  <img className="last-story-image" src={this.image(last)} />
+                </div>
                 <div className="story-title-container">
                   <h1 className="story-title">{last.title}</h1>
-                  <div className="story-body-container">
-                    <p className="story-body">{this.ellipse(last)}</p>
+                  <div className="editors-story-body-container">
+                    <p className="editors-story-body">{this.ellipse(last)}</p>
                   </div>
                   <div className="story-details-container">
                     <div className="story-author">{last.storyAuthor}</div>
@@ -128,13 +142,10 @@ class EditorsPick extends React.Component {
                   </div>
                 </div>
               </Link>
-              <div className="story-image-container">
-                <img className="story-image" src={this.image(last)} />
-              </div>
             </li>
           </ul>
         </div>
-        <p className="editors-title">Daily's Picks</p>
+        <p className="editors-title">Daily Prophet's Picks</p>
         <div className="divider-top" />
       </div>
     );
