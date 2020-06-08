@@ -47,24 +47,26 @@ class Stories extends React.Component {
               return (
                 <li className="story" key={story.id}>
                   <Link to={`/stories/${story.id}`}>
-                    <div className="story-title-container">
-                      <h1 className="story-title">{story.title}</h1>
-                      <div className="story-body-container">
-                        <p className="story-body">{ellipseBody}</p>
-                      </div>
-                      <div className="story-details-container">
-                        <div className="story-author">{name}</div>
-                        <div className="story-date-container">
-                          <div className="story-date">
-                            {month} {day}
+                    <div className="stories-container">
+                      <div className="story-title-container">
+                        <h1 className="stories-story-title">{story.title}</h1>
+                        <div className="stories-body-container">
+                          <p className="story-body">{ellipseBody}</p>
+                        </div>
+                        <div className="story-details-container">
+                          <div className="story-author">{name}</div>
+                          <div className="story-date-container">
+                            <div className="story-date">
+                              {month} {day}
+                            </div>
                           </div>
                         </div>
                       </div>
+                      <div className="stories-image-container">
+                        <img className="stories-image" src={imageUrl} />
+                      </div>
                     </div>
                   </Link>
-                  <div className="story-image-container">
-                    <img className="story-image" src={imageUrl} />
-                  </div>
                 </li>
               );
             })}

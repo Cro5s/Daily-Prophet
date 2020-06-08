@@ -71,7 +71,7 @@ class EditorsPick extends React.Component {
                   <img className="first-story-image" src={this.image(first)} />
                 </div>
                 <div className="story-title-container">
-                  <h1 className="story-title">{first.title}</h1>
+                  <h1 className="editors-story-title">{first.title}</h1>
                   <div className="editors-story-body-container">
                     <p className="editors-story-body">{this.ellipse(first)}</p>
                   </div>
@@ -99,7 +99,7 @@ class EditorsPick extends React.Component {
                           />
                         </div>
                         <div className="mid-story-title-container">
-                          <h1 className="story-title">{story.title}</h1>
+                          <h1 className="editors-story-title">{story.title}</h1>
                           <div className="editors-story-body-container">
                             <p className="editors-story-body">
                               {this.ellipse(story)}
@@ -128,7 +128,7 @@ class EditorsPick extends React.Component {
                   <img className="last-story-image" src={this.image(last)} />
                 </div>
                 <div className="story-title-container">
-                  <h1 className="story-title">{last.title}</h1>
+                  <h1 className="editors-story-title">{last.title}</h1>
                   <div className="editors-story-body-container">
                     <p className="editors-story-body">{this.ellipse(last)}</p>
                   </div>

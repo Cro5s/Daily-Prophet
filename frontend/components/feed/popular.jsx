@@ -22,6 +22,7 @@ class Popular extends React.Component {
   render() {
     const { stories, months } = this.props;
     const popularStories = this.shuffle(stories);
+    const nums = { 0: "01", 1: "02", 2: "03", 3: "04" };
 
     return (
       <div className="popular-stories">
@@ -30,41 +31,31 @@ class Popular extends React.Component {
         <div className="popular-container">
           <div className="popular-story-container">
             <ul className="story-list-container">
-              {popularStories.map((story) => {
+              {popularStories.map((story, idx) => {
                 let name = story.storyAuthor;
                 let date = new Date(story.createdAt);
                 let month = months[date.getMonth()];
                 let day = date.getDate();
-                let words = story.body.split(" ");
-                let shortenedBody = [];
-                let i = 0;
-
-                while (shortenedBody.length <= 7) {
-                  shortenedBody.push(words[i]);
-                  i++;
-                }
-
-                const ellipseBody = shortenedBody.join(" ") + "...";
 
                 return (
-                  <li className="story" key={story.id}>
-                    <Link to={`/stories/${story.id}`}>
-                      <div className="story-title-container">
-                        <h1 className="story-title">{story.title}</h1>
-                        <div className="story-body-container">
-                          <p className="story-body">{ellipseBody}</p>
-                        </div>
-                        <div className="story-details-container">
-                          <div className="story-author">{name}</div>
-                          <div className="story-date-container">
-                            <div className="story-date">
-                              {month} {day}
+                  <div className="popular-story-container" key={story.id}>
+                    <div className="popular-story-num">{nums[idx]}</div>
+                    <li className="popular-story">
+                      <Link to={`/stories/${story.id}`}>
+                        <div className="popular-story-title-container">
+                          <h1 className="popular-story-title">{story.title}</h1>
+                          <div className="popular-story-details-container">
+                            <div className="popular-story-author">{name}</div>
+                            <div className="popular-story-date-container">
+                              <div className="popular-story-date">
+                                {month} {day}
+                              </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </Link>
-                  </li>
+                      </Link>
+                    </li>
+                  </div>
                 );
               })}
             </ul>

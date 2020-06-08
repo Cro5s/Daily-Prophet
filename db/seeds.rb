@@ -620,7 +620,7 @@ ActiveRecord::Base.transaction do
   story14.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/brooms.png"), filename: "brooms.png")
   story14.save!
 
-  story15 = Story.new(title: "The Most Recognisable Spells and Charms", body: "Accio: Also known as the summoning charm, Accio summons any object to the user within a certain distance. In the Goblet of Fire Harry uses Accio to summon his broomstick during the first Triwizard Challenge.
+  story15 = Story.new(title: "The Most Recognizable Spells and Charms", body: "Accio: Also known as the summoning charm, Accio summons any object to the user within a certain distance. In the Goblet of Fire Harry uses Accio to summon his broomstick during the first Triwizard Challenge.
   
   Alohomora: Also known as the unlocking charm, Alohomora enables its user to open any lock. The charm is first used in the Philosopher's Stone and after this regularly makes an appearance in the later books.
   
