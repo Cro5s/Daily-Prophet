@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 class Stories extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { stories: [] };
     this.shuffle = this.shuffle.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ stories: this.shuffle(this.props.stories) });
   }
 
   shuffle(arr) {
@@ -20,8 +25,8 @@ class Stories extends React.Component {
   }
 
   render() {
-    const { stories, months } = this.props;
-    const shuffledStories = this.shuffle(stories);
+    const { months } = this.props;
+    const shuffledStories = this.state.stories;
 
     return (
       <div className="stories-feed-container">

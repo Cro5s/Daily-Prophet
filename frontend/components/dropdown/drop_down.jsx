@@ -68,13 +68,24 @@ function DropDown({ dropDown, closeDropDown, currentUser, logout }) {
               </li>
               <div className="dd-divider"></div>
               <li className="dd-profile-page">
-                <Link
-                  to={`/api/users/profile`}
+                <a
+                  href="https://github.com/Cro5s/Daily-Prophet"
+                  target="_blank"
                   className="nav-bar-profile"
                   onClick={closeDropDown}
                 >
-                  Profile
-                </Link>
+                  GitHub
+                </a>
+              </li>
+              <li className="dd-profile-page">
+                <a
+                  href="https://www.linkedin.com/in/kadeem-jackson-4349348a/"
+                  target="_blank"
+                  className="nav-bar-profile"
+                  onClick={closeDropDown}
+                >
+                  LinkedIn
+                </a>
               </li>
               <li className="dd-logout">
                 <Link

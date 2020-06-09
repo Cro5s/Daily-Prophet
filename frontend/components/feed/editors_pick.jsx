@@ -4,11 +4,16 @@ import { Link } from "react-router-dom";
 class EditorsPick extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { stories: [] };
     this.shuffle = this.shuffle.bind(this);
     this.ellipse = this.ellipse.bind(this);
     this.month = this.month.bind(this);
     this.day = this.day.bind(this);
     this.image = this.image.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ stories: this.shuffle(this.props.stories) });
   }
 
   shuffle(arr) {
@@ -51,8 +56,11 @@ class EditorsPick extends React.Component {
   }
 
   render() {
-    const { stories, months } = this.props;
-    const topFive = this.shuffle(stories);
+    const { months } = this.props;
+    const topFive = this.state.stories;
+
+    if (!topFive.length) return null;
+
     const first = topFive[0];
     const middle = [];
     const last = topFive[4];

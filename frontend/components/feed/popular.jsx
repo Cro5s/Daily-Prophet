@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 class Popular extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { stories: [] };
     this.shuffle = this.shuffle.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({ stories: this.shuffle(this.props.stories) });
   }
 
   shuffle(arr) {
@@ -20,8 +25,8 @@ class Popular extends React.Component {
   }
 
   render() {
-    const { stories, months } = this.props;
-    const popularStories = this.shuffle(stories);
+    const { months } = this.props;
+    const popularStories = this.state.stories;
     const nums = { 0: "01", 1: "02", 2: "03", 3: "04" };
 
     return (
