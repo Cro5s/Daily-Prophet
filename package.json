@@ -8,7 +8,7 @@
     "acorn": "^8.0.1",
     "babel-loader": "^8.1.0",
     "bootstrap": "^4.5.2",
-    "minimist": ">=1.2.2",
+    "minimist": ">=1.2.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
