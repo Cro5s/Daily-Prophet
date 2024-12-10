@@ -2,13 +2,14 @@
 #
 # Table name: responses
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
 #  body       :string           not null
+#  author_id  :integer          not null
+#  story_id   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :bigint           not null
-#  story_id   :bigint           not null
 #
+
 require 'test_helper'
 
 class ResponseTest < ActiveSupport::TestCase

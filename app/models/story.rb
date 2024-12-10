@@ -2,17 +2,18 @@
 #
 # Table name: stories
 #
-#  id         :bigint           not null, primary key
+#  id         :integer          not null, primary key
+#  title      :string           not null
 #  body       :string           not null
 #  image      :string
-#  title      :string           not null
+#  author_id  :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  author_id  :bigint           not null
 #
 # Indexes
 #
 #  index_stories_on_title  (title) UNIQUE
+#
 
 class Story < ApplicationRecord
   validates :title, :body, presence: true

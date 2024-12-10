@@ -2,12 +2,12 @@
 #
 # Table name: users
 #
-#  id              :bigint           not null, primary key
-#  email           :string           not null
+#  id              :integer          not null, primary key
+#  username        :string           not null
 #  name            :string           not null
+#  email           :string           not null
 #  password_digest :string           not null
 #  session_token   :string           not null
-#  username        :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
@@ -16,6 +16,7 @@
 #  index_users_on_email          (email) UNIQUE
 #  index_users_on_session_token  (session_token) UNIQUE
 #  index_users_on_username       (username) UNIQUE
+#
 
 class User < ApplicationRecord
   validates :username, :email, :name, :session_token, :password_digest, presence: true
