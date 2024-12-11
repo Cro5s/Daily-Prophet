@@ -9,33 +9,39 @@
 ActiveRecord::Base.transaction do
   # Users
   User.destroy_all
-  user1 = User.create!(username: "TheHP", name: "Harry Potter", email: "harryp@email.com", password: "password")
+  user1 = User.create!(username: 'TheHP', name: 'Harry Potter', email: 'harryp@email.com', password: 'password')
 
-  user2 = User.create!(username: "HGranger", name: "Hermione Granger", email: "hermioneg@email.com", password: "password")
+  user2 = User.create!(username: 'HGranger', name: 'Hermione Granger', email: 'hermioneg@email.com',
+                       password: 'password')
 
-  user3 = User.create!(username: "Reasley", name: "Ron Weasley", email: "ronw@email.com", password: "password")
+  user3 = User.create!(username: 'Reasley', name: 'Ron Weasley', email: 'ronw@email.com', password: 'password')
 
-  user4 = User.create!(username: "HeadMaster", name: "Albus Dumbledore", email: "albusd@email.com", password: "password")
+  user4 = User.create!(username: 'HeadMaster', name: 'Albus Dumbledore', email: 'albusd@email.com',
+                       password: 'password')
 
-  user5 = User.create!(username: "HalfBloodPrince", name: "Severus Snape", email: "severuss@email.com", password: "password")
+  user5 = User.create!(username: 'HalfBloodPrince', name: 'Severus Snape', email: 'severuss@email.com',
+                       password: 'password')
 
-  user6 = User.create!(username: "ImmortalNic", name: "Nicolas Flamel", email: "nicolasf@email.com", password: "password")
+  User.create!(username: 'ImmortalNic', name: 'Nicolas Flamel', email: 'nicolasf@email.com',
+               password: 'password')
 
-  user7 = User.create!(username: "BeastMaster", name: "Rubeus Hagrid", email: "rubeush@email.com", password: "password")
+  user7 = User.create!(username: 'BeastMaster', name: 'Rubeus Hagrid', email: 'rubeush@email.com', password: 'password')
 
-  user8 = User.create!(username: "MasterWandsmith", name: "Garrick Ollivander", email: "garricko@email.com", password: "password")
+  user8 = User.create!(username: 'MasterWandsmith', name: 'Garrick Ollivander', email: 'garricko@email.com',
+                       password: 'password')
 
-  user9 = User.create!(username: "PureBlood", name: "Draco Malfoy", email: "dracom@email.com", password: "password")
+  User.create!(username: 'PureBlood', name: 'Draco Malfoy', email: 'dracom@email.com', password: 'password')
 
-  user10 = User.create!(username: "Lestrange", name: "Bellatrix Lestrange", email: "bellatrixl@email.com", password: "password")
+  user10 = User.create!(username: 'Lestrange', name: 'Bellatrix Lestrange', email: 'bellatrixl@email.com',
+                        password: 'password')
 
-  user11 = User.create!(username: "Muggle", name: "Mikaela Renshaw", email: "mikaelar@email.com", password: "password")
+  user11 = User.create!(username: 'Muggle', name: 'Mikaela Renshaw', email: 'mikaelar@email.com', password: 'password')
 
-  guest = User.create!(username: "Guest", name: "Guest User", email: "guest@email.com", password: "password")
+  User.create!(username: 'Guest', name: 'Guest User', email: 'guest@email.com', password: 'password')
 
   # Stories
   Story.destroy_all
-  story1 = Story.new(title: "Seven Things That Make Me More Okay with Being a Muggle", body: "1. 11-year-olds are not given potentially deadly weapons.
+  story1 = Story.new(title: 'Seven Things That Make Me More Okay with Being a Muggle', body: "1. 11-year-olds are not given potentially deadly weapons.
   Obviously, wands are cool, and I would love to cast spells. However, given how deadly some spells can be, it does make me a little nervous that wands are just handed out to 11-year-old kids without much supervision. Sure, they can’t cast magic outside of school, but Hogwarts is a boarding school; they’re not constantly under watch. Also, they don’t need to learn the Killing Curse to be deadly. What do you think would happen if they lifted someone up using Wingardium Leviosa and then accidentally dropped them?
 
   2. I don’t have to carry heavy coins everywhere.
@@ -55,7 +61,6 @@ ActiveRecord::Base.transaction do
 
   7. My personality at age 11 doesn’t define me for the rest of my life.
   It’s a lot of fun to Sort ourselves into the Hogwarts Houses, but that’s all it is: fun. In Harry Potter, your House seems to define you for the rest of your life. People dislike Slytherins on principle. We see families expecting their kids to follow the family tradition and get Sorted into the same House they did. Hufflepuffs are dismissed as nothing more than duffers. But the thing is that no one is the same person they were at age 11. So can you imagine people making assumptions on who you are for the rest of your life based on your personality as a kid? That sounds super annoying. I’d much rather be judged by my social media profiles. At least I can change those.", author_id: user11.id)
-  story1.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/Hermione-Potions.png"), filename: "Hermione-Potions.png")
   story1.save!
 
   story2 = Story.new(title: "I Went To Hogwarts For Seven Years and Did Not Learn Math or Spelling and Now I Can't Get a Job", body: "Dear Headmaster McGonagall:
@@ -68,8 +73,8 @@ ActiveRecord::Base.transaction do
 
   Thanks to the Hogwarts curriculum, I can withstand mind control and even limited torture, but I cannot write a compelling cover letter without humiliating grammatical error’s. Why is literature not a course at your skool? I can enchant my quill to write my thoughts, but I never learned how to make my thoughts enchanting. I heard that Durmstrang students have a skool newspaper. You know what Hogwarts has? A three-headed dog lurking in the castle, with permission to kill whoever it finds. Indeedly, my life was constantly endangered while at Hogwarts, which was an academic distracshun.
 
-  I have also noticed that some employers have dismissive attitudes toward Hogwarts graduates. For instance, I spoke to a recruiter from Gringotts who told me that they don’t accept candidates from party skools. Are we a party skool? I had friends die here, but not from drinking. (It’s because they were murdered.) 
-  
+  I have also noticed that some employers have dismissive attitudes toward Hogwarts graduates. For instance, I spoke to a recruiter from Gringotts who told me that they don’t accept candidates from party skools. Are we a party skool? I had friends die here, but not from drinking. (It’s because they were murdered.)
+
   You may or may not be aware, but the economy has changed, and the need for my skills defying Lord Voldemort has lessened. You know what would have been a better use of class time? The study of foreign languages. Geography. Brexit. Also, does it seem like graduating students from Slytherin House skew racist? Can we please get them some liberal-arts exposure?
 
   Perhaps most disturbing of all, our most gifted alumna, Hermione Granger, is as well read as she is only because she spent all of her time braking into an illegal library. I believe designating any part of a library as “forbidden” sends the wrong type of message to students, especially in a skool where skipping classes and even fighting your professors is kind of chill. Obviously, the culture surrounding education needs to change.
@@ -83,10 +88,10 @@ ActiveRecord::Base.transaction do
   As you can imagine, this does not make me an appealing prospect for interview season.
 
   My wife and I have a son, and soon we will need to consider where to send our brave boy. I hope that, by the time he comes of skool age, Hogwarts will have evolved into the type of academic institution capable of preparing him for the highly technical competitive war zone that is the modern wizarding job market. In the meantime, is there an alumni network I can send my resumay to?", author_id: user3.id)
-  story2.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/Darmoni-Hogwarts.jpg"), filename: "Darmoni-Hogwarts.jpg")
+
   story2.save!
 
-  story3 = Story.new(title: "Hello From Harry Potter", body: "When I drop off James and Albus for the new school year, I’m so looking forward to seeing you and delivering the Golden Snitch that I signed for the silent auction. I hope it raises a few galleons toward refurbishing the Sorting Hat, which was looking dodgy even back in the day, when it gave me a sword to kill that basilisk in the Chamber of Secrets. Mad times—but I’m glad I was able to help, in whatever small ways, to save Hogwarts from destruction.
+  story3 = Story.new(title: 'Hello From Harry Potter', body: "When I drop off James and Albus for the new school year, I’m so looking forward to seeing you and delivering the Golden Snitch that I signed for the silent auction. I hope it raises a few galleons toward refurbishing the Sorting Hat, which was looking dodgy even back in the day, when it gave me a sword to kill that basilisk in the Chamber of Secrets. Mad times—but I’m glad I was able to help, in whatever small ways, to save Hogwarts from destruction.
 
   I write, however, on another subject. This fall, James will begin his third year on the Gryffindor quidditch team, but he has yet to start a game. I would never ask you to intercede with the coach, of course, but, as you know, wizarding universities expect to see many extracurricular boxes checked, and James’s only other activity is his work with stained glass. His teachers say he’s turning out cathedral-quality stuff, but we’re told that art achievements alone won’t cut it—even his (unobjective-parent alert!) spectacular depiction of me and my friends rescuing the Philosopher’s Stone.
 
@@ -98,28 +103,25 @@ ActiveRecord::Base.transaction do
 
   As an aside, when I see you in September, I’d like to pick your brain about my memoirs. My dream is to use the book proceeds to build a new, fifth house at Hogwarts, to maximize the school’s potential—we currently have to reject too many good (and full-paying) applicants owing to lack of space. I’ve heard people say that the house should be named after me, an absurd idea that I’d strenuously oppose, but I do think “The McGonagall Visitors Center at Potter House” has a lovely ring to it.
   Bill Weasley sends his regards. Currently his wife, Fleur, is headmaster at Beauxbatons Academy of Magic, and is always joking that I should send our kids there. A laughable notion, given my history with Hogwarts, but I did visit recently and, wow, their new quidditch field is spectacular.", author_id: user1.id)
-  story3.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/LaZebnik--HarryPotter.jpg"), filename: "LaZebnik--HarryPotter.jpg")
   story3.save!
 
-  story4 = Story.new(title: "Love Will Win", body: "Voldemort, if you’re listening, I have harnessed an ancient and powerful magic called love.", author_id: user1.id)
-  story4.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/HP-debate.jpg"), filename: "HP-debate.jpg")
+  story4 = Story.new(title: 'Love Will Win',
+                     body: 'Voldemort, if you’re listening, I have harnessed an ancient and powerful magic called love.', author_id: user1.id)
   story4.save!
 
-  story5 = Story.new(title: "University Team Finds New Evidence of Wand Use in Ancient Egypt", body: "On the heels of the highly successful St. Andrews archaeological expedition at Alexandria comes new evidence that ancient Egyptian wizards may have used wands and staves for magic. The leader of the expedition, Professor Edward Faraday, spoke from Medinet al-Faiyum, where the majority of their recent archaeological work has been done over the past eighteen months. He said that a new tomb for a high priest of Seth revealed four magical objects that could only be described as wands. “These were made from carefully crafted wood, and exhibited actual cores when examined. They were as well made as any wand produced today, and we’ve also uncovered manuscripts that will unlock what magic they were able to perform with them. It’s an incredibly surprising thing.”
+  story5 = Story.new(title: 'University Team Finds New Evidence of Wand Use in Ancient Egypt', body: "On the heels of the highly successful St. Andrews archaeological expedition at Alexandria comes new evidence that ancient Egyptian wizards may have used wands and staves for magic. The leader of the expedition, Professor Edward Faraday, spoke from Medinet al-Faiyum, where the majority of their recent archaeological work has been done over the past eighteen months. He said that a new tomb for a high priest of Seth revealed four magical objects that could only be described as wands. “These were made from carefully crafted wood, and exhibited actual cores when examined. They were as well made as any wand produced today, and we’ve also uncovered manuscripts that will unlock what magic they were able to perform with them. It’s an incredibly surprising thing.”
 
   The Professor said the discovery of the tomb was made by two former Hogwarts students now working as team members for the expedition. “The discovery was not pure luck. Using research and deduction, researchers Paul and Chyler MacLeod were able to find an almost intact tomb with many hundreds of artifacts that are now being examined by the team. Their hard work has led to this discovery, and will be invaluable into how we think of magic and magical research today, as well as giving us an insight into powerful magical societies that existed in antiquity.” The expedition originally was looking only to expand an existing dig site, but the team discovered the new site some distance from the expeditions camp. The cooperative venture between the Egyptian Museum of Magic, and St. Andrews will soon be releasing more information and possibly organizing an exhibit of the artifacts.", author_id: user8.id)
-  story5.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/wands.jpeg"), filename: "wands.jpeg")
   story5.save!
-  
-  story6 = Story.new(title: "Wizangamot Education Committee Meets with Board of Hogwarts Governors", body: "Fenton Falls: A week-long conference between a dozen members of the Wizangamot and the dozen Board of Hogwarts Governors has begun in Fenton Falls, not far from the school itself. The resort town has played host to meetings of this sort before, during the Reconstruction era for the school, as well as the Darkness Crisis a few yeas ago. Sources say the Wizangamot and Governors are meeting over a number of new educational directives that have come from the Ministry and how best to manage the school. Spokeswitch Raven Cumberbatch said the Wizangamot has been increasingly concerned with the volume of strident communications to the Wizangamot in recent weeks, and a sudden spate of discipline problems at the school.
+
+  story6 = Story.new(title: 'Wizangamot Education Committee Meets with Board of Hogwarts Governors', body: "Fenton Falls: A week-long conference between a dozen members of the Wizangamot and the dozen Board of Hogwarts Governors has begun in Fenton Falls, not far from the school itself. The resort town has played host to meetings of this sort before, during the Reconstruction era for the school, as well as the Darkness Crisis a few yeas ago. Sources say the Wizangamot and Governors are meeting over a number of new educational directives that have come from the Ministry and how best to manage the school. Spokeswitch Raven Cumberbatch said the Wizangamot has been increasingly concerned with the volume of strident communications to the Wizangamot in recent weeks, and a sudden spate of discipline problems at the school.
 
   Cumberbatch also said the discovery of several corrupt Ministry officials assigned to the school, as well as investigations by an independent Judicial task force have yielded some disturbing results. With the departure of several Ministry appointees to the school, rumors have circulated that several were actually extremist wizards of dubious character and professional qualifications. “The Wizangamot will also be inviting Professor Spriggletuft to the conference to defend or condemn the recent measures taken by the Ministry,” said Cumberbatch. “The intent here is to ensure that Hogwarts remains a great school with equal opportunity for all witches and wizards that come here,” she said.", author_id: user4.id)
-  story6.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/hogwarts-castle-.jpg"), filename: "hogwarts-castle-.jpg")
   story6.save!
 
-  story7 = Story.new(title: "Top 10 Potions ", body: "At Hogwarts, students advance their magical skills in a variety of areas, whether learning dueling techniques in Defense Against the Dark Arts, transforming themselves and objects in Transfiguration, or developing flying prowess with Quidditch practice.
+  story7 = Story.new(title: 'Top 10 Potions ', body: "At Hogwarts, students advance their magical skills in a variety of areas, whether learning dueling techniques in Defense Against the Dark Arts, transforming themselves and objects in Transfiguration, or developing flying prowess with Quidditch practice.
 
-  Yet an often-underrated subject is Potions, a magical field that teaches wizards and witches to brew several wondrous concoctions ranging from mystical to deadly. Although Professor Snape is a strict teacher to non-Slytherin students, Potions remains an interesting class that Harry managed to receive an 'Exceeds Expectations' in during his O.W.L. exam, and various potions helped the Chosen One in his travels more than once. But with dozens of mysterious tonics encountered throughout the Wizarding World, which spirits reign supreme? These are the 10 most powerful potions: 
+  Yet an often-underrated subject is Potions, a magical field that teaches wizards and witches to brew several wondrous concoctions ranging from mystical to deadly. Although Professor Snape is a strict teacher to non-Slytherin students, Potions remains an interesting class that Harry managed to receive an 'Exceeds Expectations' in during his O.W.L. exam, and various potions helped the Chosen One in his travels more than once. But with dozens of mysterious tonics encountered throughout the Wizarding World, which spirits reign supreme? These are the 10 most powerful potions:
 
   10. Draught of Peace
   Ingredients: Powdered moonstone, unicorn horn, and porcupine quills
@@ -135,8 +137,8 @@ ActiveRecord::Base.transaction do
 
   Advertised as the strongest love potion in existence, Amortentia can't create true love, but it causes such powerful infatuation bordering on obsession that it's hard to tell the difference. The process for mixing it has yet to be revealed, but we know that the potion's aroma changes to match scents that every individual finds pleasant; to Hermione, it smells like fresh-cut grass and new parchment.
 
-  A dangerous drug, Amortentia is the closest thing we've seen to date rape in Harry Potter; Merope Gaunt (Voldermort's mother) used it to force Tom Riddle Senior to marry her and conceive a child, and Romilda Vane slipped some into chocolates intended for Harry that Ron ended up eating instead. 
-  
+  A dangerous drug, Amortentia is the closest thing we've seen to date rape in Harry Potter; Merope Gaunt (Voldermort's mother) used it to force Tom Riddle Senior to marry her and conceive a child, and Romilda Vane slipped some into chocolates intended for Harry that Ron ended up eating instead.
+
   8. Beautification Potion
   Ingredients: Fairy wings, morning dew, rose petals
   Effect: Makes one temporarily attractive
@@ -198,10 +200,9 @@ ActiveRecord::Base.transaction do
   Derived from the Sorceror's Stone, this mysterious potion indefinitely extends life; Nicolas Flamel, creator of the Stone, and his wife Perenelle lived for over 600 years using this method. Little information exists about the Elixir; we don't know if the users are truly immortal while under its effects, or if the remedy only halts aging, meaning takers can still be killed.
 
   We do know Voldemort initially planned to return to life using the Elixir, although he preferred Horcruxes for maintaining his life indefinitely, as the Life potion requires regular ingestion to stay effective. A powerful liquid, but one seemingly lost to mankind; with Flamel's blessing, the Sorcerer's Stone was destroyed and the supply of Elixir halted, preventing additional brews and once again chaining the secret to eternal life.", author_id: user5.id)
-  story7.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/potions.jpeg"), filename: "potions.jpeg")
   story7.save!
 
-  story8 = Story.new(title: "10 Spells as Dangerous as Avada Kedavra", body: "Within the wizarding world, we encounter many powerful spells, from Harry's classic disarming Expelliarmus to Voldemort's instant-kill Avada Kedavra.
+  story8 = Story.new(title: '10 Spells as Dangerous as Avada Kedavra', body: "Within the wizarding world, we encounter many powerful spells, from Harry's classic disarming Expelliarmus to Voldemort's instant-kill Avada Kedavra.
 
   In fact, Avada Kedavra belongs to a trio of 'Unforgivable Curses' (listed below), jinxes so deadly and cruel that using just one lands a wizard or witch a lifelong ticket into the magical prison Azkaban. Still, throughout the series, we learn of and see a variety of potent hexes, many as destructive as the three banned curses. Read on to discover ten spells that rival the Unforgivable Curses in power!
 
@@ -302,11 +303,10 @@ ActiveRecord::Base.transaction do
   Fans should remember Harry and Hermione time-traveling using a Time-Turner in book 3, Prisoner of Azkaban, to save Buckbeak, prior to which Hermione had used it to manage her several classes. Huh, you'd think wizards could imagine better uses for such potent magic.
 
   Nonetheless, Time-Turners are simply devices that contain Hour-Reversal Charms; skilled wizards can drift through time without them. Of all spells in Harry Potter, I can't imagine any topping the ability to relive life for five hours, allowing practitioners to alter timelines until they achieve their desired outcome (whether benevolent or evil).", author_id: user10.id)
-  story8.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/voldemort-spell.jpg"), filename: "voldemort-spell.jpg")
   story8.save!
 
   story9 = Story.new(title: "Dumbledore's Lemon Drop Cupcakes with Rasberry Jam Frosting and Crystallized Pineapple", body: "Cupcake and Frosting Ingredients
-  
+
   3 sticks (1 1/2 cups) salted butter, softened to room temp
   1 cup granulated sugar
   2 1/2 cups all-purpose flour
@@ -321,22 +321,21 @@ ActiveRecord::Base.transaction do
   about 3/4 cup lemon juice, or the juice of 1 large lemon
   lemon zest from one large lemon
   24 pieces crystallized pineapple
-  
+
   Instructions
-  
+
   1. Preheat your oven to 350° F. In the bowl of a stand mixer on medium speed, cream together one stick (1/2 cup) salted butter with one cup of sugar. In a separate bowl, combine the flour with the baking powder, cream of tartar, and baking soda. To the butter/sugar, add the lemon zest, then the eggs, one at a time. Drop the speed to low and add half of the flour mixture to the stand mixer.
-  
+
   2. Allow those to combine, then pour in the 1/2 cup of milk, the lemon baking emulsion, one teaspoon of vanilla, and the lemon juice. When all of those are fully incorporated, add the rest of the flour.
-  
+
   3. Stop the mixer to run a rubber spatula along the insides of the bowl and make sure everything is combining, then mix for another minute on low speed. Place into paper-lined cupcake tins and bake for 16–20 minutes.
-  
+
   4. For the frosting, in the bowl of a stand mixer with the whisk attachment, or using a hand mixer, whisk together the remaining two sticks of butter on medium speed until smooth and creamy, about one to two minutes. Then, stop the mixer, add half of the powdered sugar, the remaining tablespoon of milk, the remaining teaspoon of vanilla, and all of the raspberry jam.
-  
+
   5. Mix on the lowest speed for a couple of minutes until everything is combined. Stop the mixer if some of the ingredients are sticking to the insides of the bowl, and scrape them down with a rubber spatula. Add the remaining powdered sugar and mix to combine. Pipe onto cupcakes that have been allowed to cool at least 15–20 minutes. Top each cupcake with a piece of candied pineapple.", author_id: user4.id)
-  story9.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/AD-cupcake.jpg"), filename: "AD-cupcake.jpg")
   story9.save!
 
-  story10 = Story.new(title: "How to Play Quidditch", body: "What Is Quidditch?
+  story10 = Story.new(title: 'How to Play Quidditch', body: "What Is Quidditch?
   Quidditch is a sport created by J.K. Rowling for her novels centered around Harry Potter. It is played in the Harry Potter universe by witches and wizards both professionally and just for fun and is made up of two teams on broomsticks.
 
   Not only is it played at Hogwarts but also in professional teams. The Quidditch World Cup, established in 1473, is held every four years and features teams from around the world. In Harry Potter and the Goblet of Fire, Harry Potter attends the 422nd game. Harry is also the Seeker for Gryffindor's team at Hogwarts and becomes the captain in his sixth year.
@@ -354,7 +353,7 @@ ActiveRecord::Base.transaction do
   Quidditch gear from the movie adaptations of the Harry Potter novels.
   Quidditch gear from the movie adaptations of the Harry Potter novels. | Source
   What Equipment Is Needed?
-  
+
   Quidditch features three different types of balls:
   the quaffle
   the bludger
@@ -382,20 +381,19 @@ ActiveRecord::Base.transaction do
   Quidditch games are played in the air on broomsticks.
 
   The game starts when a referee releases the quaffle, bludgers, and snitch. While Beaters keep bludgers at bay and the Seeker goes off in search of the snitch, Chasers try to get the quaffle through a hoop at the opposing team's end of the field. The Keeper blocks the hoops. If a goal is scored, they toss the quaffle back into play.
-  
-  All players must avoid the bludgers and the snitch. If any player but one of the Seekers come in contact with the snitch, it is a foul. The length of the game varies depending on how soon the Seeker is able to catch the snitch. 
-  
+
+  All players must avoid the bludgers and the snitch. If any player but one of the Seekers come in contact with the snitch, it is a foul. The length of the game varies depending on how soon the Seeker is able to catch the snitch.
+
   Games may also end by mutual consent between team captains.
-  
+
   There's no doubt that Quidditch sounds like a fun game to play. While we muggles may not have enchantments or flying brooms, there are still many real-life versions of the game out there, including Muggle Quidditch, that we can actually play. There are even teams, tournaments, and an International Quidditch Association.
 
 
   Are There Fouls in Quidditch?
   There are 700 Quidditch fouls listed in the Department of Magical Games and Sports records but most are not open to the public for fear that witches and wizards 'might get ideas.'", author_id: user11.id)
-  story10.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/quidditch.jpeg"), filename: "quidditch.jpeg")
   story10.save!
 
-  story11 = Story.new(title: "Top 10 Strongest Magical Creatures", body: "Used by both the Order of the Phoenix and Voldemort's forces, we've seen these mystical monsters fight for good as well as evil, and many remain some of the series' strongest adversaries. But with dozens of magical creatures running rampant, which titans reign supreme? These are the ten strongest monsters you would not want to cross in Hogwarts! Spoilers ahead.
+  story11 = Story.new(title: 'Top 10 Strongest Magical Creatures', body: "Used by both the Order of the Phoenix and Voldemort's forces, we've seen these mystical monsters fight for good as well as evil, and many remain some of the series' strongest adversaries. But with dozens of magical creatures running rampant, which titans reign supreme? These are the ten strongest monsters you would not want to cross in Hogwarts! Spoilers ahead.
 
   10. Thestral
   First Appearance: Harry Potter and the Order of the Phoenix
@@ -470,10 +468,9 @@ ActiveRecord::Base.transaction do
   The true monster of the Chamber of Secrets, the Basilisk is a giant serpent-like predator whose poison murders within a matter of minutes. As if that weren't bad enough, simply looking at its eyes instantly kills a victim; even using barriers like a camera lens or water reflection will still induce a comatose state. Due to their snake nature, a skilled Parselmouth may command a Basilisk (as Tom Riddle did), although Parselmouth Harry failed to control it, though it's not clear whether this is from loyalty to Riddle or Harry's inexperience.
 
   Although phoenix tears can heal one from Basilisk venom if applied quickly, the Basilisk's teeth are one of few weapons capable of destroying a Horcrux. Harry struggled to defeat Riddle's Basilisk, only narrowly succeeding with the aid of Fawkes and Godric Gryffindor's sword; even then, he suffered a wound that would have killed him without Fawkes's tears. Basilisks can grow up to fifty feet in length, squeeze into pipes despite their massive size, and their tough scales reflect most spells similarly to dragon hide. As if they weren't deadly enough already, Basilisks have a keen sense of smell to detect prey even if their sight is disabled and can live for over 1000 years. As was once written in blood, enemies of the heir, beware.", author_id: user7.id)
-  story11.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/hagrid.jpeg"), filename: "hagrid.jpeg")
   story11.save!
 
-  story12 = Story.new(title: "The Love Room Mystery", body: "While traversing through the Department of Mysteries, Harry and his friends come across several rooms, all dedicated to the study of a particular area, of relative mystery. We can actually name the several elements studied in the various rooms the group goes through. These include: Prophecy, Time, Thought, Space, Death and implicitly Love.
+  story12 = Story.new(title: 'The Love Room Mystery', body: "While traversing through the Department of Mysteries, Harry and his friends come across several rooms, all dedicated to the study of a particular area, of relative mystery. We can actually name the several elements studied in the various rooms the group goes through. These include: Prophecy, Time, Thought, Space, Death and implicitly Love.
 
   What Happens in the Department of Mysteries
   Upon arriving at the Entrance of the Department of Mysteries, the group faces 12 doors. They go through four of the twelve doors, trying to find the supposed location of Sirius. The first one they go in is revealed later to be the Brain Room, and they go back to the entrance. The second one is the Death Chamber, where they linger for a while before going back to the entrance again. The third one is locked, and neither Hermione's Alohomora, nor Harry's penknife are able to open it. Harry's penknife actually dissolves when he tries to put it in the lock. They move on and enter the fourth door, that Harry recognizes from his visions, which turns out to be the Time Room. They go through the Time Room, and on the other side is the door which leads to the Hall of Prophecies. Upon being ambushed by the Death Eaters the gang manages to run away but gets separated. Harry, Hermione and Neville go back to the Time Room, but Ron, Ginny and Luna go to the Space Chamber. They are reunited in the Brain Room, and then the battle moves to the Death Chamber, where the Order of the Phoenix appears to render assistance. Finally upon all of the Death Eaters being defeated, only Bellatrix remains who runs off to the Ministry Atrium. Harry pursues, is blindsided by Voldemort, who then battles Dumbledore in the Atrium.
@@ -503,10 +500,9 @@ ActiveRecord::Base.transaction do
   In a way, this makes sense. For Love to be an extremely powerful force, it would be weird if men were able to just recreate it. The fact that the room contains something that alludes to the idea of Love but can never actually imitate it is somewhat logical.
 
   But I imagine, or at least I like to imagine, that if the Love Room actually has within it a fountain of Amortentia, then that Amortentia would not be regular Amortentia. I reckon the Unspeakables would try to tweak the potion as they study it's effects, and as such, that version of Amortentia would be the truest and most powerful of them all. It just would make the effect of Dumbledore's speech stronger, if what that room holds turned out to be the actual emotion of Love materialized in some manner, and as such, more powerful than what we saw in Slughorn's classroom.", author_id: user2.id)
-  story12.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/Harry-prophecy-mystery.jpeg"), filename: "Harry-prophecy-mystery.jpeg")
   story12.save!
 
-  story13 = Story.new(title: "8 Best Hogwarts Professors", body: "8. Sybill Trelawney
+  story13 = Story.new(title: '8 Best Hogwarts Professors', body: "8. Sybill Trelawney
   Trelawney is the teacher of Divination in Hogwarts, though it has been constantly debated on how much she actually knows about the subject. Proclaiming herself to be a gifted seer, she was the reason why we have the story in the first place.
 
   It was she who made the prophecy to Dumbledore based on which Voldemort killed Harry's parents and marked him, thus beginning the battle between Harry and Voldemort. If it weren't for her, we would not have the story.
@@ -559,10 +555,9 @@ ActiveRecord::Base.transaction do
   Dumbledore has always been a good decision maker and impartial teacher, not just for Harry but for all his students. His judgment is always based on proper reasoning. He has supported all things for their righteousness. His support for the muggle community is noteworthy, thus making him the perfect embodiment of leadership and the most inspiring teacher ever.
 
   He is the only wizard who even Voldemort was afraid of. The owner of the Elder wand, Dumbledore was the greatest wizard of all time and the most amazing personality ever.", author_id: user2.id)
-  story13.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/hogwarts-classes.jpg"), filename: "hogwarts-classes.jpg")
   story13.save!
 
-  story14 = Story.new(title: "Fastest Brooms", body: "While most wizards and witches use Apparition (teleportation) to travel, brooms offer great alternatives to underage teenagers. They're also used for sport, primarily Quidditch—which reign supreme? These are the ten fastest broomsticks throughout the Harry Potter universe!
+  story14 = Story.new(title: 'Fastest Brooms', body: "While most wizards and witches use Apparition (teleportation) to travel, brooms offer great alternatives to underage teenagers. They're also used for sport, primarily Quidditch—which reign supreme? These are the ten fastest broomsticks throughout the Harry Potter universe!
 
   10. Australian Flyabout 50
   Used By: Australian Quidditch Team
@@ -617,248 +612,246 @@ ActiveRecord::Base.transaction do
   Used By: Bulgarian Quidditch Team
 
   The updated version of the previous king, Firebolt Supremes guided the Bulgarians to victory in the 2014 World Championship, fulfilling the lifelong dream of Viktor Krum. Presumably, they offer and improve upon the previous model, providing the fastest ride the Wizarding World has ever seen.", author_id: user1.id)
-  story14.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/brooms.png"), filename: "brooms.png")
   story14.save!
 
-  story15 = Story.new(title: "The Most Recognizable Spells and Charms", body: "Accio: Also known as the summoning charm, Accio summons any object to the user within a certain distance. In the Goblet of Fire Harry uses Accio to summon his broomstick during the first Triwizard Challenge.
-  
+  story15 = Story.new(title: 'The Most Recognizable Spells and Charms', body: "Accio: Also known as the summoning charm, Accio summons any object to the user within a certain distance. In the Goblet of Fire Harry uses Accio to summon his broomstick during the first Triwizard Challenge.
+
   Alohomora: Also known as the unlocking charm, Alohomora enables its user to open any lock. The charm is first used in the Philosopher's Stone and after this regularly makes an appearance in the later books.
-  
+
   Expecto Patronum: Also known as the Patronus charm, Expecto Patronum conjures a Patronus; an animal-shaped mass of energy that repels dementors. Harry first learns the Patronus charm during the Prisoner of Azkaban, which is considered impressive given his young age and the difficulty of the charm.
-  
+
   Expelliarmus: Also known as the disarming charm, Expelliarmus is arguably the most recognisable of any Harry Potter spell. The spell, which causes the victim's wand to fly out of their hand, becomes almost a trademark for Harry and is the charm that he uses to kill Voldemort.
-  
+
   Horcrux Curse: The incantation is never specified, but it's known that the Horcrux Curse splits the user's soul and allows them to trap a piece in an object. This allows them to live even if their mortal body is destroyed, effectively rendering them immortal unless the Horcruxes are destroyed. Voldemort's immortality is due to his use of the Horcrux Curse to make seven Horcruxes.
-  
+
   Lumos: Lights the tip of the user's wand.
-  
+
   Petrificus Totalus: Also known as the full-body-bind spell, Petrificus Totalus renders its victim totally paralysed. Hermione Granger uses this spell on Neville Longbottom during the Philosopher's Stone.
-  
+
   Protego: Casts a magical forcefield around the user, repelling spells cast at it. Protego is one of the most commonly used defensive spells.
   Stupefy: Stuns an opponent, rendering them unconscious. This is one of the most popular duelling spells and is used frequently throughout the series. In the Half-Blood Prince, Professor McGonagall is hit by four stunners and must recover in St. Mungos Hospital.
-  
+
   Wingardium Leviosa: Causes an object to fly. This is one of the first spell taught to the first-year students at Hogwarts. In the words of Hermione Granger; 'It's leviOsa, not levioSA.'
 
   The Unforgivable Curses
-  
+
   The Unforgivable Curses are a trifecta of spells that are outlawed in the wizarding world due to their dangerous, gruesome nature. They are as follows:
 
   The Cruciatus Curse (Crucio): Puts the victim in immeasurable pain. This is the spell that was used by Voldemort's followers to torture Frank and Alice Longbottom to insanity.
-  
+
   The Imperius Curse (Imperio): Puts a person under another's control. Voldemort's followers used this curse to turn witches and wizards to their side.
-  
+
   The Killing Curse (Avada Kedavra): As the name suggests, this spell kills its victim immediately and irreversibly. Only one person is known to ever have survived the killing curse; Harry Potter.
-  
+
   Lord Voldemort tried to kill Harry Potter using 'Avada Kedavra,' but failed, turning Harry into a living legend.
 
   Duelling Spells
   These spells are designed to be used in Wizarding duels and fights. Some are offensive in nature, while others are defensive.
 
   Confringo: Causes fireballs to shoot from the user's wand.
-  
-  Confundo: Causes confusion and disorientation. In the Order of the Phoenix, 
+
+  Confundo: Causes confusion and disorientation. In the Order of the Phoenix,
   Hermione uses this spell on Quidditch hopeful Cormac McLaggen to ensure that Ron beats him in the Quidditch tryouts.
-  
+
   Densaugeo: Causes the victim's teeth to enlarge dramatically. Draco Malfoy uses this spell on Hermione, causing her great distress.
-  
+
   Depulso: Pushes an object away with a powerful blast.
-  
+
   Diffindo: Slices through objects such as rope.
-  
+
   Duro: Turns objects or people into stone.
-  
+
   Expulso: Makes an object violently explode.
-  
+
   Fiendfyre: The incantation for this curse isn't known, but the effect certainly is. Fiendfyre is cursed wildlife that east through anything it touches. The flames take the form of wild animals, such as serpents and dragons, which have a solid form and are able to target specific objects or people. In the Deathly Hallows, Crabbe unleashes Fiendfyre in the Room of Requirement, killing himself and almost Harry, Ron, Hermione, Draco, and Goyle along with him.
-  
+
   Finite: A general-counter spell that can reverse some minor damage.
-  
+
   Furnunculus: Causes painful boils to appear on the victim's skin.
-  
+
   Immobulus: Freezes an object or person.
-  
+
   Impedimenta: Slows an advancing object for a brief amount of time.
-  
+
   Incarcerous: Binds the victim head-to-foot in thick ropes.
-  
+
   Jelly-Legs Jinx: Causes the victim's legs to wobble like jelly, preventing them from walking.
-  
+
   Levicorpus: Dangles the victim in their air by their foot. This jinx was invented by Severus Snape and was subsequently used against him by James Potter, as shown in a flashback during the Half-Blood Prince.
-  
+
   Liberacorpus: The counter-jinx to Levicorpus; returns the victim to the ground.
-  
+
   Locomotor Mortis: Paralyses an opponent's legs. Locomotor Mortis is the weaker version of Petrificus Totalus, the full-body-bind curse.
-  
+
   Oppugno: When used in conjunction with Avis, this causes the victim to be attacked by a flock of birds. It's used by Hermione Granger during the Order of the Phoenix to attack Ron Weasely.
-  
+
   Piertotum Locomotor: Animates suits of armour and statues, causing them to fight for the caster. This spell is used by Professor McGonagall during the battle for Hogwarts.
-  
+
   Protego Horribilis: A variation of Protego that protects against dark magic. This spell is cast by the Hogwarts teachers during the battle for Hogwarts.
-  
+
   Protego Maxima: Another variation of Protego that protects even more strongly against dark magic. This spell is cast by the Hogwarts teachers during the battle for Hogwarts.
-  
+
   Protego Totalum: Another variation of Protego that shields a particular area rather than a person.
-  
+
   Reducto: Blasts solid objects to the side. In the Order of the Phoenix, it's revealed that Ginny Weasley can cast Reducto so powerfully that it disintegrates objects.
-  
+
   Rictusempra: Also known as the tickling charm, Rictusempra causes the victim to buckle over laughing. Harry Potter uses this charm on Draco Malfoy during their duel in the Chamber of Secrets.
-  
+
   Ridikkulus: Banishes boggarts; magical creatures that take the appearance of whatever the viewer is the most afraid of.
-  
+
   Salvio Hexia: Repels hexes.
-  
+
   Sectumsempra: Slashes the victim. This spell was invented by Severus Snape and used by Harry Potter on Draco Malfoy during the Half-Blood Prince.
-  
+
   Serpensortia: Conjures a snake that attacks the victim. Draco Malfoy uses this spell on Harry Potter during their duel in the Chamber of Secrets.
-  
+
   Slugulus Eructo: Also known as the slug-vomiting curse, Slugulus Eructo causes the victim to uncontrollably vomit slugs. Ron Weasely attempts to use this curse on Draco Malfoy during the Chamber of Secrets but ends up accidentally cursing himself due to his broken wand.
-  
+
   Stinging Jinx: Causes the victim to swell up to the point of being unrecognisable. In the Deathly Hallows, Hermione Granger uses this jinx on Harry to disguise his identity from the Death Eaters.
-  
+
   Tarantallegra: Causes the victim's legs to dance uncontrollably.
-  
+
   Waddiwasi: Unsticks objects. In the Prisoner of Azkaban, Remus Lupin uses this spell to unstick chewing gum from a lock.
-  
+
   Miscellaneous Spells
   This is a list of spells that don't quite fit into any other category, but are fantastic all the same:
 
   Aguamenti: Conjures a stream of water from the user's wand.
-  
+
   Anapneo: Un-chokes a person, allowing them to breathe again by removing whatever's obstructing their airway.
-  
+
   Arresto Momentum: Presumably slows or stops a person's fall. In the Prisoner of Azkaban film, Dumbledore uses this spell to stop Harry from falling to his death after he passes out on his broom.
-  
+
   Ascendio: Moves an object upwards.
-  
+
   Avis: Conjures a flock of small birds.
-  
+
   Bombarda: Causes a violent explosion.
-  
+
   Bubble-Head Charm: Creates a bubble of air around the user's head, allowing them to breathe underwater. It was used by Cedric and Fleur during the second Triwizard challenge to enable them to swim t the bottom of the Great Lake.
-  
+
   Caterwauling Charm: Imposes a magical curfew on a restricted area; if anyone breaks the charm by emerging from their house, apparating or disapparating it sets off a loud wailing. In the Deathly Hallows Harry, Ron, and Hermione trigger a Caterwauling Charm when they apparate into Hogsmeade.
-  
+
   Collorportus: Used to lock doors. In the Order of the Phoenix Hermione uses the charm in an attempt to lock out the Death Eaters that chase them through the Ministry of Magic.
-  
+
   Cushioning Charm: Cushions a fall.
-  
+
   Deletrius: The counter charm to Priori Incantatum, Deletrius disperses the smoke that represents the user's last spell.
-  
+
   Deprimo: Blasts a hole in the floor of wherever the user is standing. In the Deathly Hallows, Hermione uses this charm to escape the Lovegood's house.
-  
+
   Descendo: Moves an object downwards.
-  
+
   Disillusionment Charm: The disillusionment charm renders the user invisible by camouflaging them into their surroundings perfectly. In Order of the Phoenix Alistair Moody casts this charm on Harry to make him invisible.
-  
+
   Dissendium: Opens a specific secret passageway in Hogwarts, which is designed in the hump of a statue.
-  
+
   Engorgio: Causes an object or person to swell to a greater size.
-  
+
   Episkey: Episkey allows the user to heal bones.
-  
+
   Erecto: Erects a tent automatically.
-  
+
   Evanesco: Makes things vanish.
-  
-  Ferula: Conjures bandages and binds them around an injury. In the Prisoner of 
+
+  Ferula: Conjures bandages and binds them around an injury. In the Prisoner of
   Azkaban, this spell is used to bandage Ron Weasley's broken leg.
-  
+
   Fidelius Charm: A complex charm that involves hiding a secret inside someone. The secret is kept unless the subject willingly reveals it. Peter Pettigrew's betrayal of James and Lilly Potter centred around this charm.
-  
+
   Flagrate: Burns writing or shapes onto objects. In the Order of the Phoenix Hermione Granger uses this charm to mark doors.
-  
+
   Flying Charm: The Flying Charm is what allows broomsticks to levitate.
-  
+
   Gemino: Casting Gemino on an object causes it to multiply rapidly. In the Deathly Hallows Harry, Ron, and Hermione are almost crushed to death by rapidly multiplying treasure in Bellatrix Lestrange's Gringotts vault.
-  
+
   Glisseo: Causes stairs to flatten, turning them into a slide or chute.
-  
+
   Homenum Revelio: Alerts the user to nearby human presence.
-  
+
   Hot Air Charm: Shoots a jet of hot air from the caster's wand.
-  
+
   Hover Charm: Causes an object to hover. In the Chamber of Secrets Harry is almost expelled from Hogwarts when he is mistakenly thought to have cast this charm in the presence of his Aunt and Uncle.
-  
+
   Hurling Hex: Hurls a flier from their broom. In the Philosopher's Stone, Professor Quirrell likely casts this spell to try and unseat Harry from his broom during his first Quidditch match,
-  
+
   Impervius: Creates a kind of forcefield around objects upon which it is cast. For example, Hermione casts Impervius on Harry's glasses to make them repel rain.
-  
+
   Incendio: Conjures fire from the user's wand.
-  
+
   Intruder Charm: Alerts the user to when an intruder has entered a house or a specific location.
-  
+
   Langlock: Glues the user's tongue to the roof of their mouth. This spell was invented by Severus Snape during his days at Hogwarts
-  
+
   Legilimens: Allows the user to see into another's mind, provided that they're not adept at Occlumency (protecting their mind from invasion).
-  
+
   Locomotor: Moves objects.
-  
+
   Lumos Maxima: Throws a ball of light from the user's lit wand.
-  
+
   Meteolojinx Recanto: Reverses weather-related spells. In the Deathly Hallows, Hermione recommends that Ron try this spell to stop a Ministry employee's office from raining.
-  
+
   Mimblewimble: Tongue ties its victim, causing them to be unable to say a certain thing.
-  
+
   Mobiliarbus: Similar to locomotor in that it moves objects.
-  
+
   Mobilicorpus: Moves a person or body.
-  
+
   Morsmorde: Conjures the Dark Mark; the symbol of Voldemort and his followers.
-  
+
   Muffliato: Fills the air around the user with a buzzing noise, preventing anyone from eavesdropping.
-  
+
   Nox: The counter-charm to Lumos; extinguishes the user's lit wand.
-  
+
   Obliviate: Wipes the victim's memory. In the Chamber of Secrets Gilderoy Lockhart loses his memory after this charm backfires on him.
-  
+
   Obscuro: Conjures a blindfold that obscures the recipient's vision.
-  
+
   Orchideous: Summons a bunch of orchids to the user's wand-tip.
-  
+
   Periculum: Conjures red sparks from the tip of the owner's wand.
-  
+
   Permanent Sticking Charm: Sticks posters, paintings and other items to walls for an indefinite amount of time. In Harry Potter and the Deathly Hallows it's revealed that Sirius Black stuck posters to his bedroom wall with a permanent sticking charm, to avoid his mother taking them down.
-  
+
   Point Me: Makes the user's wand spin in their hand to point north. In the Goblet of Fire Harry uses this spell in the last triwizard challenge to help navigate the maze.
-  
+
   Portus: Turns an item into a Portkey; a magically enchanted object that teleports the user from one place to another.
   Priori Incantatem: Reveals the last spell that a wand cast.
-  
+
   Quietus: The counter-charm to Sonorous; causes the caster's voice to quieten after being magically amplified.
-  
+
   Reducio: The counter-charm to Engorigo; reduces an object's size.
-  
+
   Relashio: Forces something gripping the user to release. In the Goblet of Fire Harry uses this spell to force Grindylows in the Great Lake to release his feet.
-  
+
   Rennervate: Causes a person to return to consciousness after being stunned or otherwise knocked out.
-  
+
   Reparo: Repairs a broken item. In the Philosopher's Stone, Hermione fixes Harry's glasses on the Hogwarts Express using Reparo, making it one of the first spells to be identified and used in the series.
-  
+
   Repello Muggletum: Repells muggles from a specific location. This is used by Harry, Ron, and Hermione when camping in the muggle world during the Deathly Hallows. Presumably, it's also the spell that was cast on Hogwarts to deter muggles from finding its location.
-  
+
   Revelio: Reveals hidden objects, messages, or writing.
-  
+
   Scourgify: Cleans an item. In the Order of the Phoenix, Tonks uses this spell to clean Hedwig's cage.
-  
+
   Silencio: Renders an animal or person unable to make a sound.
-  
+
   Sonorous: Amplifies the user's voice. In the Goblet of Fire, Ludo Bagman uses this spell while commentating on the Quidditch World Cup.
-  
+
   Teleportation Spell: Teleports items from one place to another. Although it's never revealed what the incantation is, this spell is used by Dumbledore to transport Harry's trunk and owl to the Burrow.
-  
+
   Tergeo: Cleans items.
-  
+
   Trip Jinx: Causes the victim to trip.
-  
+
   Unbreakable Vow: Kills the participant or participants if they break a promise. In the Half-Blood Prince, Severus Snape swears an Unbreakable Vow to assist Draco Malfoy in killing Dumbledore.
-  
+
   Undetectable Extension Charm: Causes an object to expand on the inside while remaining the same size on the outside. Arthur Weasley performs this charm on his car in order to fit his entire family in it as they drive to Kings Cross station.
-  
+
   Vulnera Sanentur: Returns a person's blood to their body after it's spilled. This is used by Severus Snape to heal Draco Malfoy after Harry attacks him in the Half-Blood Prince.", author_id: user8.id)
-  story15.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/wingardium-leviosa.gif"), filename: "wingardium-leviosa.gif")
   story15.save!
 
-  story16 = Story.new(title: "The Sword of Gryffindor", body: "The sword of Gryffindor was made a thousand years ago by goblins, the magical world’s most skilled metalworkers, and is therefore enchanted. Fashioned from pure silver, it is inset with rubies, the stone that represents Gryffindor in the hour-glasses that count the house points at Hogwarts. Godric Gryffindor’s name is engraved just beneath the hilt.
+  story16 = Story.new(title: 'The Sword of Gryffindor', body: "The sword of Gryffindor was made a thousand years ago by goblins, the magical world’s most skilled metalworkers, and is therefore enchanted. Fashioned from pure silver, it is inset with rubies, the stone that represents Gryffindor in the hour-glasses that count the house points at Hogwarts. Godric Gryffindor’s name is engraved just beneath the hilt.
 
   The sword was made to Godric Gryffindor’s specifications by Ragnuk the First, finest of the goblin silversmiths, and therefore King (in goblin culture, the ruler does not work less than the others, but more skillfully). When it was finished, Ragnuk coveted it so much that he pretended that Gryffindor had stolen it from him, and sent minions to steal it back. Gryffindor defended himself with his wand, but did not kill his attackers. Instead he sent them back to their king bewitched, to deliver the threat that if he ever tried to steal from Gryffindor again, Gryffindor would unsheathe the sword against them all.
 
@@ -867,10 +860,9 @@ ActiveRecord::Base.transaction do
   The question of why a wizard would need a sword, though often asked, is easily answered. In the days before the International Statute of Secrecy, when wizards mingled freely with Muggles, they would use swords to defend themselves just as often as wands. Indeed, it was considered unsporting to use a wand against a Muggle sword (which is not to say it was never done). Many gifted wizards were also accomplished duellists in the conventional sense, Gryffindor among them.
 
   There have been many enchanted swords in folklore. The Sword of Nuadu, part of the four legendary treasures of Tuatha Dé Danann, was invincible when drawn. Gryffindor’s sword owes something to the legend of Excalibur, the sword of King Arthur, which in some legends must be drawn from a stone by the rightful king. The idea of fitness to carry the sword is echoed in the sword of Gryffindor’s return to worthy members of its true owner’s house.", author_id: user4.id)
-  story16.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/the+sword+of+Gryffindor.jpeg"), filename: "the+sword+of+Gryffindor.jpeg")
   story16.save!
 
-  story17 = Story.new(title: "Quotes from Albus Dumbledore", body: "After revelations about Dumbledore’s past that emerged in The Deathly Hallows, debates continue to rage over Dumbledore’s motivations, but this is a discussion for another article. Dumbledore polarizes fans, yet no matter one’s personal feelings about this character, it is impossible not to admire the wisdom, wittiness, and insight that flow from his mouth. Through my multiple readings of Rowling’s novels, I have discovered ten quotes that have encouraged me in tough times, changed my outlook on life, and nourished my soul.
+  story17 = Story.new(title: 'Quotes from Albus Dumbledore', body: "After revelations about Dumbledore’s past that emerged in The Deathly Hallows, debates continue to rage over Dumbledore’s motivations, but this is a discussion for another article. Dumbledore polarizes fans, yet no matter one’s personal feelings about this character, it is impossible not to admire the wisdom, wittiness, and insight that flow from his mouth. Through my multiple readings of Rowling’s novels, I have discovered ten quotes that have encouraged me in tough times, changed my outlook on life, and nourished my soul.
 
   “After all, to the well-organized mind, death is but the next great adventure.”
 
@@ -974,15 +966,14 @@ ActiveRecord::Base.transaction do
   Meaning Within Context: Like Voldemort, Harry has to deal with his fear of death. Dumbledore reassures him that this fear is ultimately misplaced and meaningless. This quote also offers foreshadowing, however, since this is the book in which Dumbledore dies.
 
   Personal Meaning: In this quote, Dumbledore explains one of our most common fears: the uncertainty of what happens after death. Humans crave certainty. We need to know what the weather is going to be so that we can make plans. We need to know that we have a job, shelter, food, something to do, a stable government, and a future. We cannot see in darkness; therefore, many fear it. And we don’t know exactly what’s coming when we die. Death is something that we must all face, and we must face it alone. However, realizing that death itself is not to be feared is a comforting thought.", author_id: user3.id)
-  story17.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/Albus+Dumbledore.jpeg"), filename: "Albus+Dumbledore.jpeg")
   story17.save!
 
   story18 = Story.new(title: "Hermione's Time-Turner may have saved the day, but it also glorified burnout", body: "Like many an overachieving tween suckup growing up in the late 1990s, I identified deeply with Hermione Granger. The heroine of J.K. Rowling’s mega-franchise and I had a lot in common. For one, I looked just like her: My buck teeth and frizzy brown hair, once a source of insecurity, quickly came to represent something special as the series exploded into pop culture, first as books and then film adaptations. Hermione’s shameless brilliance, thirst for excellence and ability to solve problems well beyond her grade level — not to mention the validation she got from teachers and, eventually, other students — helped me and plenty of others come to terms with being a little less cool, a little more into books and school, than everyone else.
-  
+
   The identification has stuck with me over the years, so much so that in high school, one of my best friends got me a replica of Hermione’s Time-Turner for my birthday. I was beside myself with glee. The little necklace, a tiny hourglass embedded in a delicate three-ringed gyroscope, looked exactly like the one in the film adaptation of Harry Potter and the Prisoner of Azkaban, given to Hermione by Professor McGonagall so she can take twice as many classes as her peers. That I now owned one myself, albeit a Muggle replica, was intoxicating; it was beautiful, of course, but just imagine how much more I could do, how many Advanced Placement courses and extracurricular activities I could take up while still having time for a social life and sleep. If only a teacher would entrust a magic-functional one to my care!
-  
+
   But I didn’t expect that, in the years since, as my peers and I have grown from obsessive pre-teens into ambitious, overextended adults, the Time-Turner would become part of a cultural ethos, even when it isn’t explicitly mentioned. In college, when we pulled all-nighters with regularity, we’d mainline Red Bull and Adderall to churn out term papers and cram for finals. Now, as adults, we still constantly overbook our social lives, committing to drinks dates and dropping them at the last minute. I bite off more than I can chew at work, accepting more projects than I can reasonably squeeze in, for fear of not making enough as a freelancer, and fall behind on my deadlines as a result. We’re a generation of overachievers epitomized by Hermione’s IRL counterpart, Emma Watson, who transitioned from her successes as a millionaire child star to an Ivy Leaguer juggling a Hollywood career before becoming an ambassador to the U.N. and the occasional face of brands like Burberry.
-  
+
   In the original version of the story, Hermione suffers from her double life in the same way we suffered from our all-nighters in the real world. She becomes irritable and impatient, even disrespecting her Divination teacher, Professor Trelawney, after weeks of tea-leaf readings and other “silly” lessons on fortune-telling. Mostly, Time-Turner Hermione walks around like an exhausted zombie, to the point where her typically oblivious friends — all still in the dark about how she’s been managing — start worrying about her.
 
   In the movie, though, apart from one Divination blow-up and a much-deserved punching of a racist classmate, she shows no signs of burnout. Her wits are as sharp as ever when she and Harry go back three hours in time to save both their past selves and their friends’ futures. In both the book and film, the professor who gave her the device and the headmaster, Professor Dumbledore, encourage her long-term overburdening without providing any alternative sources of relief. Sure, this might be because Hermione convinced them she could handle it, but Hermione was 13 years old. By the end of the book/movie, at which point it’s implied, not specified, that she voluntarily relinquishes the Time-Turner, readers and audiences are left to believe that the experience has been a net positive for her — it may have nearly killed her, but in the name of good grades and proving herself superhuman, it was worth it.
@@ -992,8 +983,5 @@ ActiveRecord::Base.transaction do
   And the drawbacks of a glorified burnout machine are very real. Millennials are, without a doubt, the most stressed generation yet. Twenty- and thirty-something women are burning out left and right; many in the young workforce of Silicon Valley lean heavily on Adderall and other “smart drugs” to better compete with their peers. As millennials, we’ve taken a lot longer to learn our own boundaries than past generations, mostly because past generations had those lines defined for them. I don’t pull energy-drink-fueled all-nighters anymore, and I’m doing my best to work smarter rather than more, but I’ve been wired in the opposite direction for at least half my life, so the transition does and will continue to require substantial effort.
 
   Maybe it’s a good thing my Time-Turner broke a few years back.", author_id: user11.id)
-  story18.image.attach(io: open("https://daily-prophet-dev.s3.amazonaws.com/hourglass.jpeg"), filename: "hourglass.jpeg")
   story18.save!
-
-  
 end
