@@ -37,6 +37,8 @@ gem 'bootsnap', '>= 1.4.0', require: false
 
 gem 'aws-sdk-s3'
 gem 'jquery-rails'
+gem 'msgpack', '~> 1.5.0'
+gem 'nio4r', '~> 2.5.9'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
