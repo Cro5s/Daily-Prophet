@@ -13,7 +13,9 @@ gem 'puma', '~> 4.3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+# gem 'uglifier', '>= 1.3.0'
+# Terser is a Uglifier alternative minifier
+gem 'terser'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
