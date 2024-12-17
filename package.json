@@ -1,41 +1,41 @@
 {
-  "name": "DailyProphet",
-  "private": true,
-  "dependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "acorn": "^8.0.1",
-    "babel-loader": "^8.1.0",
-    "bootstrap": "^4.5.2",
-    "minimist": ">=1.2.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0",
-    "redux": "^4.0.5",
-    "redux-devtools-extension": "^2.13.8",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
-  },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "version": "1.0.0",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
-  },
-  "scripts": {
-    "start": "webpack --watch --mode=development",
-    "postinstall": "webpack"
-  },
-  "engines": {
-    "node": "12.5.0",
-    "npm": "6.9.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "DailyProphet",
+    "private": true,
+    "dependencies": {
+        "@babel/core": "^7.11.6",
+        "@babel/preset-env": "^7.11.5",
+        "@babel/preset-react": "^7.10.4",
+        "acorn": "^8.0.1",
+        "babel-loader": "^8.1.0",
+        "bootstrap": "^4.5.2",
+        "minimist": ">=1.2.2",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-redux": "^7.2.1",
+        "react-router-dom": "^5.2.0",
+        "redux": "^4.0.5",
+        "redux-devtools-extension": "^2.13.8",
+        "redux-logger": "^3.0.6",
+        "redux-thunk": "^2.3.0",
+        "webpack": "^4.44.1",
+        "webpack-cli": "^3.3.12"
+    },
+    "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+    "version": "1.0.0",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib",
+        "test": "test"
+    },
+    "scripts": {
+        "start": "webpack --watch --mode=development",
+        "postinstall": "webpack"
+    },
+    "engines": {
+        "node": ">=16.0.0",
+        "npm": "6.9.0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
